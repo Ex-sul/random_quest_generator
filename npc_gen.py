@@ -305,7 +305,7 @@ con_1_inj_disfig = ["loss of ear", "loss of an eye", "loss of teeth"]
 # LISTS - QUIRKS
 
 
-def quirks_jewelry():
+def q_jewel():
     jewelry_types = ["a ring", "a bracelet", "a necklace", "a locket", "an amulet", "an earring"]
     return random.choice(jewelry_types)
 
@@ -344,16 +344,27 @@ def quirks_people(n):
     people_pool = []
     people_lists = [people_closest, people_close, people_less_close, people_least_close]
     people_pool.extend(random.choices(people_lists, weights=[40, 30, 20, 10])[0])
-    return random.choice(people_pool)
+    random.shuffle(people_pool)
+    p1 = people_pool.pop()
+    # Making sure to see if p1 and p2 aren't the same people
+    if p1 in people_closest:
+        people_pool.clear()
+        people_lists = [people_close, people_less_close, people_least_close]
+        people_pool.extend(random.choices(people_lists, weights=[40, 40, 20])[0])
+        random.shuffle(people_pool)
+        p2 = people_pool.pop()
+    else:
+        p2 = people_pool.pop()
+    return p1, p2
 
 
 def q_circ():
     circumstance_types = ["dead", "lost", "estranged", "much loved", "hated", "imprisoned", "falsely accused",
                           "banished", "distant", "nearby", "close", "promoted", "honorary", "indebted", "dangerous",
                           "troubled", "misunderstood", "erring", "concerned", "distressed", "wounded", "enchanted",
-                          "enthralled", "spellbound", "cursed", "immortalized", "remembered", "metamorphosed",
-                          "deceived", "disregarded", "neglected", "famous", "apotheosized", "believed-to-be-dead",
-                          "believed-to-be-lost", "captured", "kidnapped", "insane", "mad", "homicidal",
+                          "enthralled", "spellbound", "cursed", "metamorphosed", "avenged", "vindicated", "acquitted",
+                          "deceived", "disregarded", "neglected", "famous", "believed-to-be-dead", "drunken",
+                          "believed-to-be-lost", "captured", "kidnapped", "insane", "mad", "homicidal", "murdered",
                           "self-destructive", "financially ruined", "returned", "found", "new"]
     return random.choice(circumstance_types)
 
@@ -389,6 +400,12 @@ def q_magic():
     return random.choice(actions_toward_magic)
 
 
+def q_familiar():
+    familiars = ['bat', 'cat', 'crab', 'toad', 'frog', 'hawk', 'lizard', 'owl', 'snake', 'fish', 'rat', 'raven', 'spider', 'weasel']
+    return random.choice(familiars)
+
+
+
 def q_thinks():
     thinks_words = ["has discovered", "will soon discover", "is discovering", "is afraid", "fears", "was afraid",
                     "thinks", "knows", "suspects", "doesn't know", "has been told", "hopes", "is secretly relieved",
@@ -417,6 +434,12 @@ def quirk_gen(n):
     gender = n.gender
     prof_type = n.prof_type
     prof = n.prof
+    p1, p2 = quirks_people(n)
+    circ = q_circ()
+    circ_spc50 = random.choice([circ, " "])
+    circ_spc75 = random.choices([circ, " "], weights=[25, 75])[0]
+    circ_spc90 = random.choices([circ, " "], weights=[10, 90])[0]
+
     ##################### but [    ] say ##############
     cannot_ = random.choice(['cannot', 'is unable to', 'refuses to', 'is afraid to', 'dares not', 'does not at first',
                              'is reluctant to', 'will not clearly', 'will not'])
@@ -446,7 +469,7 @@ def quirk_gen(n):
                       "grows increasingly tired", "loses every desire, appetite, purpose, and goal",
                       f"{rc(['ravenously hungry', 'has an unquenchable thirst', 'cannot eat or drink'])}",
                       "experiences racing thoughts, elevated mood, difficulty maintaining attention, and becomes hyperactively goal-directed",
-                      ]
+                      "experiences synesthesia, seeing sounds as swirls of colored light"]
     reacts = random.choice(reaction_types)
     # ALONE
     quirks_1 = [f"{subj} wears too much jewelry",
@@ -522,7 +545,7 @@ def quirk_gen(n):
                 f"{subj} always seems to be too hot",
                 f"{subj} always seems to be too cold",
                 f"{subj} is overly sensitive to offensive odors",
-                f"{subj} is sensitive to daylight and other bright lights",
+                f"{subj} is sensitive to moonlight but not sunlight",
                 f"{subj} is always excusing {reflex} to go to the bathroom, perhaps suspiciously",
                 f"{subj} always looks over {poss} shoulder while walking as if {subj_l} is afraid of being followed",
                 f"{subj} has a strong foreign accent",
@@ -650,6 +673,7 @@ def quirk_gen(n):
                 f"{subj} has a drinking problem{rc([' and refuses to admit it', ' and wants to be freed from it', ''])}",
                 f"{subj} becomes more social and talkative when drunk",
                 f"{subj} becomes angrier when drunk",
+                f"{subj} smokes a pipe {rc(['at dinner', 'with a long stem', 'in the evenings', 'with an oddly fragrant and sweet-smelling tobacco', 'without apparently having to put anything in it', f'that lights when {subj_l} inhales'])}",
                 f"{subj} dislikes having to wear clothes",
                 f"{subj} is always falling asleep at inopportune times",
                 f"{subj} has trouble remembering {rc(['names but not faces', 'faces but not names', 'dates, events, and directions'])}",
@@ -741,8 +765,8 @@ def quirk_gen(n):
                 f"{subj} is, unbeknownst to the players, the identical twin of an NPC they already know",
                 f"{subj} does not currently have the exercise of {poss} free will and is being controlled by {rc(['someone', 'something', 'a creature', 'a force', 'a group'])} hostile to the player characters",
                 f"{subj} has just arrived from a {q_places_lite()} that {subj_l} claims has vanished by magic",
-                f"{subj} claims that there is a nearby {q_places_lite()} that just appeared overnight",
-                f"{subj} always sleeps facing {rc(['north', 'south', 'east', 'west'])} and keeps a compass with {subj_l} just to be sure",
+                f"{subj} claims that there is a nearby {rc([q_places_lite, 'ghost town'])} that just appeared overnight",
+                f"{subj} always sleeps facing {rc(['north', 'south', 'east', 'west'])} and keeps a compass with {obj} to make sure",
                 f"{subj} is cursed with true prophecies of the future that no one believes.  The players' characters will have an opportunity to believe one of these prophecies, but only if they are very lucky with the dice",
                 f"{subj} is cursed with prophetic {rc(['dreams', 'visions'])}.  Whenever {subj_l} tries to relate one of these prophecies, {subj_l} is forced to tell the exact opposite of the truth, an oddity which {subj_l} is unable to relate to others; they must discover it for themselves",
                 f"{subj} is cursed with the inability to see the ground or the floor--and so is always tripping and falling down stairs",
@@ -844,115 +868,102 @@ def quirk_gen(n):
                 f"{subj} believes that breathing through one's mouth will help one write better and do other mental tasks",
                 f"{subj} can write backwards as easily as forwards and even prefers it",
                 f"On the advice of a physician, {subj_l} cured a speech impediment {subj_l} had by talking for hours at a time in front of a mirror with {rc(['rocks', 'marbles'])} in {poss} mouth",
-                f"{subj} believes that standing naked outdoors for hours at a time is good for one's health.  {subj} tries to take these \"air baths\" from time to time and is even comfortable with taking business meetings in the nude",
+                f"{subj} believes that standing naked outdoors for an hour each morning is good for one's health.  {subj} tries to take these \"air baths\" from time to time and is even comfortable with taking meetings in the nude",
                 f"{subj} brags that no one has seen {obj} naked since birth",
                 f"{subj} believes there is an undiscovered race of {rc(['beings', 'creatures', 'elves', 'aberrations', 'mole people', 'humanoids', 'rodent-like people', 'dwarves', 'cold-blooded creatures', 'reptilians', 'gnomes', 'magical creatures', 'magical beasts', 'spirit beings', 'elementals'])} living in the ground and is planning an expedition into the earth to prove their existence and set up {rc(['diplomatic relations', 'trade negotiations'])}",
-                ]
+                f"{subj} likes to {rc([f'discuss {poss} plans with', 'confide in', 'pet', 'conceal'])} {poss} {q_familiar()} familiar",
+                f"{subj} takes {poss} {q_familiar()} familiar's advice when {rc(['composing a letter', 'deciding a course of action'])}",
+                f"{subj} wears {poss} boots for months at a time without taking them off.  When {subj_l} finally does, some of {poss} skin comes away with them",
+                f"Of late {subj_l} has grown so secluded that {subj_l} will only speak to others through a locked door or window",
+                f"{subj} is so afraid of ghosts, spirits, and other incorporeal beings that {subj_l} pays lots of money to have {poss} {rc(['home', 'room', 'property'])} fortified with warding magic, and so has become an easy mark for con men",
+                f"{subj} can write with {rc([f'{poss} toes', f'a magic quill that obeys {poss} thoughts', 'an unseen servant', 'an invisible familiar'])}",
+                f"{subj} keeps an aviary of carrier {rc(['pigeons', 'bats', 'pixies', 'sprites', 'owls', 'ravens', 'imps', 'pseudodragons'])}",
+                f"{subj} {rc(['believes', 'claims'])} that {subj_l} is being {rc(['pursued', 'hunted', 'followed', 'visited'])} by a glass wolf named King Charles the Mad",
+                f"{subj} once witnessed {poss} {rc(['father', 'brother', 'son'])} {rc(['die', 'kill a man'])} in {rc(['a public', 'a private', 'a magic', 'a fencing', 'an honor', 'a drunken'])} duel",
+                f"{subj} is fond of jousting tournaments",
+                f"{subj} always walks around a building before entering it",]
     # OTHER NPCS
-    quirks_2 = ["wears {} to remember {} {} {}".format(quirks_jewelry(), NPC.poss, quirks_people_circ(), quirks_people(NPC)),
-                "wears {} to remember {} {}".format(quirks_jewelry(), NPC.poss, quirks_people(NPC)),
-                f"{subj} accidentally killed {quirks_people(n)} with magic as a child and has neither studied nor practiced it since",
-                f"{subj} is struggling mightily against a temptation that would destroy {poss} {quirks_people(n)}",
-                "has a tattoo to remember {} {} {}".format(NPC.poss, quirks_people_circ(), quirks_people(NPC)),
-                "is always talking about {} {} {}".format(NPC.poss, quirks_people_circ(), quirks_people(NPC)),
-                "is grieving {} lost {}".format(NPC.poss, quirks_people(NPC)),
-                "is still grieving the loss of {} {}, who died many years ago".format(NPC.poss, quirks_people(NPC)),
-                "is always showing people a letter from {} {} {}".format(NPC.poss, quirks_people_circ(), quirks_people(NPC)),
-                "tries to hide the fact that {} is constantly rereading a letter from {} {} {}".format(NPC.subj, NPC.poss, quirks_people_circ(), quirks_people(NPC)),
-                "tries to hide the fact that {} frequently rereads a letter from {} {}".format(NPC.subj, NPC.poss, quirks_people(NPC)),
-                "is always showing people a letter from {} {}".format(NPC.poss, quirks_people(NPC)),
-                "has received a death threat from {} {}".format(NPC.poss, quirks_people(NPC)),
-                "has received a death threat from {} {} {}".format(NPC.poss, quirks_people_circ(), quirks_people(NPC)),
-                "claims to have received a death threat from {} {}".format(NPC.poss, quirks_people(NPC)),
-                "is trying to hide a letter from {} {} {}".format(NPC.poss, quirks_people_circ(), quirks_people(NPC)),
-                "is trying to destroy a letter from {} {} {}".format(NPC.poss, quirks_people_circ(), quirks_people(NPC)),
-                "claims that {} {} is trying to destroy {}".format(NPC.poss, quirks_people(NPC), NPC.obj),
-                "distrusts anyone who reminds {} of {} {}".format(NPC.obj, NPC.poss, quirks_people(NPC)),
-                "has a weak spot for anyone who reminds {} of {} {}".format(NPC.obj, NPC.poss, quirks_people(NPC)),
-                "often talks to {} {} as if they were present".format(NPC.poss, quirks_people(NPC)),
-                "thinks that {} dead {} still talks to {} (and may be right)".format(NPC.poss, quirks_people(NPC), NPC.obj),
-                "is being pursued by an obsessed {}".format(quirks_people(NPC)),
-                "is afraid that {} {} is searching for {}".format(NPC.poss, quirks_people(NPC), NPC.obj),
-                "is trying to find {} {}".format(NPC.poss, quirks_people(NPC)),
-                "is trying to find {} {} {}".format(NPC.poss, quirks_people_circ(), quirks_people(NPC)),
-                "is searching for {} {}, who {} believes is also looking for {}".format(NPC.poss, quirks_people(NPC), NPC.subj, NPC.obj),
-                "is hiding from {} {}, who has tracked {} to this area".format(NPC.poss, quirks_people(NPC), NPC.obj),
-                "was betrayed by {} {}".format(NPC.poss, quirks_people(NPC)),
-                "feels betrayed by {} {}".format(NPC.poss, quirks_people(NPC)),
-                "was accused of betraying {} {}".format(NPC.poss, quirks_people(NPC)),
-                "betrayed {} {}".format(NPC.poss, quirks_people(NPC)),
-                "is on the run, accused of killing {} {}".format(NPC.poss, quirks_people(NPC)),
-                "killed {} {} in self-defense and was legally acquitted but still doesn't want this fact to be known".format(
-                    NPC.poss, quirks_people(NPC)),
-                "is trying to reconnect with {} {}".format(NPC.poss, quirks_people(NPC)),
-                "is trying to reconnect with {} {} {}".format(NPC.poss, quirks_people_circ(), quirks_people(NPC)),
-                "is trying to contact {} {}".format(NPC.poss, quirks_people(NPC)),
-                "is trying to contact {} {} {}".format(NPC.poss, quirks_people_circ(), quirks_people(NPC)),
-                "is trying to expose {} {}".format(NPC.poss, quirks_people(NPC)),
-                "is trying to expose {} {} {}".format(NPC.poss, quirks_people_circ(), quirks_people(NPC)),
-                "is trying to kill {} {}".format(NPC.poss, quirks_people(NPC)),
-                "is trying to kill {} {} {}".format(NPC.poss, quirks_people_circ(), quirks_people(NPC)),
-                "is trying to locate {} {}".format(NPC.poss, quirks_people(NPC)),
-                "is trying to locate {} {} {}".format(NPC.poss, quirks_people_circ(), quirks_people(NPC)),
-                "is trying to restore the reputation of {} {}".format(NPC.poss, quirks_people(NPC)),
-                "is trying to restore the reputation of {} {} {}".format(NPC.poss, quirks_people_circ(),
-                                                                         quirks_people(NPC)),
-                "is trying to ruin the reputation of {} {}".format(NPC.poss, quirks_people(NPC)),
-                "is trying to ruin the reputation of {} {} {}".format(NPC.poss, quirks_people_circ(),
-                                                                      quirks_people(NPC)),
-                "is trying to separate {} {} from a lover".format(NPC.poss, quirks_people(NPC)),
-
-                "is, whether {} realizes it or not, trying to ruin {} {}'s life".format(NPC.subj, NPC.poss,
-                                                                                        quirks_people(NPC)),
-                "regrets not listening to {} {} while {} still had the chance".format(NPC.poss, quirks_people(NPC),
-                                                                                      NPC.subj),
-                "is trying to improve {} {}'s life".format(NPC.poss, quirks_people(NPC)),
-                "claims to regret not listening to {} {} while {} still had the chance".format(NPC.poss,
-                                                                                               quirks_people(NPC),
-                                                                                               NPC.subj),
-                "claims to be trying to improve {} {}'s life".format(NPC.poss, quirks_people(NPC)),
-
-                "is trying to keep {} {} and {} {} apart".format(NPC.poss, quirks_people(NPC), NPC.poss,
-                                                                 quirks_people(NPC)),
-                "is trying to pay back {} {}".format(NPC.poss, quirks_people(NPC)),
-                "is trying to pay back {} {} {}".format(NPC.poss, quirks_people_circ(), quirks_people(NPC)),
-                "is trying to get back in the good graces of {} {}".format(NPC.poss, quirks_people(NPC)),
-                "is trying to get back in the good graces of {} {} {}".format(NPC.poss, quirks_people_circ(),
-                                                                              quirks_people(NPC)),
-                "is trying to impress {} {}".format(NPC.poss, quirks_people(NPC)),
-                "is trying to impress {} {} {}".format(NPC.poss, quirks_people_circ(), quirks_people(NPC)),
-
-                "is trying to escape from {} {}".format(NPC.poss, quirks_people(NPC)),
-                "is trying to escape from {} {} {}".format(NPC.poss, quirks_people_circ(), quirks_people(NPC)),
-                "is trying to avoid {} {}".format(NPC.poss, quirks_people(NPC)),
-                "is trying to avoid {} {} {}".format(NPC.poss, quirks_people_circ(), quirks_people(NPC)),
-                "is trying to appease {} {}".format(NPC.poss, quirks_people(NPC)),
-                "is trying to appease {} {} {}".format(NPC.poss, quirks_people_circ(), quirks_people(NPC)),
-                "is trying to get along with {} {}".format(NPC.poss, quirks_people(NPC)),
-                "is trying to get along with {} {} {}".format(NPC.poss, quirks_people_circ(), quirks_people(NPC)),
-                "wants people to {} {}'s on good terms with {} {}".format(
-                    random.choice(["think", "know", "believe", "see"]),
-                    NPC.subj, NPC.poss, quirks_people(NPC)),
-                "wants people to {} {}'s on good terms with {} {} {}".format(
-                    random.choice(["think", "know", "believe", "see"]),
-                    NPC.subj, NPC.poss, quirks_people_circ(),
-                    quirks_people(NPC)),
-                "is buying a gift for {} {}".format(NPC.poss, quirks_people(NPC)),
-                "is buying a gift for {} {} {}".format(NPC.poss, quirks_people_circ(), quirks_people(NPC)),
-                "{} highly of {} {}".format(random.choice(["thinks", "speaks"]), NPC.poss, quirks_people(NPC)),
-                "{} highly of {} {} {}".format(random.choice(["thinks", "speaks"]), NPC.poss, quirks_people_circ(),
-                                               quirks_people(NPC)),
-                "refuses to believe that {} {} is dead (and may possibly be right)".format(NPC.poss,
-                                                                                           quirks_people(NPC)),
-                "knows that {} {} is dead, even if no one else does yet".format(NPC.poss, quirks_people(NPC)),
-                "was accused of injuring {} {} with magic and now claims not to study or practice it".format(NPC.poss, quirks_people(NPC)),
-                "had {} reputation ruined by {} {}".format(NPC.poss, NPC.poss, quirks_people(NPC)),
-                "had {} reputation ruined by {} {} {}".format(NPC.poss, NPC.poss, quirks_people_circ(),
-                                                              quirks_people(NPC)),
-                "has a rival for the affections of {} {}".format(NPC.poss, quirks_people(NPC)),
-                "never new the name of {} rival for the affections of {} {} {}".format(NPC.poss, NPC.poss,
-                                                                                       quirks_people_circ(),
-                                                                                       quirks_people(NPC)),
+    quirks_2 = [f"{subj} wears {q_jewel()} to remember {poss} {circ} {p1}",
+                f"{subj} wears {q_jewel()} to remember {poss} dead {p1}",
+                f"{subj} accidentally killed {poss} {p1} with magic as a child and has neither studied nor practiced it since",
+                f"{subj} is struggling mightily against a temptation that would destroy {poss} {p1}",
+                f"{subj} has a tattoo to remember {poss}{circ_spc50}{p1}",
+                f"{subj} is always talking about {poss} {circ} {}",
+                f"{subj} is grieving {poss} lost {p1}",
+                "is still grieving the loss of {} {}, who died many years ago",
+                "is always showing people a letter from {} {} {}",
+                "tries to hide the fact that {} is constantly rereading a letter from {} {} {}",
+                "tries to hide the fact that {} frequently rereads a letter from {} {}",
+                "is always showing people a letter from {} {}",
+                "has received a death threat from {} {}",
+                "has received a death threat from {} {} {}",
+                "claims to have received a death threat from {} {}",
+                "is trying to hide a letter from {} {} {}",
+                "is trying to destroy a letter from {} {} {}",
+                "claims that {} {} is trying to destroy {}",
+                "distrusts anyone who reminds {} of {} {}",
+                "has a weak spot for anyone who reminds {} of {} {}",
+                "often talks to {} {} as if they were present",
+                "thinks that {} dead {} still talks to {} (and may be right)",
+                "is being pursued by an obsessed {}",
+                "is afraid that {} {} is searching for {}",
+                "is trying to find {} {}",
+                "is trying to find {} {} {}",
+                "is searching for {} {}, who {} believes is also looking for {}",
+                "is hiding from {} {}, who has tracked {} to this area",
+                "was betrayed by {} {}",
+                "feels betrayed by {} {}",
+                "was accused of betraying {} {}",
+                "betrayed {} {}",
+                "is on the run, accused of killing {} {}",
+                "killed {} {} in self-defense and was legally acquitted but still doesn't want this fact to be known",
+                "is trying to reconnect with {} {}",
+                "is trying to reconnect with {} {} {}",
+                "is trying to contact {} {}",
+                "is trying to contact {} {} {}",
+                "is trying to expose {} {}",
+                "is trying to expose {} {} {}",
+                "is trying to kill {} {}",
+                "is trying to kill {} {} {}",
+                "is trying to locate {} {}",
+                "is trying to locate {} {} {}",
+                "is trying to restore the reputation of {} {}",
+                "is trying to restore the reputation of {} {} {}",
+                "is trying to ruin the reputation of {} {}",
+                "is trying to ruin the reputation of {} {} {}",
+                "is trying to separate {} {} from a lover",
+                "is, whether {} realizes it or not, trying to ruin {} {}'s life",
+                "regrets not listening to {} {} while {} still had the chance",
+                "is trying to improve {} {}'s life",
+                "claims to regret not listening to {} {} while {} still had the chance",
+                "claims to be trying to improve {} {}'s life",
+                "is trying to keep {} {} and {} {} apart",
+                "is trying to pay back {} {}",
+                "is trying to pay back {} {} {}",
+                "is trying to get back in the good graces of {} {}",
+                "is trying to get back in the good graces of {} {} {}",
+                "is trying to impress {} {}",
+                "is trying to impress {} {} {}",
+                "is trying to escape from {} {}",
+                "is trying to escape from {} {} {}",
+                "is trying to avoid {} {}",
+                "is trying to avoid {} {} {}",
+                "is trying to appease {} {}",
+                "is trying to appease {} {} {}",
+                "is trying to get along with {} {}",
+                "is trying to get along with {} {} {}",
+                "wants people to {} {}'s on good terms with {} {}".format(random.choice(["think", "know", "believe", "see"]),
+                "wants people to {} {}'s on good terms with {} {} {}".format(random.choice(["think", "know", "believe", "see"]),
+                "is buying a gift for {} {}",
+                "is buying a gift for {} {} {}",
+                "{} highly of {} {}".format(random.choice(["thinks", "speaks"]),
+                "{} highly of {} {} {}".format(random.choice(["thinks", "speaks"]),
+                "refuses to believe that {} {} is dead (and may possibly be right)",
+                "was accused of injuring {} {} with magic and now claims not to study or practice it",
+                "had {} reputation ruined by {} {}",
+                "had {} reputation ruined by {} {} {}",
+                "has a rival for the affections of {} {}",
+                "never new the name of {} rival for the affections of {} {} {}",
                 "{} {} shows up looking for a reckoning or restitution".format(NPC.poss, quirks_people(NPC)),
                 "is receiving unwanted attention from {} {}".format(NPC.poss, quirks_people(NPC)),
                 "is receiving unwanted attention from {} {} {}".format(NPC.poss, quirks_people_circ(),
@@ -1304,8 +1315,7 @@ def ill_gen(con, sex, prof_type):
 
 
 def looks_gen(sex):
-    # determines how good-looking the NPC is #
-    looks_pool = []
+    # determines how good-looking the NPC is
     if sex == "female":
         looks_pool = ["hideous", "ugly", "homely", "plain-looking", "pretty", "beautiful", "divinely beautiful"]
     else:
@@ -1320,17 +1330,17 @@ class NPC:
     num_of_NPCs = 0
 
     def __init__(self):
-        # SEX AND GENDER #
+        # SEX AND GENDER
         self.sex = sex_gen()
         self.gender = gender_noun(self.sex)
         self.subj = gender_subj(self.sex)
         self.poss = gender_poss(self.sex)
         self.obj = gender_obj(self.sex)
         self.reflex = gender_reflex(self.sex)
-        # PROFESSION #
+        # PROFESSION
         self.prof_type = prof_type_gen(self.char)
         self.prof = prof_gen(self.prof_type, self.sex)
-        # CHARACTER AND PERSONALITY #
+        # CHARACTER AND PERSONALITY
         self.char = char_gen()
         self.principles = prin_gen(self.char)
         self.law_disposition = law_disp(self.char, self.principles, self.subj, self.poss, self.obj, self.reflex)
@@ -1342,7 +1352,7 @@ class NPC:
         self.conf_ct2 = conf_traitchar(self.char, self.trait2)
         self.conf_tt = conf_traittrait(self.trait1, self.trait2)
         self.quirk = quirk_gen(self)
-        # CONSTITUTION AND APPEARANCE #
+        # CONSTITUTION AND APPEARANCE
         self.con = con_gen()
         self.ill = ill_gen(self.con, self.sex, self.prof_type)
         self.looks = looks_gen(self.sex)
