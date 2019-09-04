@@ -331,9 +331,9 @@ def quirks_people(n):
     people_close = ["father", "mother", "brother", "sister", "son", "daughter"]
     people_less_close = ["grandfather", "grandmother", "cousin", "mentor", "benefactor", "benefactress", "enemy",
                          "rival", "friend", "childhood friend", "guardian", "patron", "patroness", "step father",
-                         "step mother", "step sibling", "uncle", "aunt", "nephew", "niece", "nanny", "ward"]
+                         "step mother", "step brother", "step sister", "uncle", "aunt", "nephew", "niece", "nanny", "ward"]
     people_least_close = ["traveler", "creditor", "lender", "employer", "superior", "employee", "subordinate",
-                          "correspondent", "liason", "peer", "teacher", "student", "flatterer", "sycophant",
+                          "correspondent", "liason", "peer", "teacher", "student", "flatterer", "lackey",
                           "acquaintance", "colleague"]
     # Sorting closest people by gender
     if n.sex == "male":
@@ -346,7 +346,7 @@ def quirks_people(n):
     people_pool.extend(random.choices(people_lists, weights=[40, 30, 20, 10])[0])
     random.shuffle(people_pool)
     p1 = people_pool.pop()
-    # Making sure to see if p1 and p2 aren't the same people
+    # Making sure p1 and p2 aren't the same person
     if p1 in people_closest:
         people_pool.clear()
         people_lists = [people_close, people_less_close, people_least_close]
@@ -355,17 +355,49 @@ def quirks_people(n):
         p2 = people_pool.pop()
     else:
         p2 = people_pool.pop()
-    return p1, p2
+    # Determining gender of p1
+    if p1 in ["wife", "beloved", "fiancée", "mother", "sister", "daughter", "grandmother", "benefactress", "patroness", "step mother",
+              "step sister", "aunt", "niece", "nanny"]:
+        p1_subj = "she"
+        p1_poss = "her"
+        p1_obj = "her"
+        p1_reflex = "herself"
+    elif p1 in ["husband", "lover", "suitor", "fiancé", "father", "brother", "son", "grandfather", "benefactor", "patron",
+                "step father", "step brother", "uncle",  "nephew"]:
+        p1_subj = "he"
+        p1_poss = "his"
+        p1_obj = "him"
+        p1_reflex = "himself"
+    else:
+        p1_sex = random.choice(["male", "female"])
+        if p1_sex == "male":
+            p1_subj = "he"
+            p1_poss = "his"
+            p1_obj = "him"
+            p1_reflex = "himself"
+        else:
+            p1_subj = "she"
+            p1_poss = "her"
+            p1_obj = "her"
+            p1_reflex = "herself"
+
+    return p1, p2, p1_subj, p1_poss, p1_obj, p1_reflex
 
 
 def q_circ():
-    circumstance_types = ["dead", "lost", "estranged", "much loved", "hated", "imprisoned", "falsely accused",
-                          "banished", "distant", "nearby", "close", "promoted", "honorary", "indebted", "dangerous",
+    circumstance_types = ["dead", "dying", "lost", "estranged", "much loved", "hated", "imprisoned", "falsely accused",
+                          "banished", "distant", "nearby", "close", "indebted", "dangerous",
                           "troubled", "misunderstood", "erring", "concerned", "distressed", "wounded", "enchanted",
                           "enthralled", "spellbound", "cursed", "metamorphosed", "avenged", "vindicated", "acquitted",
                           "deceived", "disregarded", "neglected", "famous", "believed-to-be-dead", "drunken",
                           "believed-to-be-lost", "captured", "kidnapped", "insane", "mad", "homicidal", "murdered",
-                          "self-destructive", "financially ruined", "returned", "found", "new"]
+                          "self-destructive", "financially ruined", "returned", "found", "new", "undead", "cornered",
+                          "desperate", "loving", "wonderful", "trustful", "loyal", "trusting", "gullible",
+                          "happy", "newly resurrected", "recovering", "ailing", "convalescing", "penitent", "pious",
+                          "reverent", "longsuffering", "persevering", "relentless", "frustrated", "patient", "prudent",
+                          "scheming", "thoughtful", "selfless", "selfish", "intelligent", "foolish", "wise", "shrewd",
+                          "delusional", "all-seeing", "vigilant", "callous", "infallible", "innocent", "magic-endowed",
+                          "famous", "infamous", "well known", "unknown", "secret", "stalwart", "sensitive", "much maligned"]
     return random.choice(circumstance_types)
 
 
@@ -434,8 +466,10 @@ def quirk_gen(n):
     gender = n.gender
     prof_type = n.prof_type
     prof = n.prof
-    p1, p2 = quirks_people(n)
+    isnt = "isn't"
+    p1, p2, p1_subj, p1_poss, p1_obj, p1_reflex = quirks_people(n)
     circ = q_circ()
+    circ_spc25 = random.choices([f" {circ} ", " "], weights=[75, 25])[0]
     circ_spc50 = random.choice([f" {circ} ", " "])
     circ_spc75 = random.choices([f" {circ} ", " "], weights=[25, 75])[0]
     circ_spc90 = random.choices([f" {circ} ", " "], weights=[10, 90])[0]
@@ -882,53 +916,58 @@ def quirk_gen(n):
                 f"{subj} once witnessed {poss} {rc(['father', 'brother', 'son'])} {rc(['die', 'kill a man'])} in {rc(['a public', 'a private', 'a magic', 'a fencing', 'an honor', 'a drunken'])} duel",
                 f"{subj} is fond of jousting tournaments",
                 f"{subj} always walks around a building before entering it",]
+
     # OTHER NPCS
-    quirks_2 = [f"{subj} wears {q_jewel()} to remember {poss} {circ} {p1}",
-                f"{subj} wears {q_jewel()} to remember {poss} dead {p1}",
-                f"{subj} accidentally killed {poss} {p1} with magic as a child and has neither studied nor practiced it since",
+
+    quirks_2 = [f"{subj} wears {q_jewel()} to remember {poss} {rc([circ, 'dead'])} {p1}",
+                f"{subj} accidentally {rc(['killed', 'injured'])} {poss} {p1} with magic as a child and has neither studied nor practiced it since",
                 f"{subj} is struggling mightily against a temptation that would destroy {poss} {p1}",
                 f"{subj} has a tattoo to remember {poss}{circ_spc50}{p1}",
                 f"{subj} is always talking about {poss} {circ} {p1}",
                 f"{subj} is grieving {poss} lost {p1}",
                 f"{subj} is still grieving the loss of {poss} {p1}, who died many years ago",
                 f"{subj} is always showing people a letter from {poss}{circ_spc50}{p1}",
-                f"{subj} tries to hide the fact that {subj_l} is constantly rereading a letter from {poss} {circ} {p1}",
-                f"{subj} tries to hide the fact that {subj_l} frequently rereads a letter from {poss} {p1}",
+                f"{subj} tries to hide the fact that {subj_l} {rc(['is constantly rereading', 'frequently rereads'])} a letter from {poss}{circ_spc25}{p1}",
                 f"{subj} {rc(['has', 'claims to have'])} received a death threat from {poss}{circ_spc50}{p1}",
-                f"{subj} is trying to hide a letter from {} {} {}",
-                "is trying to destroy a letter from {} {} {}",
-                "claims that {} {} is trying to destroy {}",
-                "distrusts anyone who reminds {} of {} {}",
-                "has a weak spot for anyone who reminds {} of {} {}",
-                "often talks to {} {} as if they were present",
-                "thinks that {} dead {} still talks to {} (and may be right)",
-                "is being pursued by an obsessed {}",
-                "is afraid that {} {} is searching for {}",
-                "is trying to find {} {}",
-                "is trying to find {} {} {}",
-                "is searching for {} {}, who {} believes is also looking for {}",
-                "is hiding from {} {}, who has tracked {} to this area",
-                "was betrayed by {} {}",
-                "feels betrayed by {} {}",
-                "was accused of betraying {} {}",
-                "betrayed {} {}",
-                "is on the run, accused of killing {} {}",
-                "killed {} {} in self-defense and was legally acquitted but still doesn't want this fact to be known",
-                "is trying to reconnect with {} {}",
-                "is trying to reconnect with {} {} {}",
-                "is trying to contact {} {}",
-                "is trying to contact {} {} {}",
-                "is trying to expose {} {}",
-                "is trying to expose {} {} {}",
-                "is trying to kill {} {}",
-                "is trying to kill {} {} {}",
-                "is trying to locate {} {}",
+                f"{subj} is trying to {rc(['hide', 'destroy', 'publish'])} a letter from {poss}{circ_spc25}{p1}",
+                f"{subj} claims that {poss}{circ_spc90}{p1} is trying to {rc(['destroy', 'kill'])} {obj}",
+                f"{subj} distrusts anyone who reminds {obj} of {poss}{circ_spc90}{p1}",
+                f"{subj} has a weak spot for anyone who reminds {obj} of {poss}{circ_spc90}{p1}",
+                f"{subj} often talks to {poss}{circ_spc90}{p1} as if {p1_subj} were present",
+                f"{subj} thinks that {poss} dead {p1} still talks to {obj} -- {p1_subj} {rc(['is', isnt])}",
+                f"{subj} {rc(['is', f'claims {subj_l} is', f'thinks {subj_l} is'])} being pursued by {rc(['an', f'{poss}'])} obsessed {p1}",
+                f"{subj} {rc(['is afraid', 'believes', 'is hopeful'])} that {poss}{circ_spc90}{p1} is searching for {obj}",
+                f"{subj} is trying to find {poss}{circ_spc50}{p1}",
+                f"{subj} is searching for {poss}{circ_spc75}{p1}, who {subj_l} believes is also looking for {obj}",
+                f"{subj} is hiding from {poss}{circ_spc90}{p1}, who has tracked {obj} to this area",
+                f"{subj} {rc(['was', 'feels'])} betrayed by {poss}{circ_spc90}{p1}",
+                f"{subj} was accused of betraying {poss}{circ_spc90}{p1}",
+                f"{subj} betrayed {poss} {p1}",
+                f"{poss.capitalize()} {p1} {rc(['thinks', 'claims that'])} {subj_l} {rc(['betrayed', 'stole from', 'deceived'])} {p1_obj}",
+                f"{subj} is on the run, accused of killing {poss} {p1}",
+                f"{poss.capitalize()} {p1} is on the run, accused of {rc(['killing', 'betraying', 'poisoning', 'stealing from'])} {poss} {p2}",
+                f"{subj} {rc(['killed', 'injured'])} {poss} {p1} {rc(['in self-defense', 'by accident'])} and was legally acquitted {rc(['but still does not want', 'and wants'])} this fact to be known",
+                f"{subj} is trying to reconnect with {poss}{circ_spc50}{p1}",
+                f"{subj} is trying to contact {poss}{circ_spc50}{p1}",
+                f"{subj} is trying to expose {poss}{circ_spc25}{p1}",
+                f"{subj} {rc(['has received', 'receives', 'is about to receive'])} a {rc(['cursed', 'magic'])} {q_obj()} from {poss}{circ_spc90}{p1}",
+                f"{subj} is {rc(['trying', 'about', 'unknowingly about'])} to send a {rc(['cursed', 'magic'])} {q_obj()} to {poss}{circ_spc90}{p1}",
+                f"{subj} is concerned because {subj_l} recently received a {rc(['cursed', 'magic'])} {q_obj()} from {poss}{circ_spc90}{p1} and doesn't understand {rc(['why', f'{p1_poss} reasons', f'{p1_poss} motives'])}",
+                f"{subj} is weighing the possible consequences in {poss} mind of sending a {rc(['cursed', 'magic'])} {q_obj()} to {poss}{circ_spc90}{p1}",
+                f"{poss.capitalize()} {p1} left {obj} a {rc(['cursed', 'magic'])} {q_obj()} in {p1_poss} will, which {subj_l} has just received",
+                f"{subj} is trying to {rc(['get', 'persuade', 'make'])} {poss}{circ_spc75}{p1} to send a {rc(['cursed', 'magic'])} {q_obj()} to {poss} {p2}",
+                f"{subj} is trying to {rc(['stop', 'prevent', 'dissuade'])} {poss}{circ_spc75}{p1} from sending a {rc(['cursed', 'magic'])} {q_obj()} to {poss} {p2}",
+                f"{subj} is trying to kill {poss}{circ_spc50}{p1} for reasons that {rc(['are', 'are not'])} obvious to those who know {rc([f'{obj}', f'{p1_obj}'])}",
+                f"{subj} is trying to kill {poss}{circ_spc50}{p1}",
+                f"{subj} is trying to prevent {poss}{circ_spc50}{p1} from {rc(['killing', 'destroying', 'ruining', 'meeting', 'ruining the reputation of', 'restoring the reputation of', 'improving the reputation of', 'lying to', 'liking', 'making amends with', 'running into', 'forgetting', 'remembering'])} {poss} {p2}",
+                f"{subj} is trying to get {poss}{circ_spc50}{p1} to {rc(['meet', 'forgive', 'make amends with', 'impersonate', 'slander', 'disown', 'destroy', 'be on good terms with', 'get in the good graces of', 'reconcile with', 'run into', 'restore the reputation of', 'ruin the reputation of', 'avoid', 'forget', 'remember'])} {poss} {p2}",
+                f"{subj} is trying to locate {} {}",
                 "is trying to locate {} {} {}",
-                "is trying to restore the reputation of {} {}",
+                f"{subj} is trying to restore the reputation of {} {}",
                 "is trying to restore the reputation of {} {} {}",
                 "is trying to ruin the reputation of {} {}",
                 "is trying to ruin the reputation of {} {} {}",
-                "is trying to separate {} {} from a lover",
+                f"{subj} is trying to separate {} {} from a lover",
                 "is, whether {} realizes it or not, trying to ruin {} {}'s life",
                 "regrets not listening to {} {} while {} still had the chance",
                 "is trying to improve {} {}'s life",
