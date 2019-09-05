@@ -1000,6 +1000,11 @@ def quirk_gen(n):
                 f"{subj} is planning to introduce {poss}{circ_spc25}{p1} to {poss} {p2}",
                 f"{subj} {rc(['thinks', 'fears', 'has discovered', 'suspects'])} that {poss}{circ_spc90}{p1} and {poss} {p2} are conspiring against {obj}",
                 f"{subj} {rc(['thinks', 'knows', 'fears', 'hopes', 'suspects'])} that {poss}{circ_spc90}{p1} and {poss} {p2} know each other better than they let on",
+                f"{poss.capitalize()}{circ_spc50}{p1} is trying to {rc([f'reconcile {obj} to', f'separate {obj} from'])} {poss} {p2}",
+                f"{poss.capitalize()} {p2} is trying to {rc([f'reconcile {obj} to', f'separate {obj} from'])} {poss}{circ_spc50}{p1}",
+                f"{poss.capitalize()}{circ_spc50}{p1} is {rc([f'distancing {p1_reflex} from', 'avoiding', 'trying to meet', 'trying to make amends with'])} {poss} {p2}",
+                f"{subj} told {poss}{circ_spc50}{p1} that {poss} {p2} was {rc(['alive', 'dead', 'out of the picture', 'a good person', 'evil', 'a mage', 'wealthy', 'poor'])}",
+                f"{subj} told {poss}{circ_spc50}{p1} that {poss} {p2} was {rc(['in', 'no longer in'])} possession of {rc(['a', f'{poss}', f'{p1_poss}'])} {rc(['magic', 'cursed'])} {q_obj()}",
                 ]
     # ORGANIZATIONS
     quirks_org = ["has received a death threat from {}".format(quirks_organizations()),
