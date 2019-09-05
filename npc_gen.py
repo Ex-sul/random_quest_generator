@@ -466,6 +466,7 @@ def quirk_gen(n):
     reflex = n.reflex
     gender = n.gender
     prof_type = n.prof_type
+    org = q_orgs()
     prof = n.prof
     isnt = "isn't"
     p1, p2, p1_subj, p1_poss, p1_obj, p1_reflex = quirks_people(n)
@@ -1007,19 +1008,20 @@ def quirk_gen(n):
                 f"{subj} told {poss}{circ_spc50}{p1} that {poss} {p2} was {rc(['in', 'no longer in'])} possession of {rc(['a', f'{poss}', f'{p1_poss}'])} {rc(['magic', 'cursed'])} {q_obj()}",
                 ]
     # ORGANIZATIONS
-    quirks_org = ["has received a death threat from {}".format(quirks_organizations()),
-                  f"{subj} is struggling mightily against a temptation that would destroy {q_orgs()}",
-                  "claims to have received a death threat from {}".format(quirks_organizations()),
-                  "has a recruitment letter from {}".format(quirks_organizations()),
-                  "is trying to hide a letter from {}".format(quirks_organizations()),
-                  "is trying to destroy a letter from {}".format(quirks_organizations()),
-                  "claims that {} is trying to recruit {}".format(quirks_organizations(), NPC.obj),
-                  "claims that {} is trying to gain {} support".format(quirks_organizations(), NPC.poss),
-                  "claims that {} is trying to destroy {}".format(quirks_organizations(), NPC.obj),
-                  "claims that {} is trying to destroy {} {}".format(quirks_organizations(), NPC.poss, quirks_people(NPC)),
-                  "{} aiding {} {} in trying to destroy {}".format(random.choice(["may be", "is", "is accused of"]), NPC.poss, quirks_people(NPC), quirks_organizations()),
-                  "is {} of being a member of {}".format(random.choice(["accused", "suspected"]), quirks_organizations()),
-                  "is trying to rescue {} {} from {}".format(NPC.poss, quirks_people(NPC), quirks_organizations()),
+    quirks_org = [f"{subj} {rc(['has', 'claims to have'])} received a death threat from {org}",
+                  f"{subj} is struggling mightily against a temptation that would destroy {org}",
+                  f"{subj} {rc(['has', 'claims to have', 'is hiding', 'is about to destroy', 'is looking for', 'is hoping for', 'has lost'])} a recruitment letter from {org}",
+                  f"{subj} {rc(['has', 'claims to have', 'is hiding', 'is about to destroy', 'is looking for', 'is trying to intercept', 'has lost'])} {poss}{circ_spc90}{p1}'s recruitment letter from {org}",
+                  f"{subj} is trying to {rc(['hide', 'destroy', 'intercept', 'elicit', 'deliver', 'return', 'identify', 'locate', 'burn', 'forge', 'report', 'publish'])} a letter from {org}",
+                  f"{subj} claims that {org} is trying to {rc(['recruit', 'kill', 'ruin', 'destroy'])} {obj}",
+                  f"{subj} claims that {org} is trying to gain {poss} support",
+                  f"{subj} claims that {org} is trying to {rc(['recruit', 'destroy'])} {poss}{circ_spc75}{p1}",
+                  f"{subj} claims that {org} is trying to {rc(['recruit', 'destroy'])} {poss}{circ_spc75}{p1} and {p2}",
+                  f"{poss.capitalize()}{circ_spc90}{p1} thinks that {org} is trying to {rc(['recruit', 'destroy'])} {rc([f'{obj}', f'{p1_obj}', f'{poss} {p2}'])}",
+                  f"{subj} {rc(['is', 'is not', 'may be', 'is suspected of'])} aiding {poss}{circ_spc75}{p1} in trying to {rc(['destroy', 'dismantle', 'found', 'join', 'establish'])} {org}",
+                  f"{subj} is{rc([' ', ' thought to be ', ' suspected of being ', ' known to be '])}a member of {org}",
+                  f"{subj} is trying to rescue {poss}{circ_spc50}{p1} from {org}",
+                  f"{poss.capitalize()}{circ_spc90}{p1} is trying to rescue {obj} from {org}",
                   "is trying to infiltrate {} to find {} {}".format(quirks_organizations(), NPC.poss, quirks_people(NPC)),
                   "is trying to help {} {} join {}".format(NPC.poss, quirks_people(NPC), quirks_organizations()),
                   "is trying to talk {} {} out of joining {}".format(NPC.poss, quirks_people(NPC), quirks_organizations()),
