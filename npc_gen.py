@@ -1498,9 +1498,35 @@ def narrative_view2(NPC):
         if NPC.looks == "plain-looking" and random.randint(1, 10) == 1:
             print(f"{l_an} {NPC.looks}", end=" ")
             looks_stated = True
-
+        elif NPC.looks != "plain-looking":
+            print(f"{l_an} {NPC.looks}", end=" ")
+            looks_stated = True
+        else:
+            looks_stated = False
     else:
         looks_stated = False
+
+    # Statement of Gender
+    if morality_stated or looks_stated:
+        print(f"{NPC.gender}{rc([',', '—'])}", end=" ")
+
+    # PRINT SUBSEQUENT STATEMENT
+
+    # If gender hasn't been printed yet, print it
+    if not morality_stated and not looks_stated:
+        if not NPC.conf_ct1:
+            print(f"{NPC.trait1}", end=" ")
+        else:
+            print(f"{seemingly} {NPC.trait1}", end=" ")
+        print(f"{NPC.gender}{rc([',', '—'])}", end=" ")
+        traits_stated = True
+    else:
+        traits_stated = False
+
+    # Printing the traits
+
+
+
 
 
 
