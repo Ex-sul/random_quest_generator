@@ -465,9 +465,7 @@ def quirk_gen(n):
     obj = n.obj
     reflex = n.reflex
     gender = n.gender
-    prof_type = n.prof_type
     org = q_orgs()
-    prof = n.prof
     isnt = "isn't"
     p1, p2, p1_subj, p1_poss, p1_obj, p1_reflex = quirks_people(n)
     circ = q_circ()
@@ -596,8 +594,8 @@ def quirk_gen(n):
                 f"{subj} always speaks about {reflex} in the third person",
                 f"{subj} is always muttering under {poss} breath",
                 f"{subj} tries to use big words {subj_l} doesn't understand",
-                f"{subj} dresses well for a {gender} of a {prof_type} profession",
-                f"{subj} dresses poorly for a {gender} with a {prof_type} vocation",
+                f"{subj} dresses well for a {gender} of {poss} profession",
+                f"{subj} dresses poorly for a {gender} with {poss} vocation",
                 f"{subj} refers to events or information {subj_l} knows that others don't have and then pretends to be surprised when they say they haven't heard of it",
                 f"{subj} always interrupts others telling stories to provide details left out, even if {subj_l} wasn't there",
                 f"{subj} is always {rc(['carrying', 'reading', 'writing in', 'eyeing', 'concealing', 'perusing'])} a book",
@@ -772,8 +770,8 @@ def quirk_gen(n):
                 f"{subj} has been transformed into an animal and is desperately trying to communicate",
                 f"{subj} often leans back against a wall or tree with one leg up, foot flat against it",
                 f"{subj} enunciates {poss} words with increasing precision and intensity the angrier {subj_l} gets",
-                f"{subj} has been {rc(['magically', 'alchemically'])} shrunken to the size of a doll or thimble",
-                f"{subj} has been {rc(['magically', 'alchemically'])} enlarged to the size of a horse or a small house",
+                f"{subj} has been {rc(['magically', 'alchemically'])} shrunken to the size of a {rc(['doll', 'thimble'])}",
+                f"{subj} has been {rc(['magically', 'alchemically'])} enlarged to the size of a {rc(['horse', 'giant', 'house', 'tree'])}",
                 f"{subj} is always covering {poss} mouth with {poss} hand when {subj_l} is not speaking",
                 f"{subj} has been magically transported to another plane of existence.  {subj} is still visible in this one, but translucent, intangible, and mute",
                 f"{subj} has just appeared covered in blood.  Upon inspection, it is not {poss} own",
@@ -783,7 +781,7 @@ def quirk_gen(n):
                 f"believes in a {rc(['foreign', 'uncommon', 'little-known'])} deity",
                 f"{subj} practices an illegal religion in secret",
                 f"{subj} advocates for the legalization of a certain religion and so is under suspicion of practicing it {reflex}",
-                f"{subj} advocates for the legalization of a certain spell or type of magic, and so is suspected of knowing it",
+                f"{subj} advocates for the legalization of a certain spell or type of magic -- and so is suspected of knowing it",
                 f"{subj} accidentally killed someone with magic as a child and has neither studied nor practiced it since",
                 f"{subj} is thought by some to be the orchestrator of an elaborate and successful hoax that made {rc(['all magic', 'a certain type of magic', 'a certain religion'])} illegal in the region",
                 f"{subj} was the victim of an attack that caused {rc(['all magic', 'a certain type of magic', 'a certain religion'])} to be outlawed in the region, though {subj_l} certainly did not wish for that result",
@@ -876,8 +874,8 @@ def quirk_gen(n):
                 f"{subj} thinks those who use magic are compensating for their weakness",
                 f"{subj} thinks those who do not use magic are unintelligent and uncultured",
                 f"{subj} is fascinated by the dead, lost civilizations, and forgotten magic",
-                f"{subj} has a small pet or familiar that is always with {obj}",
-                f"{subj} claims to have a small pet or familiar, though no one else can see or hear it",
+                f"{subj} has a {rc(['small pet', 'familiar'])} that is always with {obj}",
+                f"{subj} claims to have a {rc(['small pet', 'familiar'])}, though no one else can see or hear it",
                 f"{subj} has a different {rc(['hair', 'eye'])} color every day",
                 f"{subj} has a {rc(['different', 'much lighter', 'much darker'])} {rc(['hair', 'eye', 'skin'])} color {rc(['in low light', 'in darkness', 'indoors'])} than {subj_l} does in broad daylight",
                 f"{subj} has a different {rc(['hair', 'eye'])} color depending upon {rc([f'{poss} mood', 'the weather', f'what direction {subj_l} is facing', f'{poss} proximity to magic'])}",
@@ -1024,44 +1022,55 @@ def quirk_gen(n):
                   f"{poss.capitalize()}{circ_spc90}{p1} is trying to {rc(['rescue', 'separate'])} {obj} from {org}",
                   f"{poss.capitalize()}{circ_spc90}{p1} is trying to stop {obj} from {rc(['joining', 'leaving', 'destroying', 'starting', 'supporting', 'establishing', 'founding', 'recruiting for'])} {org}",
                   f"{subj} is trying to stop {poss}{circ_spc90}{p1} from {rc(['joining', 'leaving', 'destroying', 'starting', 'supporting', 'establishing', 'founding', 'recruiting for'])} {org}",
-                  "is trying to infiltrate {} to find {} {}",
-                  "is trying to help {} {} join {}",
-                  "is trying to talk {} {} out of joining {}",
-                  "is trying to talk {} out of accepting {} {}",
-                  "is trying to join {} to impress {} {}",
-                  "is trying to join {} to impress {} {} {}",
-                  "is trying to join {} to spite {} {}",
-                  "is trying to join {} to spite {} {} {}",
-                  "left {} for {} {}",
-                  "left {} for {} {} {}",
-                  "had to choose between {} and {} {}",
-                  "will have to choose between {} and {} {}",
-                  "had to choose between {} and {}",
-                  "will have to choose between {} and {}",
-                  "had to choose between {} and {} {} {}",
-                  "is trying to get {} {} to leave {} ",
-                  "arrived at the same time that a resurgence of magic occurred in the land and is now the target of {}",
-                  "has recently been inducted into {}",
-                  "is the purported founder of {}",
-                  "is somehow connected to the dissolution of {}",
-                  "wants to found {} for {} {}",
-                  "{} magic will break up {}",
-                  "{} internal corruption will destroy {}",
-                  "{} a rival will take over {}",
-                  "is receiving unwanted attention from {}",
-                  "stumbled upon a private meeting of {}",
-                  "is hiding {} {} from {}",
-                  "is hiding {} {} {} from {}",
-                  "{} that {} is hiding {} {} from {}",
-                  "{} that {} {} left {} to join {}",
-                  "{} that {} {} is hiding from {} in {}",
-                  "is trying to {} {}"]
+                  f"{subj} is trying to infiltrate {org} to find {poss}{circ_spc50}{p1}",
+                  f"{subj} is trying to keep a magic {q_obj()} out of the hands of {org}",
+                  f"{subj} is trying to deliver a {rc(['magic', 'cursed'])} {q_obj()} to {org}",
+                  f"{subj} has just received a {rc(['magic', 'cursed'])} {q_obj()} from {org}",
+                  f"{subj} is trying to {rc(['obtain', 'hide', 'destroy'])} a {rc(['magic', 'cursed'])} {q_obj()} for {poss}{circ_spc90}{p1} in {org}",
+                  f"{subj} received a {rc(['magic', 'cursed'])} {q_obj()} from {poss}{circ_spc90}{p1} just before {p1_subj} was {rc(['killed', 'abducted', 'recruited', 'indoctrinated'])} by {org}",
+                  f"{poss.capitalize()}{circ_spc90}{p1} gave {obj} a {rc(['magic', 'cursed'])} {q_obj()} for safe keeping before {p1_subj} left to {rc(['investigate', 'join', 'infiltrate'])} {org}",
+                  f"Before {p1_subj} died, {poss}{circ_spc90}{p1} gave {obj} a magic {q_obj()} and told {obj} to {rc(['deliver it to', 'keep it out of the hands of'])} {org}",
+                  f"{org.capitalize()} is trying to deliver a {rc(['magic', 'cursed'])} {q_obj()} to {obj}",
+                  f"{org.capitalize()} is trying to deliver a {rc(['magic', 'cursed'])} {q_obj()} to {obj} through {poss}{circ_spc90}{p1}",
+                  f"{subj} is trying to negotiate with {org} for {poss}{circ_spc90}{p1} with a {rc(['magic', 'cursed'])} {q_obj()}",
+                  f"{poss.capitalize()}{circ_spc50}{p1} wants {obj} to deliver a {rc(['magic', 'cursed'])} {q_obj()} to {poss} {p2} in {org}",
+                  f"{poss.capitalize()}{circ_spc50}{p1} has charged {obj} with {rc(['getting', 'picking up', 'recovering', 'stealing'])} a {rc(['magic', 'cursed'])} {q_obj()} from {poss} {p2} in {org}",
+                  f"{org.capitalize()} is trying to {rc(['recover', 'steal'])} a {rc(['magic', 'cursed'])} {q_obj()} from {obj}",
+                  f"{org.capitalize()} is trying to {rc(['recover', 'steal'])} a {rc(['magic', 'cursed'])} {q_obj()} from {obj} through {poss}{circ_spc75}{p1}",
+                  f"{subj} is trying to {rc(['get', 'bribe'])} {poss}{circ_spc90}{p1} not to {rc(['join', 'support', 'destroy', 'expose'])} {org} with a magic {q_obj()}",
+                  f"{org.capitalize()} and {poss}{circ_spc90}{p1} are both trying to keep a {rc(['magic', 'cursed'])} {q_obj()} out of {poss} hands",
+                  f"{org.capitalize()} and {poss}{circ_spc90}{p1} are both trying give {obj} a {rc(['magic', 'cursed'])} {q_obj()}",
+                  f"Both {poss} {p1} and {poss} {p2} died trying to protect {obj} from {org}",
+                  f"{subj} is trying to help {poss}{circ_spc75}{p1} join {org}",
+                  f"{subj} is trying to talk {poss}{circ_spc75}{p1} out of joining {org}",
+                  f"{subj} is trying to talk {org} out of accepting {poss}{circ_spc75}{p1}",
+                  f"{subj} is trying to join {org} to impress {poss}{circ_spc50}{p1}",
+                  f"{subj} is trying to join {org} to spite {poss}{circ_spc50}{p1}",
+                  f"{subj} left {org} for {poss}{circ_spc50}{p1}",
+                  f"{subj} {rc(['had', 'has', 'will have'])} to choose between {org} and {poss}{circ_spc50}{p1}",
+                  f"{subj} is trying to get {poss}{circ_spc75}{p1} to leave {org}",
+                  f"{subj} arrived at the same time that a resurgence of magic occurred in the land and is now being targeted by {org}",
+                  f"{subj} has recently been inducted into {org}",
+                  f"{subj} is the purported founder of {org}",
+                  f"{subj} is somehow connected to the dissolution of {org}",
+                  f"{subj} wants to found {org} for {poss}{circ_spc25}{p1}",
+                  f"{subj} {rc(['thinks', 'suspects', 'hopes', 'fears'])} {rc(['magic', 'internal corruption', 'a rival'])} will {rc(['break up', 'destroy'])} {org}",
+                  f"{subj} is receiving unwanted attention from {org}",
+                  f"{poss.capitalize()}{circ_spc90}{p1} is receiving unwanted attention from {org}",
+                  f"{subj} stumbled upon a private meeting of {org}",
+                  f"{poss.capitalize()}{circ_spc90}{p1} stumbled upon a private meeting of {org}",
+                  f"{subj} is hiding {poss}{circ_spc75}{p1} from {org}",
+                  f"{org.capitalize()} is hiding {obj} from {poss}{circ_spc75}{p1}{rc(['', '...for a price'])}",
+                  f"{poss.capitalize()}{circ_spc90}{p1} is hiding {rc([f'{obj}', '', f'{poss} {p2}'])} {rc(['from', 'in'])} {org}",
+                  f"{subj} {rc(['thinks', 'suspects', 'fears', 'knows'])} that {org} is hiding {poss}{circ_spc75}{p1} from {obj}",
+                  f"{subj} {rc(['thinks', 'suspects', 'fears', 'knows'])} that {poss}{circ_spc90}{p1} left {obj} to join {org}",
+                  f"{subj} {rc(['thinks', 'suspects', 'fears', 'knows'])} that {poss}{circ_spc75}{p1} is hiding from {obj} in {org}"]
     
     # CALCULATING RESULTS
     quirks = []
-    quirks.append(quirks_1)
-    quirks.append(quirks_2)
-    quirks.append(quirks_org)
+    quirks.extend(quirks_1)
+    quirks.extend(quirks_2)
+    quirks.extend(quirks_org)
     return random.choice(quirks)
 
 
@@ -1364,9 +1373,7 @@ class NPC:
         self.poss = gender_poss(self.sex)
         self.obj = gender_obj(self.sex)
         self.reflex = gender_reflex(self.sex)
-        # PROFESSION
-        self.prof_type = prof_type_gen(self.char)
-        self.prof = prof_gen(self.prof_type, self.sex)
+
         # CHARACTER AND PERSONALITY
         self.char = char_gen()
         self.principles = prin_gen(self.char)
@@ -1379,6 +1386,9 @@ class NPC:
         self.conf_ct2 = conf_traitchar(self.char, self.trait2)
         self.conf_tt = conf_traittrait(self.trait1, self.trait2)
         self.quirk = quirk_gen(self)
+        # PROFESSION
+        self.prof_type = prof_type_gen(self.char)
+        self.prof = prof_gen(self.prof_type, self.sex)
         # CONSTITUTION AND APPEARANCE
         self.con = con_gen()
         self.ill = ill_gen(self.con, self.sex, self.prof_type)
@@ -1441,9 +1451,60 @@ def narrative_view(NPC):
     if NPC.con != 0:
         print(str(NPC.subj).capitalize() + " has a health condition: " + str(NPC.ill) + ".")
     # Quirk
-    print(NPC.quirk)
+    print(NPC.quirk + ".")
     # End
     print("==================================================")
+
+
+def narrative_view2(NPC):
+    # VARIABLES
+
+    # 'Seeming' word
+    seeming_word_list = ["seemingly", "apparently", "ostensibly", "evidently"]
+    seemingly = random.choices(seeming_word_list, weights=[80, 10, 5, 5])[0]
+
+    # Character: 'a' or 'an'
+    if NPC.char == "evil":
+        c_an = "an"
+    else:
+        c_an = "a"
+
+    # Looks: 'a' or 'an'
+    if NPC.looks == "ugly" or NPC.looks == "unattractive" or NPC.looks == "extremely handsome":
+        l_an = "an"
+    else:
+        l_an = "a"
+
+    # PRINT NPC NUMBER
+    print(str(NPC.num_of_NPCs) + ".", end=" ")
+
+    # PRINT INITIAL STATEMENT
+
+    # Statement of Profession
+    print(f"The {NPC.prof} is", end=" ")
+
+    # Statement of Morality
+    if NPC.char == "neutral" and random.randint(1, 10) == 1:
+        print("neither a very good nor a very bad", end=" ")
+        morality_stated = True
+    elif NPC.char != "neutral":
+        print(f"{c_an} {NPC.char}", end=" ")
+        morality_stated = True
+    else:
+        morality_stated = False
+
+    # Statement of Appearance
+    if not morality_stated:
+        if NPC.looks == "plain-looking" and random.randint(1, 10) == 1:
+            print(f"{l_an} {NPC.looks}", end=" ")
+            looks_stated = True
+
+    else:
+        looks_stated = False
+
+
+
+
 
 
 current_NPCs = []
