@@ -1057,7 +1057,7 @@ def quirk_gen(n):
                 f"{subj} has an embattled relationship with {poss}{circ_spc50}{p1}",
                 f"{subj} is alienated from {poss}{circ_spc75}{p1}",
                 f"{subj} is obsessed with {poss}{circ_spc50}{p1}",
-                f"{subj} is trying to resurrect {poss} {p1} {rc(['', f'without {poss} {p2} finding out', f'with the help of {poss} {p2}'])}",
+                f"{subj} is trying to resurrect {poss} {p1}{rc(['', f' without {poss} {p2} finding out', f' with the help of {poss} {p2}'])}",
                 f"{subj} is often visited by {poss} dead {p1} in {rc(['dreams', 'visions', 'nightmares'])}{rc(['', f'.  {p1_subj.capitalize()} was killed by {poss} {p2}', f'.  {p1_subj.capitalize()} may have been killed by {poss} {p2}', f'.  {poss.capitalize()} {p2} was the last person to see {p1_obj} alive', f'.  {poss.capitalize()} {p2} suspects {obj} of the crime', f'.  {subj} and {poss} {p2} were unable to save {p1_obj}', f'.  {subj} and {poss} {p2} were the last ones to see {p1_obj} alive', ])}",
                 f"{subj} is hiding {poss}{circ_spc75}{p1} from {rc(['the authorities', 'an angry mob', 'a pursuer', f'{poss} {p2}', f'the people who killed {poss} {p2}', 'criminals'])}",
                 f"{subj} {rc(['thinks', 'knows', 'has discovered', 'suspects'])} that {poss}{circ_spc90}{p1} is hiding {poss} {p2} from {obj}",
