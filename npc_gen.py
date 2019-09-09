@@ -6,10 +6,11 @@ from random import choice as rc
 # CHARACTER TRAITS
 # Good
 traits1_char_is_good = ["angelic", "good-natured", "high-minded", "incorruptible", "magnanimous", "upright",
-                        "upstanding", "saintly", "virtuous", "beneficent", "righteous", "blameless", "ethical", "moral"]
+                        "upstanding", "saintly", "virtuous", "beneficent", "righteous", "blameless", "ethical",
+                        "moral", "morally exemplary"]
 traits1_char_not_good = ["demonic", "amoral", "barbaric", "brutal", "corrupt", "decadent", "destructive", "hateful",
                          "malicious", "sadistic", "sordid", "superficial", "vacuous", "venal", "nefarious", "vicious",
-                         "wicked"]
+                         "wicked", "bad", "villainous"]
 
 # Honorable, receiving or worthy of honor
 traits2_char_is_honor = ["admirable", "dignified", "honorable", "noble", "praiseworthy", "laudable", "respected"]
@@ -19,7 +20,7 @@ traits2_char_not_honor = ["contemptible", "ignoble", "ignominious", "contemptibl
 # Benevolent, Kind, Considerate
 traits3_char_is_bene = ["benevolent", "caring", "compassionate", "conscientious", "considerate", "empathetic", "kind",
                         "protective", "respectful", "sensitive", "sweet", "sympathetic", "tolerant", "understanding",
-                        "warm", "warm-hearted", "appreciative", "gracious", "maternal"]
+                        "warm", "warm-hearted", "appreciative", "gracious"]
 traits3_char_not_bene = ["cliquish", "malevolent", "insensitive", "cold", "cold-hearted", "callous", "cruel", "envious",
                          "jealous", "impudent", "inconsiderate", "insensitive", "mocking", "predatory",
                          "unappreciative", "uncaring", "ungrateful", "venomous", "tyrannical", "despotic", "imperious",
@@ -27,33 +28,34 @@ traits3_char_not_bene = ["cliquish", "malevolent", "insensitive", "cold", "cold-
                          "bossy", "paternalistic"]
 
 # Humble
-traits4_char_is_humble = ["humble", "modest", "self-critical", ]
+traits4_char_is_humble = ["humble", "modest", "self-critical", "self-effacing", "unpretentious"]
 traits4_char_not_humble = ["immodest", "snobbish", "proud", "arrogant", "conceited", "egocentric", "haughty",
                            "narcissistic", "petty", "prideful", "self-righteous", "moralistic", "sanctimonious",
                            "pharisaical", "un-self critical", ]
 
 # Chaste, Pure
-traits5_char_is_pure = ["chaste", "prudish", "celebate", "pure"]
+traits5_char_is_pure = ["chaste", "prudish", "celibate", "pure"]
 traits5_char_not_pure = ["lustful", "lewd", "lascivious", "unchaste", "sensual", "dissolute", "hedonistic",
                          "libidinous", "perverse", "licentious", "profligate", "provocative", "vile"]
 
 # Just
-traits6_char_is_just = ["fair", "just", "impartial", ]
-traits6_char_not_just = ["unfair", "unjust", "sectarian", "biased", "partisan", "prejudiced", "fanatical", ]
+traits6_char_is_just = ["fair", "just", "impartial", "equitable", "evenhanded", "fair-minded"]
+traits6_char_not_just = ["unfair", "unjust", "sectarian", "biased", "partisan", "prejudiced", "fanatical"]
 
 # Honest, Sincere
-traits7_char_is_honest = ["genuine", "honest", "guileless", "forthright", "open", "direct", "transparent", "blunt", ]
+traits7_char_is_honest = ["genuine", "honest", "guileless", "forthright", "open", "direct", "transparent", "blunt",
+                          "authentic", "sincere"]
 traits7_char_not_honest = ["disingenuous", "dishonest", "beguiling", "deceptive", "artificial", "deceitful", "devious",
-                           "false", "fraudulent", "insincere", "scheming", "sly", "crafty", "subtle", ]
+                           "false", "fraudulent", "insincere", "scheming", "sly", "crafty", "subtle"]
 
 # Faithful, Loyal; Constant, Dependable
 traits8_char_is_const = ["constant", "dedicated", "dutiful", "faithful", "loyal", "reliable", "responsible", "solid",
-                         "stable", "steadfast", "steady", "trustworthy", "devoted"]
+                         "stable", "steadfast", "steady", "trustworthy", "devoted", "unchanging"]
 traits8_char_not_const = ["unfaithful", "faithless", "fickle", "arbitrary", "disloyal", "erratic", "irresponsible",
                           "lazy", "neglectful", "treacherous", "unreliable", "unstable", ]
 
 # Merciful, Forgiving; Patient, Thick-skinned
-traits9_char_is_forgive = ["forgiving", "patient", "uncomplaining", "thick-skinned", ]
+traits9_char_is_forgive = ["forgiving", "patient", "uncomplaining", "thick-skinned", "merciful", ]
 traits9_char_not_forgive = ["unforgiving", "vengeful", "angry", "pugnacious", "oversensitive", "whiny", "impatient",
                             "reactionary", "reactive", "resentful", "vindictive", ]
 
@@ -63,25 +65,31 @@ traits10_char_not_charit = ["ungenerous", "unhelpful", "stingy", "miserly", "clo
                             "opportunistic", "self-indulgent", "selfish", "thievish", "uncharitable", ]
 
 # Brave
-traits11_char_is_brave = ["heroic", "brave"]
-traits11_char_not_brave = ["cowardly", ]
+traits11_char_is_brave = ["heroic", "brave", "courageous", "daring", "fearless", "gallant", "gutsy", "stout"]
+traits11_char_not_brave = ["cowardly", "dastardly", "anxious", "apprehensive", "base", "cowering", "caitiff",
+                           "gutless", "jittery", "craven", "pusillanimous", "fainthearted", "nervous", "panicky"]
 
 # Pious, Reverent
-traits12_char_is_pious = ["pious", "reverential", "religious", "devout"]
-traits12_char_not_pious = ["impious", "irreligious", "irreverent", "iconoclastic", ]
+traits12_char_is_pious = ["pious", "reverential", "religious", "devout", "godly", "reverent", "god-fearing",
+                          "churchgoing"]
+traits12_char_not_pious = ["impious", "irreligious", "irreverent", "iconoclastic", "sanctimonious", "ungodly",
+                           "godless"]
 
 # Industrious, Hard-working
-traits13_char_is_indust = ["punctual", "self-reliant", "focused", "hardworking", "busy", ]
-traits13_char_not_indust = ["negligent", "procrastinating", ]
+traits13_char_is_indust = ["punctual", "self-reliant", "focused", "hardworking", "busy", "diligent", "assiduous",
+                           "laborious", "active", "attentive", "industrious", "productive", "eager", "studious",
+                           "dutiful"]
+traits13_char_not_indust = ["negligent", "procrastinating", "lazy", "apathetic", "inattentive", "indifferent",
+                            "lackadaisical", "lethargic", "passive"]
 
 # Compliant, Flexible; Obedient
-traits14_char_is_flex = ["tractable", "obedient", "flexible", "undogmatic", ]
-traits14_char_not_flex = ["stubborn", "disobedient", "willful", "unyielding", "uncooperative", "inflexible",
-                          "unchanging", "rigid", "dogmatic", "narrow-minded", ]
+traits14_char_is_flex = []
+traits14_char_not_flex = []
 
 # Self-Controlled
-traits15_char_is_contr = ["restrained", "frugal", "disciplined", ]
-traits15_char_not_contr = ["unrestrained", "uninhibited", "undisciplined", "compulsive", "indiscreet"]
+traits15_char_is_contr = ["restrained", "frugal", "disciplined", "self-controlled", "composed", "controlled",
+                          "deliberate", "ordered"]
+traits15_char_not_contr = ["unrestrained", "uninhibited", "undisciplined", "compulsive", "indiscreet", "unruly"]
 
 char_traits_pos = []
 char_traits_pos.extend(traits1_char_is_good)
@@ -152,13 +160,17 @@ traits17_pers_not_detailed = ["thoughtless", "disorderly", "bewildered", "disorg
 traits18_pers_is_forceful = ["strong-willed", "assertive", "forceful", "competitive", "strong", "aggressive",
                              "demanding", "dominating", "stern", "strict", "courageous", "daring", "decisive",
                              "dynamic", "firm", "unflappable", "dauntless", "independent", "tough", "secure",
-                             "confident", "outspoken", "physical", "masculine"]
+                             "confident", "outspoken", "physical", "masculine", "stubborn", "disobedient", "willful",
+                             "unyielding", "uncooperative", "inflexible", "rigid", "dogmatic", "narrow-minded",
+                             "adamant", "pigheaded", "obstinate"]
 traits18_pers_not_forceful = ["gentle", "peaceful", "weak-willed", "wormy", "noncompetitive", "soft", "submissive",
                               "unaggressive", "undemanding", "vulnerable", "weak", "insecure", "overly repentant",
                               "conformist", "conventional", "mellow", "ordinary", "placid", "fawning", "flattering",
-                              "self-defacing", "self-conscious", "timid", "panicky", "delicate", "dependent",
+                              "self-effacing", "self-conscious", "timid", "panicky", "delicate", "dependent",
                               "desperate", "fearful", "anxious", "hesitant", "indecisive", "inert", "passive",
-                              "inhibited", "neurotic", "effeminate", "twitchy", "casual", ]
+                              "inhibited", "neurotic", "effeminate", "twitchy", "casual", "subservient", "docile",
+                              "tractable", "obedient", "flexible", "undogmatic", "compliant", "deferential",
+                              "respectful", "amenable", "acquiescent", "governable", "obliging", "obeisant"]
 
 # Ambitious
 traits19_pers_is_ambit = ["self-improvement minded", "well-rounded", "ambitious", "purposeful", "hurried",
@@ -166,8 +178,10 @@ traits19_pers_is_ambit = ["self-improvement minded", "well-rounded", "ambitious"
 traits19_pers_not_ambit = ["unambitious", "aimless", "complacent", "self-destructive", ]
 
 # Trusting, Gullible, Not Guarded
-traits20_pers_is_trusting = ["trusting", "impressionable", "gullible", "naive", ]
-traits20_pers_not_trusting = ["cautious", "circumspect", "skeptical", "calculating", "paranoid", "questioning", ]
+traits20_pers_is_trusting = ["trusting", "impressionable", "gullible", "naive", "credulous", "naive", "unquestioning",
+                             "unsuspicious"]
+traits20_pers_not_trusting = ["cautious", "circumspect", "skeptical", "calculating", "paranoid", "questioning",
+                              "doubtful", "mistrustful", "incredulous", "unconvinced", "suspicious"]
 
 # Intelligent, Capable
 traits21_pers_is_int = ["resourceful", "brilliant", "capable", "clever", "contemplative", "creative", "curious", "deep",
@@ -232,35 +246,70 @@ all_traits.extend(all_traits_pos)
 all_traits.extend(all_traits_neg)
 
 # LISTS - PROFESSIONS
-prof_com = ["architect", "astrologer", "baker", "banker", "barber", "bee keeper", "beer brewer", "bell maker",
-            "blacksmith", "bodyguard", "bookbinder", "butcher", "candle maker", "carpenter", "cartographer", "cook",
-            "courier", "dog trainer", "falconer", "farmer", "fletcher", "glass blower", "gravedigger", "grocer",
+prof_com = ["architect", "astrologer", "baker", "banker", "barber", "bee keeper", "brewer", "bell maker",
+            "blacksmith", "bodyguard", "bookbinder", "butcher", "candlemaker", "carpenter", "cartographer", "cook",
+            "courier", "dog trainer", "falconer", "farmer", "fletcher", "glassblower", "gravedigger", "grocer",
             "guard", "guild master", "harness maker", "herbalist", "horse trainer", "hunter", "innkeeper", "jeweler",
-            "librarian", "locksmith", "lumberjack", "merchant", "messenger", "pilgrim", "sailor", "shepherd",
-            "ship builder", "shoemaker", "soldier", "spinner", "stone mason", "tailor", "tavern keeper", "town crier",
-            "weaver", "wine seller"]
-prof_com_m = ["barman", "ferryman", "fisherman", "monk", "priest"]
+            "librarian", "locksmith", "lumberjack", "merchant", "messenger", "pilgrim", "sailor",
+            "ship builder", "shipwright", "shoemaker", "soldier", "spinner", "stonemason", "tailor", "tavern keeper", "town crier",
+            "weaver", "wine merchant", "cowherd", "swineherd", "gardener", "goatherd", "hawker", "peasant", "reaper",
+            "serf", "hostler", "sheep-shearer", "thresher", "woodcutter", "lumberjack", "vintner", "woolcomber",
+            "yeoman", "forester", "fowler", "gamekeeper", "master of hounds", "molecatcher", "rat catcher", "trapper",
+            "leech-collector", "seaweed harvester", "oysterer", "pastrycook", "cooper", "scabbard maker", "hatter",
+            "saddler", "chicken butcher", "purse maker", "buckle maker", "roofer", "rope maker", "tanner", "rug maker",
+            "town's guard", "bleacher", "cutler", "knife sharpener", "glover", "bottler", "cobbler", "girdler",
+            "armorsmith", "arrowsmith", "bladesmith", "bowyer", "merchant tailor", "miner", "swordsmith", "smelter",
+            "blacksmith's striker", "arcane smith", "silversmith", "goldbeater", "spooner", "tinker", "alabasterer",
+            "stabler", "basketmaker", "bonecarver", "book printer", "bricklayer", "builder", "buttonmaker",
+            "cabinetmaker", "cartwright", "chainmaker", "charcoalburner", "cheesemaker", "clockmaker", "clothier",
+            "coiner", "combmaker", "compass-smith", "confectioner", "corsetier", "ditch digger", "dog catcher", "dyer",
+            "embroiderer", "engraver", "feltmaker", "furniture maker", "gemcutter", "gilder", "horner", "lacemaker",
+            "lampwright", "lanternmaker", "leadworker", "linenspinner", "lutemaker", "mapmaker", "master builder",
+            "miller", "miniaturist", "mint maker", "moneyer", "nailmaker", "netmaker", "oilmaker", "papermaker",
+            "parchmenter", "perfumer", "pewterer", "pinmaker", "plasterer", "pot mender", "quarrier", "quilter",
+            "reedmaker", "sailmaker", "saltboiler", "sawyer", "shingler", "siever", "sin-eater", "silk-dyer", "stonecarver",
+            "stonecutter", "tapestrymaker", "tenter", "threadmaker", "tile maker", "wheelwright", "typefounder",
+            "haberdasher", "hay merchant", "ironmonger", "oil merchant", "spice merchant", "pie seller", "stationer",
+            "taverner", "archer", "bowman", "captain", "crossbowman", "guardsman", "pikeman", "scout", "sergeant",
+            "sergeant-at-arms", "spearman", "siege engineer", "camp cook", "hermit", "pardoner", "bargeman", "mariner",
+            "sea captain", "ship's captain", "navigator", "riverboat pilot", "courtier", "ship provisioner", "mathematician",
+            "philosopher", "professor", "scribe", "tutor", "theologian", "restaurateur", "copyist", "bather", "porter",
+            "attendant", "lawyer", "attorney", "dog trainer", "privy cleaner", "procurator", "quartermaster", "riveter",
+            "royal food taster", "scullion", "stable hand", "valet", "wagoner", "water carrier", "weeper", "beggar",
+            "transient", "squatter", "vagabond", "acolyte", "ale house keeper", "almsman", "anchorsmith",
+            "ballast master", "blast furnace slagger", "boatswain", "bondman", "broker", "cane seller", "castrator"]
+prof_com_m = ["barman", "ferryman", "fisherman", "monk", "priest", "plowman", "shepherd", "tillerman", "huntsman",
+              "foundryman", "silk-dresser", "friar", "boatman", "waterman", "manservant", "butler", "groom",
+              "groom of the stool", "potboy", "rag and bone man", "whipping boy"]
 prof_com_f = ["bartender", "ferrywoman", "fisherwoman", "milkmaid", "nun", "priestess", "quilter", "seamstress",
-              "wet-nurse"]
+              "wet-nurse", "dairymaid", "plowwoman", "shepherdess", "tillerwoman", "huntswoman", "foundrywoman",
+              "silkmaid", "maid", "maidservant", "laundress", "scullery maid", "housewife", "alewife", "brewster"]
 prof_gov = ["bailiff", "captain of the guard", "chamberlain", "chancellor", "chancery clerk", "coin stamper",
             "executioner", "jailer", "judge", "landlord", "royal treasurer", "sheriff", "steward", "tax collector",
-            "toll keeper"]
-prof_gov_m = ["host for foreign diplomats, ambassadors, and important travelers"]
+            "toll keeper", "lancer", "diplomat", "constable", "exchequer", "herald", "keeper of the privy seal",
+            "marshal", "master of the revels", "seneschal", "admiral", "solicitor", "alderman"]
+prof_gov_m = ["host for foreign diplomats, ambassadors, and important travelers", "lord high steward", "watchman",
+              "almanac man"]
 prof_gov_f = ["hostess for foreign diplomats, ambassadors, and important travelers"]
-prof_crime = ["arsonist", "assassin", "bandit", "blackmailer", "briber", "con artist", "fence", "forger",
+prof_crime = ["arsonist", "assassin", "bandit", "blackmailer", "briber", "burglar", "con artist", "fence", "forger",
               "grave robber", "highway robber", "hired thug", "impostor", "kidnapper for ransom", "mercenary",
               "pickpocket", "poacher", "saboteur", "seller of contraband (drugs, weapons, cursed or magical objects)",
-              "slaver", "spy", "temple robber", "thief", "unlawful dueler", "usurer (loan shark)", "vandal"]
-prof_crime_m = ["warlock who curses people, places, or objects for money or other compensation"]
-prof_crime_f = ["courtesan", "prostitute",
-                "witch who curses people, places, or objects for money or other compensation"]
-prof_med = ["alchemist", "apothecary", "healer", "physician", "surgeon"]
-prof_med_f = ["midwife"]
-prof_art = ["bard", "calligrapher", "dancer", "glass painter", "manuscript illuminator", "painter", "playwright",
-            "poet", "sculptor", "storyteller", "tumbler"]
-prof_high = ["aristocrat", "court jester", "diplomat", "general", "royal adviser"]
-prof_high_m = ["baron", "bishop", "count", "duke", "king", "knight", "nobleman", "prince"]
-prof_high_f = ["baroness", "countess", "duchess", "high priestess", "lady", "noblewoman", "princess", "queen"]
+              "slaver", "spy", "temple robber", "thief", "unlawful dueler", "usurer (loan shark)", "vandal",
+              "cutpurse", "murderer"]
+prof_crime_m = ["warlock who curses people, places, or objects for money or worse compensation", "conman"]
+prof_crime_f = ["courtesan", "prostitute", "harlot",
+                "witch who curses people, places, or objects for money or worse compensation"]
+prof_med = ["alchemist", "apothecary", "healer", "physician", "surgeon", "doctor", "leech", "sawbones", "herbalist"]
+prof_med_f = ["midwife", "wise woman", "nurse"]
+prof_art = ["bard", "calligrapher", "dancer", "glasspainter", "manuscript illuminator", "painter", "playwright",
+            "poet", "sculptor", "storyteller", "tumbler", "artist's model", "fresco painter", "composer", "fiddler",
+            "harper", "lutenist", "minstrel", "musician", "piper", "singer", "actor", "fool", "juggler", "jester",
+            "troubadour"]
+prof_high = ["aristocrat", "general", "royal adviser", ]
+prof_high_m = ["baron", "bishop", "count", "duke", "king", "knight", "nobleman", "prince", "squire", "emperor",
+               "archduke", "abbot", "cardinal"]
+prof_high_f = ["baroness", "countess", "duchess", "high priestess", "lady", "noblewoman", "princess", "queen", "abbess",
+               "empress", "archduchess", "dame",]
 
 # CONSTITUTION AND APPEARANCE #
 # -2 illnesses that do not disfigure #
@@ -311,16 +360,25 @@ def q_jewel():
 
 
 def q_obj():
-    objects = ['trinket', 'artifact', 'ring', 'bracelet', 'necklace', 'locket', 'amulet', 'earring', 'coin', 'coin purse',
-               'pair of greaves', 'pair of gauntlets', 'pair of boots', 'helmet', 'breastplate', 'shield', 'sword', 'dagger', 'knife',
-               'cup', 'plate', 'spoon', 'needle', 'thread', 'thimble', 'spinning wheel', 'hatchet', 'staff', 'spell focus',
-               'vial', 'quiver', 'crystal', 'orb', 'rod', 'wand', 'blanket', 'cloak', 'bell', 'candle', 'book', 'bottle',
-               'map', 'scroll', 'chain', 'chalk', 'rope', 'shirt', 'pair of trousers', 'belt', 'button', 'hat', 'reliquary',
+    objects = ['trinket', 'artifact', 'ring', 'bracelet', 'necklace', 'locket', 'amulet', 'earring', 'coin',
+               'coin purse',
+               'pair of greaves', 'pair of gauntlets', 'pair of boots', 'helmet', 'breastplate', 'shield', 'sword',
+               'dagger', 'knife',
+               'cup', 'plate', 'spoon', 'needle', 'thread', 'thimble', 'spinning wheel', 'hatchet', 'staff',
+               'spell focus',
+               'vial', 'quiver', 'crystal', 'orb', 'rod', 'wand', 'blanket', 'cloak', 'bell', 'candle', 'book',
+               'bottle',
+               'map', 'scroll', 'chain', 'chalk', 'rope', 'shirt', 'pair of trousers', 'belt', 'button', 'hat',
+               'reliquary',
                'emblem', 'hourglass', 'flask', 'hunting trap', 'leash', 'collar', 'ink well', 'quill', 'lamp', 'ladder',
-               'magnifying glass', 'set of manacles', 'hand mirror', 'mirror', 'sheet of parchment', 'bottle of perfume',
-               'cooking pot', 'healing potion', 'robe', 'sack', 'whistle', 'pouch of powdered soap', 'spellbook', 'spyglass',
-               'tent', 'torch', 'tinderbox', 'mess kit', 'waterskin', 'whetstone', 'bow', 'rapier', 'abacus', 'deck of cards',
-               'set of dice', 'chess piece', 'letter', 'bone', 'tooth', 'tusk', 'antler', 'shard of glass', 'mirror shard',
+               'magnifying glass', 'set of manacles', 'hand mirror', 'mirror', 'sheet of parchment',
+               'bottle of perfume',
+               'cooking pot', 'healing potion', 'robe', 'sack', 'whistle', 'pouch of powdered soap', 'spellbook',
+               'spyglass',
+               'tent', 'torch', 'tinderbox', 'mess kit', 'waterskin', 'whetstone', 'bow', 'rapier', 'abacus',
+               'deck of cards',
+               'set of dice', 'chess piece', 'letter', 'bone', 'tooth', 'tusk', 'antler', 'shard of glass',
+               'mirror shard',
                'pebble', 'stone', 'nail', 'leaf', 'marble']
     return random.choice(objects)
 
@@ -331,7 +389,8 @@ def quirks_people(n):
     people_close = ["father", "mother", "brother", "sister", "son", "daughter"]
     people_less_close = ["grandfather", "grandmother", "cousin", "mentor", "benefactor", "benefactress", "enemy",
                          "rival", "friend", "childhood friend", "guardian", "patron", "patroness", "step father",
-                         "step mother", "step brother", "step sister", "uncle", "aunt", "nephew", "niece", "nanny", "ward",
+                         "step mother", "step brother", "step sister", "uncle", "aunt", "nephew", "niece", "nanny",
+                         "ward",
                          "father-in-law", "mother-in-law", "brother-in-law", "sister-in-law"]
     people_least_close = ["traveler", "creditor", "lender", "employer", "superior", "employee", "subordinate",
                           "correspondent", "liason", "peer", "teacher", "student", "flatterer", "lackey",
@@ -357,14 +416,16 @@ def quirks_people(n):
     else:
         p2 = people_pool.pop()
     # Determining gender of p1
-    if p1 in ["wife", "beloved", "fiancée", "mother", "sister", "daughter", "grandmother", "benefactress", "patroness", "step mother",
+    if p1 in ["wife", "beloved", "fiancée", "mother", "sister", "daughter", "grandmother", "benefactress", "patroness",
+              "step mother",
               "step sister", "aunt", "niece", "nanny"]:
         p1_subj = "she"
         p1_poss = "her"
         p1_obj = "her"
         p1_reflex = "herself"
-    elif p1 in ["husband", "lover", "suitor", "fiancé", "father", "brother", "son", "grandfather", "benefactor", "patron",
-                "step father", "step brother", "uncle",  "nephew"]:
+    elif p1 in ["husband", "lover", "suitor", "fiancé", "father", "brother", "son", "grandfather", "benefactor",
+                "patron",
+                "step father", "step brother", "uncle", "nephew"]:
         p1_subj = "he"
         p1_poss = "his"
         p1_obj = "him"
@@ -398,7 +459,8 @@ def q_circ():
                           "reverent", "longsuffering", "persevering", "relentless", "frustrated", "patient", "prudent",
                           "scheming", "thoughtful", "selfless", "selfish", "intelligent", "foolish", "wise", "shrewd",
                           "delusional", "all-seeing", "vigilant", "callous", "infallible", "innocent", "magic-endowed",
-                          "famous", "infamous", "well known", "unknown", "secret", "stalwart", "sensitive", "much maligned"]
+                          "famous", "infamous", "well known", "little known", "secret", "stalwart", "sensitive",
+                          "much maligned"]
     return random.choice(circumstance_types)
 
 
@@ -409,12 +471,12 @@ def q_orgs():
                           "an enemy army", "a coven of witches", "a clan of vampires", "a cabal of usurpers",
                           "a group of conspirators", "a group of conspiracy theorists", "a group of assassins",
                           "a well-known spy network", "a rumored spy network", "a prostitution ring", "a church",
-                          "a temple", "an order of priests", "an order of priestesses", "an order of monks and hermits",
-                          "the royal advisers of an enemy", "a group of ambassadors and diplomats from an enemy",
+                          "a temple", "an order of priests and priestesses", "an order of monks and hermits",
+                          "a group of royal advisers of an enemy", "a group of ambassadors and diplomats from an enemy",
                           "a foreign intelligence service", "an enemy intelligence service",
                           "the nation's intelligence ministry", "a merchants' guild", "a caravan of merchants",
                           "a group of missionaries", "a secret society of printers who hide ciphers in their books",
-                          "an association of bibliophiles", "the aristocracy", "a clan of gypsies",
+                          "an association of book-lovers", "the aristocracy", "a clan of gypsies",
                           "a group of street urchin and pickpockets", "a high-minded society of barbers",
                           "a secret school", "a fight club", "an association of doctors", "a charitable organization",
                           "an association of bankers and money-lenders", "a posse of bounty-hunters",
@@ -423,8 +485,9 @@ def q_orgs():
                           "a group of scholars who predict and prevent crimes involving magic",
                           "a group dedicated to eradicating magic and those who use it",
                           "an elitist group of educators who insist that everyone must learn magic",
-                          "a traveling carnival", "a traveling circus", "an association of farmers",
-                          "an association of horse-breeders", "a group dedicated to the conservation or recovery of magic"]
+                          "a traveling carnival", "a traveling circus", "a group of farmers",
+                          "an association of horse-breeders",
+                          "a group dedicated to the conservation or recovery of magic"]
     return random.choice(organization_types)
 
 
@@ -434,9 +497,9 @@ def q_magic():
 
 
 def q_familiar():
-    familiars = ['bat', 'cat', 'crab', 'toad', 'frog', 'hawk', 'lizard', 'owl', 'snake', 'fish', 'rat', 'raven', 'spider', 'weasel']
+    familiars = ['bat', 'cat', 'crab', 'toad', 'frog', 'hawk', 'lizard', 'owl', 'snake', 'fish', 'rat', 'raven',
+                 'spider', 'weasel']
     return random.choice(familiars)
-
 
 
 def q_thinks():
@@ -448,12 +511,15 @@ def q_thinks():
 
 
 def q_places():
-    places = ["place of birth", "home", "hometown", "native land", "village", "city", "kingdom", "country", "island", "ship", "nation",
+    places = ["place of birth", "home", "hometown", "native land", "village", "city", "kingdom", "country", "island",
+              "ship", "nation",
               "land", "empire", "realm", "continent", "plane of existence"]
     return random.choice(places)
 
+
 def q_places_lite():
-    places = ['village', 'city', 'land', 'kingdom', 'empire', 'country', 'nation', 'army', 'island', 'continent', 'plane of existence']
+    places = ['village', 'city', 'land', 'kingdom', 'empire', 'country', 'nation', 'army', 'island', 'continent',
+              'plane of existence']
     return random.choice(places)
 
 
@@ -482,7 +548,7 @@ def quirk_gen(n):
                       "experiences swelling of throat and difficulty breathing",
                       "experiences lightheadedness or confusion", "is inexplicably giddy", "is oddly euphoric",
                       "experiences temporary amnesia", "experiences permanent amnesia", "experiences aches and pains",
-                      "has heightened sense of smell", "has a hypersensitive nose", "starts crying uncontrollably",
+                      "has a heightened sense of smell", "has a hypersensitive nose", "starts crying uncontrollably",
                       "starts laughing uncontrollably", "experiences blindsight",
                       "experiences tickling sensations", f"hears ringing in {poss} ears", "experiences hallucinations",
                       "has visions", "sleepwalks or has night terrors", f"compulsively cleans {poss} body",
@@ -494,7 +560,8 @@ def quirk_gen(n):
                       "becomes frightened and doesn't recognize anyone", "cannot see people", "cannot see objects",
                       "becomes invulverable and harmless", "glows dimly in a wide radius",
                       f"magically and involuntarily changes {rc(['size', 'shape', 'hue', 'age'])}", "grows pale",
-                      "has nosebleeds", "experiences a consistent magical effect", "experiences a random magical effect",
+                      "has nosebleeds", "experiences a consistent magical effect",
+                      "experiences a random magical effect",
                       f"involuntarily casts a {rc(['random', 'specific'])} spell", "becomes amorous",
                       f"is compelled to tell {rc(['the truth', 'lies'])}", "has seizures",
                       "experiences an aura with no accompanying seizure", "has sensations of drowning",
@@ -515,13 +582,13 @@ def quirk_gen(n):
                 f"{subj} is able to {q_magic()} magic",
                 f"{subj} {reacts} in the presence of magic",
                 f"{subj} {reacts} in the presence of {rc(['mages', 'magic-users', 'people who can use magic'])}",
-                f"{subj} {reacts} in the presence of invisible or otherwise undetectable magic",
+                f"{subj} {reacts} in the presence of invisible or undetected magic",
                 f"{subj} {reacts} in the presence of magical beasts, races, or deities",
                 f"{subj} {reacts} in places where magic has been done {rc(['recently', 'before'])}",
                 f"{subj} {reacts} in places where magic {rc(['has never been done', 'has not been done recently', 'cannot be done'])}",
                 f"{subj} {reacts} in the presence of death",
                 f"{subj} {reacts} in ancient ruins, temples, and graveyards",
-                f"{subj} {reacts} when near the followers of a certain god or powerful being",
+                f"{subj} {reacts} when near the followers of a certain {rc(['god', 'powerful being'])}",
                 f"{subj} {reacts} near aberrations, fey folk, fiends, elementals, giants, shapechangers, and magical beasts",
                 f"{subj} {reacts} when travelling over ground on which people have died",
                 f"{subj} {reacts} when on ground in which people have been buried",
@@ -531,24 +598,24 @@ def quirk_gen(n):
                 f"{subj} {reacts} if {subj_l} maintains eye contact with anyone for more than a few seconds",
                 f"{subj} {reacts} when the name of someone from {poss} past is spoken aloud",
                 f"{subj} {reacts} in the presence of a particular member of the party",
-                f"{subj} {reacts} {rc(['indoors', 'outdoors'])}",
+                f"{subj} {reacts} when {rc(['indoors', 'outdoors'])}",
                 f"{subj} {reacts} in the presence of {rc(['children', 'pets and familiars'])}",
                 f"{subj} {reacts} if {subj_l} attempts to ride {rc(['a horse or other beast of burden', 'in a cart or wagon drawn by any type of beast of burden'])}",
                 f"{subj} {reacts} {rc(['at dawn', 'at midday', 'at dusk', 'in the night'])}",
                 f"{subj} {rc(['often', 'frequently', 'occasionally', 'sometimes'])} {reacts} {rc(['in summertime', 'in autumn', 'at wintertime', 'in the spring'])}",
                 f"{subj} has two different-colored eyes",
                 f"{subj} has a single lock of white hair (or a contrasting color)",
-                f"{subj} stands or sits oddly erect",
-                f"{subj} slouches or has poor posture",
+                f"{subj} stands and sits oddly erect",
+                f"{subj} slouches and has poor posture",
                 f"{subj} wears glasses or a monocle",
                 f"{subj} is strangely agile and graceful",
                 f"{subj} bites {poss} {rc(['nails', 'lips'])}",
                 f"{subj} constantly fidgets and is unable to sit or stand still",
-                f"{subj} talks either too loudly or too quietly to be heard",
+                f"{subj} talks {rc(['far too loudly', 'too quietly to be heard'])}",
                 f"{subj} has allergies",
                 f"{subj} raises {poss} voice at the end of every sentence like it's a question",
                 f"{subj} has bad breath and is unaware of it",
-                f"{subj} always covers {poss} mouth with hand when speaking or eating",
+                f"{subj} always covers {poss} mouth with {poss} hand when speaking or eating",
                 f"{subj} is uncomfortable eating or drinking in front of people",
                 f"{subj} walks an unusually long distance from others to relieve {reflex}",
                 f"{subj} always seems to be sweating for no apparent reason",
@@ -643,11 +710,11 @@ def quirk_gen(n):
                 f"{subj} always talks of the good old days, even if there was nothing particularly good about them",
                 f"{subj} always talks of the bad old days, even if there was nothing particularly bad about them",
                 f"{subj} is afraid to speak ill of the dead",
-                f"{subj} shows respect to tombstones and memorials",
+                f"{subj} shows respect for tombstones and memorials",
                 f"{subj} always seems tired but can always keep going",
                 f"{subj} always seems full of energy but never gets much done or moves very quickly",
                 f"{subj} is superstitious",
-                f"{subj} likes the challenge of completing a task with missing or makeshift supplies",
+                f"{subj} likes the challenge of {rc(['completing a task', 'doing a job'])} with missing or makeshift supplies",
                 f"{subj} has a cold heart that can be melted by youth, charm, passion, or idealism",
                 f"{subj} is forgetful",
                 f"{subj} has a habit of counting things",
@@ -692,7 +759,7 @@ def quirk_gen(n):
                 f"{subj} sniffles a lot, even when healthy",
                 f"{subj} always has to have something in {poss} hand",
                 f"{subj} speaks in a monotone",
-                f"{subj} speaks in an exaggerated and dramatic way, or in multiple voices",
+                f"{subj} speaks in {rc(['an exaggerated and dramatic way', 'multiple voices', 'different pitches'])}",
                 f"{subj} is susceptible to gambling and taking bets and dares",
                 f"{subj} engages complete strangers in conversation about a religion or cause {subj_l} feels strongly about",
                 f"{subj} {rc(['thinks', 'believes', 'pretends', 'acts as if'])} {subj_l} has a profession or rank that {subj_l} doesn't have",
@@ -702,7 +769,7 @@ def quirk_gen(n):
                 f"{subj} is afraid of magic",
                 f"{subj} distrusts people who use magic",
                 f"{subj} is fascinated by {rc(['mages', 'magic-users', 'people who can use magic', 'wizards', 'sorcerers'])}",
-                f"{subj} believes those who can use magic are a cut above the rest",
+                f"{subj} believes those who can use magic are {rc(['a cut above the rest', 'better than other people', 'superior to everyone else', 'more sophisticated'])}",
                 f"{subj} believes those who use magic are compensating for something",
                 f"{subj} has a drinking problem{rc([' and refuses to admit it', ' and wants to be freed from it', ''])}",
                 f"{subj} becomes more social and talkative when drunk",
@@ -725,7 +792,7 @@ def quirk_gen(n):
                 f"{subj} is incapable of writing legibly {rc([f'because {poss} hand shakes', f'because {subj_l} uses the other hand, inexplicably'])}",
                 f"{subj} {rc(['has', f'mistakenly thinks {subj_l} has'])} a serious debt problem",
                 f"{subj} believes that {subj_l} is under a spell{rc([' ', ' but is not', f', and although it is not obvious at first, {subj_l} is', f' because {subj_l} is under a spell, the only effect of which is that {subj_l} thinks {subj_l} is under a spell'])}",
-                f"{subj} claims to be under a spell or curse",
+                f"{subj} claims to be under a {rc(['spell', 'curse'])}",
                 f"{subj} never wears shoes or any kind of footwear",
                 f"{subj} is never seen without {poss} {rc(['hat', 'spectacles', 'pet', 'purse of gold', 'weapon', 'spell focus', 'friend', f'an apple in {poss} hand', 'retinue'])}",
                 f"{subj} dresses only in one color",
@@ -746,7 +813,7 @@ def quirk_gen(n):
                 f"{subj} is excessively {rc(['worried', 'concerned'])} about the end of {rc(['the world', 'a reign', 'a kingdom', 'an era'])} {rc(['and has good reason', 'and carries a certain letter as evidence', 'but just sounds paranoid', f'and is looking for someone to believe {obj}', f'and is used to people not believing {obj}'])}",
                 f"{subj} likes to play cards and has a {rc(['special', 'magic'])} deck that {subj_l} keeps on {poss} person",
                 f"{subj} refuses to believe in magic, even if {subj_l}'s witnessed it first-hand",
-                f"{subj} makes sure everyone knows about {poss} dietary restrictions or dislikes",
+                f"{subj} makes sure everyone knows about {poss} dietary restrictions and dislikes",
                 f"{subj} distrusts strangers",
                 f"{subj} hates getting wet and will not go out in the rain or cross streams on foot",
                 f"{subj} has a lisp and tries to avoid words that have the letter \"s\" in them",
@@ -766,7 +833,7 @@ def quirk_gen(n):
                 f"{subj} has magical burns on {poss} skin but {cannot_} say how {subj_l} got them",
                 f"{subj} has magical injuries but {cannot_} say how {subj_l} got them",
                 f"{subj} denies that {subj_l} can use magic, despite suspicions to the contrary",
-                f"{subj} claims to be able to use magic but seems unable to prove it",
+                f"{subj} claims to be able to use magic but {rc(['is', 'is apparently', 'is embarrassingly'])} unable to prove it",
                 f"{subj} has been transformed into an animal and is desperately trying to communicate",
                 f"{subj} often leans back against a wall or tree with one leg up, foot flat against it",
                 f"{subj} enunciates {poss} words with increasing precision and intensity the angrier {subj_l} gets",
@@ -779,7 +846,7 @@ def quirk_gen(n):
                 f"{subj} is standing nearby when {poss} exact duplicate shows up.  It is not obvious which one, if either, is real",
                 f"{subj} has neither slept nor rested for {rc(['two', 'three', 'four', 'seven', 'fourteen', 'thirty', 'sixty', 'ninety'])} days, yet seems wide awake",
                 f"believes in a {rc(['foreign', 'uncommon', 'little-known'])} deity",
-                f"{subj} practices an illegal religion in secret",
+                f"{subj} practices {rc(['an illegal religion', 'illegal magic'])} in secret",
                 f"{subj} advocates for the legalization of a certain religion and so is under suspicion of practicing it {reflex}",
                 f"{subj} advocates for the legalization of a certain spell or type of magic -- and so is suspected of knowing it",
                 f"{subj} accidentally killed someone with magic as a child and has neither studied nor practiced it since",
@@ -799,7 +866,7 @@ def quirk_gen(n):
                 f"{subj} is, unbeknownst to the players, the identical twin of an NPC they already know",
                 f"{subj} does not currently have the exercise of {poss} free will and is being controlled by {rc(['someone', 'something', 'a creature', 'a force', 'a group'])} hostile to the player characters",
                 f"{subj} has just arrived from a {q_places_lite()} that {subj_l} claims has vanished by magic",
-                f"{subj} claims that there is a nearby {rc([q_places_lite, 'ghost town'])} that just appeared overnight",
+                f"{subj} claims that there is a nearby {rc([q_places_lite(), 'ghost town'])} that just appeared overnight",
                 f"{subj} always sleeps facing {rc(['north', 'south', 'east', 'west'])} and keeps a compass with {obj} to make sure",
                 f"{subj} is cursed with true prophecies of the future that no one believes.  The players' characters will have an opportunity to believe one of these prophecies, but only if they are very lucky with the dice",
                 f"{subj} is cursed with prophetic {rc(['dreams', 'visions'])}.  Whenever {subj_l} tries to relate one of these prophecies, {subj_l} is forced to tell the exact opposite of the truth, an oddity which {subj_l} is unable to relate to others; they must discover it for themselves",
@@ -844,7 +911,7 @@ def quirk_gen(n):
                 f"{subj} has finally learned to pick {poss} battles.  Unfortunately, {subj_l} fights all the least important ones",
                 f"{subj} is in possession of a scroll on which is written very old magic in an ancient tongue",
                 f"{subj} knows a secret way {rc(['through the city wall', 'out of the city', 'into the castle', 'into someplace the party wants to go', 'out of a clear and present danger for the party'])}",
-                f"As it happens, the minds of all lay open to a powerful {rc(['creature', 'being', 'monster', 'wizard', 'group', 'clan', 'race of beings', 'organization'])} that can read and control thoughts.  Only {subj_l} knows how to create a mental barrier between the party and the danger",
+                f"As it happens, the minds of all lay open to a powerful {rc(['creature', 'being', 'monster', 'wizard', 'group', 'clan', 'race of beings', 'organization'])} that can read and control thoughts.  Only {subj_l} knows how to create a mental barrier between the party and their danger",
                 f"{subj} has the means to make amends with the authorities on behalf of the party for any wrongdoing (real or perceived) they have done",
                 f"{subj} is swept away in a flash flood and will be presumed dead if the party doesn't save {obj}",
                 f"{subj} has burn scars from a fire in which {subj_l} almost {rc(['died', 'perished'])} as a child.  As a result, {subj_l} is afraid of open flames",
@@ -885,7 +952,7 @@ def quirk_gen(n):
                 f"{subj} has a knack for navigating and rarely gets lost, even in new surroundings",
                 f"{subj} doesn't appear to be quite touching the ground, but the gap is barely perceptible",
                 f"{subj} is affected by light differently.  The side of {obj} that should be lighted is in shadow and vice versa",
-                f"{poss.capitalize()} appearance is less affected by light than others' is.  In bright light, {subj_l} doesn't appear as well-lit as everyone else; in low light, {subj_l} doesn't appear as dark",
+                f"{poss.capitalize()} appearance is less affected by light than others.  In bright light, {subj_l} doesn't appear as well-lit as everyone else; in low light, {subj_l} doesn't appear as dark",
                 f"{subj} walks with a limp {rc([' and a cane', ' but without a cane'])}.  The limp goes away in specific situations, which causes some to think {subj_l} is faking it",
                 f"{subj} prefers the company of people {rc(['older', 'younger', 'smarter', 'less intelligent', 'stronger', 'weaker', 'more attractive', 'less attractive', 'wealthier', 'poorer'])} than {subj_l} is"
                 f"{subj} is able to comprehend metaphors, subtlety, and imprecision of speech, but prefers not to",
@@ -895,7 +962,7 @@ def quirk_gen(n):
                 f"{subj} thinks that surrounding oneself with {rc(['lead', 'gold', 'silver', 'tin', 'virgins', 'magic skeptics', 'bones', 'upright stones', 'oak trees', 'tuning forks', 'burning frankincense'])} can keep out unwanted magic and scrying eyes",
                 f"{subj} thinks pouring water on someone can cure most minor ailments and stimulate the mind",
                 f"{subj} has a superstitious fear of eating the meat of any animal {subj_l} didn't kill {reflex} or witness someone else kill",
-                f"{subj} does not drink water but only ale, wine, or tea",
+                f"{subj} does not drink water but only {rc(['ale', 'beer', 'wine'])} or tea",
                 f"{subj} does not get {poss} sleep all at once but takes short naps every few hours throughout the day and night",
                 f"{subj} is an insomniac who has to walk in circles around a table or other object until {subj_l} is tired enough to fall asleep",
                 f"{subj} believes {subj_l} can learn everything {subj_l} needs to know about a person by how they eat their food",
@@ -915,7 +982,7 @@ def quirk_gen(n):
                 f"{subj} {rc(['believes', 'claims'])} that {subj_l} is being {rc(['pursued', 'hunted', 'followed', 'visited'])} by a glass wolf named King Charles the Mad",
                 f"{subj} once witnessed {poss} {rc(['father', 'brother', 'son'])} {rc(['die', 'kill a man'])} in {rc(['a public', 'a private', 'a magic', 'a fencing', 'an honor', 'a drunken'])} duel",
                 f"{subj} is fond of jousting tournaments",
-                f"{subj} always walks around a building before entering it",]
+                f"{subj} always walks around a building before entering it", ]
 
     # OTHER NPCS
 
@@ -955,7 +1022,7 @@ def quirk_gen(n):
                 f"{subj} {rc(['has received', 'receives', 'is about to receive'])} a {rc(['cursed', 'magic'])} {q_obj()} from {poss}{circ_spc90}{p1}",
                 f"{subj} is {rc(['trying', 'about', 'unknowingly about'])} to send a {rc(['cursed', 'magic'])} {q_obj()} to {poss}{circ_spc90}{p1}",
                 f"{subj} is concerned because {subj_l} recently received a {rc(['cursed', 'magic'])} {q_obj()} from {poss}{circ_spc90}{p1} and doesn't understand {rc(['why', f'{p1_poss} reasons', f'{p1_poss} motives'])}",
-                f"{subj} is weighing the possible consequences in {poss} mind of sending a {rc(['cursed', 'magic'])} {q_obj()} to {poss}{circ_spc90}{p1}",
+                f"{subj} is weighing the possible consequences of sending a {rc(['cursed', 'magic'])} {q_obj()} to {poss}{circ_spc90}{p1}",
                 f"{poss.capitalize()} {p1} left {obj} a {rc(['cursed', 'magic'])} {q_obj()} in {p1_poss} will, which {subj_l} has just received",
                 f"{subj} is trying to {rc(['get', 'persuade', 'make'])} {poss}{circ_spc75}{p1} to send a {rc(['cursed', 'magic'])} {q_obj()} to {poss} {p2}",
                 f"{subj} is trying to {rc(['stop', 'prevent', 'dissuade'])} {poss}{circ_spc75}{p1} from sending a {rc(['cursed', 'magic'])} {q_obj()} to {poss} {p2}",
@@ -983,14 +1050,14 @@ def quirk_gen(n):
                 f"{subj} {rc(['thought', 'thinks'])} highly of {poss}{circ_spc25}{p1}",
                 f"{subj} refuses to believe that {poss}{circ_spc75}{p1} is dead{rc(['', f', but {p1_subj} is', ' -- and happens to be right'])}",
                 f"{poss.capitalize()}{circ_spc50}{p1} ruined {poss} {rc(['reputation', 'life', 'livelihood', f'relationship with {poss}{circ_spc90}{p2}'])}",
-                f"{subj} {rc(['has a', f'never new the name of {poss}', 'may have gotten rid of a'])} rival for the affections of {poss}{circ_spc90}{p1}",
+                f"{subj} {rc(['has a', f'never knew the name of {poss}', 'may have gotten rid of a'])} rival for the affections of {poss}{circ_spc90}{p1}",
                 f"{poss.capitalize()}{circ_spc90}{p1} {rc(['has recently shown', 'has just shown', 'will soon show'])} up looking for {rc(['revenge', 'answers', 'restitution', 'a confrontation', f'{obj}', 'an apology', 'a remedy', 'a miracle', 'reconciliation', 'a chance to make up for lost time'])}",
                 f"{subj} is receiving {rc(['unwanted', 'undeserved', 'unexpected', 'unusual'])} attention from {poss}{circ_spc50}{p1}",
                 f"{subj} has an odd relationship with {poss}{circ_spc75}{p1}",
                 f"{subj} has an embattled relationship with {poss}{circ_spc50}{p1}",
                 f"{subj} is alienated from {poss}{circ_spc75}{p1}",
                 f"{subj} is obsessed with {poss}{circ_spc50}{p1}",
-                f"{subj} is trying to resurrect {poss} {p1}{rc(['', f'without {poss} {p2} finding out', f'with the help of {poss} {p2}'])}",
+                f"{subj} is trying to resurrect {poss} {p1} {rc(['', f'without {poss} {p2} finding out', f'with the help of {poss} {p2}'])}",
                 f"{subj} is often visited by {poss} dead {p1} in {rc(['dreams', 'visions', 'nightmares'])}{rc(['', f'.  {p1_subj.capitalize()} was killed by {poss} {p2}', f'.  {p1_subj.capitalize()} may have been killed by {poss} {p2}', f'.  {poss.capitalize()} {p2} was the last person to see {p1_obj} alive', f'.  {poss.capitalize()} {p2} suspects {obj} of the crime', f'.  {subj} and {poss} {p2} were unable to save {p1_obj}', f'.  {subj} and {poss} {p2} were the last ones to see {p1_obj} alive', ])}",
                 f"{subj} is hiding {poss}{circ_spc75}{p1} from {rc(['the authorities', 'an angry mob', 'a pursuer', f'{poss} {p2}', f'the people who killed {poss} {p2}', 'criminals'])}",
                 f"{subj} {rc(['thinks', 'knows', 'has discovered', 'suspects'])} that {poss}{circ_spc90}{p1} is hiding {poss} {p2} from {obj}",
@@ -1057,15 +1124,15 @@ def quirk_gen(n):
                   f"{subj} {rc(['thinks', 'suspects', 'hopes', 'fears'])} {rc(['magic', 'internal corruption', 'a rival'])} will {rc(['break up', 'destroy'])} {org}",
                   f"{subj} is receiving unwanted attention from {org}",
                   f"{poss.capitalize()}{circ_spc90}{p1} is receiving unwanted attention from {org}",
-                  f"{subj} stumbled upon a private meeting of {org}",
-                  f"{poss.capitalize()}{circ_spc90}{p1} stumbled upon a private meeting of {org}",
+                  f"{subj} {rc(['stumbles', 'stumbled', 'will stumble'])} upon a private meeting of {org}",
+                  f"{poss.capitalize()}{circ_spc90}{p1} stumbled upon the private meeting of {org}",
                   f"{subj} is hiding {poss}{circ_spc75}{p1} from {org}",
-                  f"{org.capitalize()} is hiding {obj} from {poss}{circ_spc75}{p1}{rc(['', '...for a price'])}",
+                  f"{org.capitalize()} is hiding {obj} from {poss}{circ_spc75}{p1}{rc(['', '. For a price'])}",
                   f"{poss.capitalize()}{circ_spc90}{p1} is hiding {rc([f'{obj}', '', f'{poss} {p2}'])} {rc(['from', 'in'])} {org}",
                   f"{subj} {rc(['thinks', 'suspects', 'fears', 'knows'])} that {org} is hiding {poss}{circ_spc75}{p1} from {obj}",
                   f"{subj} {rc(['thinks', 'suspects', 'fears', 'knows'])} that {poss}{circ_spc90}{p1} left {obj} to join {org}",
                   f"{subj} {rc(['thinks', 'suspects', 'fears', 'knows'])} that {poss}{circ_spc75}{p1} is hiding from {obj} in {org}"]
-    
+
     # CALCULATING RESULTS
     quirks = []
     quirks.extend(quirks_1)
@@ -1415,48 +1482,6 @@ def profile_view(NPC):
 
 
 def narrative_view(NPC):
-    # Selecting the seeming word
-    seeming_word_list = ["seemingly", "apparently", "ostensibly", "evidently"]
-    seeming_word = random.choices(seeming_word_list, weights=[85, 5, 5, 5])[0]
-    # Determining "a" or "an" for both character and looks words
-    if NPC.char == "evil":
-        a_or_an_char = "an"
-    else:
-        a_or_an_char = "a"
-    if NPC.looks == "ugly" or NPC.looks == "unattractive" or NPC.looks == "extremely handsome":
-        a_or_an_looks = "an"
-    else:
-        a_or_an_looks = "a"
-    # Taking character-trait conflicts into account and printing
-    print("==================================================")
-    if NPC.char != "neutral" and not NPC.conf_tt and not NPC.conf_ct1 and not NPC.conf_ct2:
-        print("The {} is {} {} {} -- {}, {}, and {}.".format(NPC.prof, a_or_an_char, NPC.char, NPC.gender, NPC.looks, NPC.trait1, NPC.trait2))
-    elif NPC.char == "neutral" and not NPC.conf_tt and not NPC.conf_ct1 and not NPC.conf_ct2:
-        print("The {} is {} {} {}, {} and {}.".format(NPC.prof, a_or_an_looks, NPC.looks, NPC.gender, NPC.trait1, NPC.trait2))
-    elif NPC.conf_tt:
-        print("The {} is {} {} and {} {}, {} both {} and {}.".format(NPC.prof, a_or_an_char, NPC.char, NPC.looks, NPC.gender, seeming_word, NPC.trait1, NPC.trait2))
-    elif NPC.conf_ct1 and not NPC.conf_ct2 and not NPC.conf_tt:
-        print("The {} is {} {} {}: {}, {}, and {} {}.".format(NPC.prof, a_or_an_char, NPC.char, NPC.gender, NPC.looks, NPC.trait2, seeming_word, NPC.trait1))
-    elif NPC.conf_ct2 and not NPC.conf_ct1 and not NPC.conf_tt:
-        print("The {} is {} {} {}: {}, {}, and {} {}.".format(NPC.prof, a_or_an_char, NPC.char, NPC.gender, NPC.looks, NPC.trait1, seeming_word, NPC.trait2))
-    elif NPC.conf_ct1 and NPC.conf_ct2 and not NPC.conf_tt:
-        print("The {} is {} {} and {} {}, yet {} {} and {}.".format(NPC.prof, a_or_an_char, NPC.char, NPC.looks, NPC.gender, seeming_word, NPC.trait1, NPC.trait2))
-    else:
-        print("Scenario not accounted for:")
-        print("Character: " + str(NPC.char))
-        print("Trait 1: " + str(NPC.trait1) + ". Conflicts with character: " + str(NPC.conf_ct1))
-        print("Trait 2: " + str(NPC.trait2) + ". Conflicts with character: " + str(NPC.conf_ct2))
-        print("Traits conflict with each other: " + str(NPC.conf_tt))
-    # Health statement
-    if NPC.con != 0:
-        print(str(NPC.subj).capitalize() + " has a health condition: " + str(NPC.ill) + ".")
-    # Quirk
-    print(NPC.quirk + ".")
-    # End
-    print("==================================================")
-
-
-def narrative_view2(NPC):
     # VARIABLES
 
     # 'Seeming' word
@@ -1484,53 +1509,72 @@ def narrative_view2(NPC):
     print(f"The {NPC.prof} is", end=" ")
 
     # Statement of Morality
-    if NPC.char == "neutral" and random.randint(1, 10) == 1:
-        print("neither a very good nor a very bad", end=" ")
+    if NPC.char == "neutral" and random.randint(1, 10) == 1:  # 10% chance for moral neutrality to be stated
+        print("neither a very good nor a very evil", end=" ")
         morality_stated = True
-    elif NPC.char != "neutral":
+    elif NPC.char != "neutral":  # if not neutral and morality still unstated, print morality
         print(f"{c_an} {NPC.char}", end=" ")
         morality_stated = True
-    else:
+    else:  # character is neutral and their morality has not been stated
         morality_stated = False
 
     # Statement of Appearance
-    if not morality_stated:
-        if NPC.looks == "plain-looking" and random.randint(1, 10) == 1:
+    if not morality_stated:  # morality has not been stated; try stating appearance
+        if NPC.looks == "plain-looking" and random.randint(1,
+                                                           10) == 1:  # 10% chance to state a plain-looking character's appearance
             print(f"{l_an} {NPC.looks}", end=" ")
             looks_stated = True
-        elif NPC.looks != "plain-looking":
+        elif NPC.looks != "plain-looking":  # if character is not plain-looking and their appearance has not been stated, state it
             print(f"{l_an} {NPC.looks}", end=" ")
             looks_stated = True
-        else:
+        else:  # character is plain-looking and their appearance has not been stated
             looks_stated = False
     else:
         looks_stated = False
 
-    # Statement of Gender
+    # Statement of Gender if Preceded by a Modifier
     if morality_stated or looks_stated:
-        print(f"{NPC.gender}{rc([',', '—'])}", end=" ")
+        print(f"{NPC.gender},", end=" ")
 
     # PRINT SUBSEQUENT STATEMENT
 
-    # If gender hasn't been printed yet, print it
-    if not morality_stated and not looks_stated:
-        if not NPC.conf_ct1:
-            print(f"{NPC.trait1}", end=" ")
+    # Stating Traits in Initial Statement, Since No Modifier Has Been Given
+    if not morality_stated and not looks_stated:  # not possible at this point for traits to conflict with character, since character is neutral
+        if NPC.conf_tt:  # if the traits contradict each other, state them both
+            print(f"somehow both {NPC.trait1} and {NPC.trait2}.", end=" ")
         else:
-            print(f"{seemingly} {NPC.trait1}", end=" ")
-        print(f"{NPC.gender}{rc([',', '—'])}", end=" ")
-        traits_stated = True
-    else:
-        traits_stated = False
+            print(f"{NPC.trait1} and {NPC.trait2}.", end=" ")
+        # END STATEMENT
 
-    # Printing the traits
-
-
-
-
-
-
-
+    # Stating Traits Subsequently, Since a Modifier Was Already Given
+    if morality_stated or looks_stated:
+        if morality_stated:  # if morality has been stated, looks have not: chance to print them
+            if NPC.looks == "plain-looking" and random.randint(1,
+                                                               4) == 1:  # 25% chance to state a plain-looking character's appearance
+                print(f"{NPC.looks}", end=", ")
+            elif NPC.looks != "plain-looking":  # if character is not plain-looking and their appearance has not been stated, state it
+                print(f"{NPC.looks}", end=", ")
+            else:  # character is plain-looking and their appearance will not be stated at all
+                pass
+        # Morality and Appearance Statements Resolved; Now Printing Traits
+        if NPC.conf_tt:  # traits conflict; print them both
+            print(f"somehow both {NPC.trait1} and {NPC.trait2}.", end=" ")
+        elif not NPC.conf_ct1 and not NPC.conf_ct2:  # if neither trait conflicts with character, print them both
+            print(f"{NPC.trait1} and {NPC.trait2}.", end=" ")
+        elif not NPC.conf_ct1 and NPC.conf_ct2:  # trait2 conflicts with character, but trait1 does not
+            print(f"{NPC.trait1} and {seemingly} {NPC.trait2}.", end=" ")
+        elif NPC.conf_ct1 and not NPC.conf_ct2:  # trait1 conflicts with character, but trait2 does not
+            print(f"{NPC.trait2} and {seemingly} {NPC.trait1}.", end=" ")
+        else:  # both traits conflict with character; print them both
+            print(f"{seemingly} {NPC.trait1} and {NPC.trait2}.", end=" ")
+        # END STATEMENT
+    if NPC.con != 0:
+        print(str(NPC.subj).capitalize() + " has a health condition: " + str(NPC.ill) + ".", end=" ")
+    # Quirk
+    print(NPC.quirk + ".")
+    print(" ")
+    print(" ")
+    # End
 
 
 current_NPCs = []
