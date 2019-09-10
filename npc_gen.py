@@ -88,8 +88,8 @@ traits14_char_not_flex = []
 
 # Self-Controlled
 traits15_char_is_contr = ["restrained", "frugal", "disciplined", "self-controlled", "composed", "controlled",
-                          "deliberate", "ordered"]
-traits15_char_not_contr = ["unrestrained", "uninhibited", "undisciplined", "compulsive", "indiscreet", "unruly"]
+                          "deliberate", "ordered", "mature", "precise", ]
+traits15_char_not_contr = ["unrestrained", "uninhibited", "undisciplined", "compulsive", "indiscreet", "unruly", "impulsive", "rowdy", "reckless", ]
 
 char_traits_pos = []
 char_traits_pos.extend(traits1_char_is_good)
@@ -131,7 +131,7 @@ traits16_pers_is_social = ["leaderly", "charismatic", "persuasive", "teacherly",
                            "charming", "cheerful", "lively", "colorful", "companionable", "conciliatory", "cooperative",
                            "courteous", "discreet", "cultured", "ebullient", "elegant", "eloquent", "enthusiastic",
                            "exciting", "friendly", "fun-loving", "hearty", "humorous", "inoffensive", "lovable",
-                           "mature", "personable", "polished", "popular", "sociable", "tasteful", "urbane", "vivacious",
+                           "personable", "polished", "popular", "sociable", "tasteful", "urbane", "vivacious",
                            "well-bred", "winning", "youthful", "amusing", "artful", "chummy", "formal", "glamorous",
                            "smooth", "stylish", "suave", "grand", "trendy", "gallant", "responsive", ]
 traits16_pers_not_social = ["antagonistic", "inaccessible", "standoffish", "shy", "solitary", "gossiping", "defensive",
@@ -152,7 +152,7 @@ traits16_pers_not_social = ["antagonistic", "inaccessible", "standoffish", "shy"
 
 # Detail-oriented, Tidy, Alert
 traits17_pers_is_detailed = ["scrupulous", "alert", "meticulous", "observant", "organized", "painstaking", "orderly",
-                             "perfectionist", "planful", "pedantic", "clean", "neat", "tidy", ]
+                             "perfectionistic", "planful", "pedantic", "clean", "neat", "tidy", ]
 traits17_pers_not_detailed = ["thoughtless", "disorderly", "bewildered", "disorganized", "confused", "preoccupied",
                               "forgetful", "single-minded", "sloppy", "vague", "dirty", "messy", ]
 
@@ -186,7 +186,7 @@ traits20_pers_not_trusting = ["cautious", "circumspect", "skeptical", "calculati
 # Intelligent, Capable
 traits21_pers_is_int = ["resourceful", "brilliant", "capable", "clever", "contemplative", "creative", "curious", "deep",
                         "educated", "efficient", "farsighted", "imaginative", "incisive", "innovative", "insightful",
-                        "intuitive", "knowledgeable", "logical", "methodical", "objective", "perceptive", "precise",
+                        "intuitive", "knowledgeable", "logical", "methodical", "objective", "perceptive",
                         "profound", "rational", "realistic", "reflective", "sage", "sane", "scholarly", "shrewd",
                         "skillful", "sober", "sophisticated", "studious", "systematic", "thorough", "well-read", "wise",
                         "witty", "cerebral", "complex", "articulate", "intelligent", "many-sided", "unfathomable",
@@ -199,11 +199,11 @@ traits21_pers_not_int = ["shallow", "uneducated", "shallow-minded", "obtuse", "d
 # Energetic, Lively, Carefree; Idealistic, Impractial, Unserious
 traits22_pers_is_liv = ["boisterous", "breezy", "adventurous", "venturesome", "very active", "careless", "energetic",
                         "optimistic", "passionate", "playful", "relaxed", "romantic", "idealistic", "imprudent",
-                        "reckless", "obsessive", "absentminded", "frivolous", "silly", "indulgent", "noncommittal",
+                        "obsessive", "absentminded", "frivolous", "silly", "indulgent", "noncommittal",
                         "fanciful", "easily distracted", "impractical", "unrealistic", "sentimental", "spontaneous",
                         "sporting", "dreamy", "daydreaming", "fiery", "flamboyant", "high-spirited", "idiosyncratic",
                         "intense", "modern", "emotional", "unpredictable", "whimsical", "zany", "excitable", "extreme",
-                        "impulsive", "rowdy", ]
+                        ]
 traits22_pers_not_liv = ["calm", "stolid", "unhurried", "discontented", "discouraged", "enervated", "pessimistic",
                          "plodding", "slow", "prudent", "adaptable", "anticipative", "clear-headed", "balanced",
                          "practical", "earnest", "serious", "stoic", "businesslike", "joyless", "impassive",
@@ -251,7 +251,8 @@ prof_com = ["architect", "astrologer", "baker", "banker", "barber", "bee keeper"
             "courier", "dog trainer", "falconer", "farmer", "fletcher", "glassblower", "gravedigger", "grocer",
             "guard", "guild master", "harness maker", "herbalist", "horse trainer", "hunter", "innkeeper", "jeweler",
             "librarian", "locksmith", "lumberjack", "merchant", "messenger", "pilgrim", "sailor",
-            "ship builder", "shipwright", "shoemaker", "soldier", "spinner", "stonemason", "tailor", "tavern keeper", "town crier",
+            "ship builder", "shipwright", "shoemaker", "soldier", "spinner", "stonemason", "tailor", "tavern keeper",
+            "town crier",
             "weaver", "wine merchant", "cowherd", "swineherd", "gardener", "goatherd", "hawker", "peasant", "reaper",
             "serf", "hostler", "sheep-shearer", "thresher", "woodcutter", "lumberjack", "vintner", "woolcomber",
             "yeoman", "forester", "fowler", "gamekeeper", "master of hounds", "molecatcher", "rat catcher", "trapper",
@@ -267,12 +268,14 @@ prof_com = ["architect", "astrologer", "baker", "banker", "barber", "bee keeper"
             "lampwright", "lanternmaker", "leadworker", "linenspinner", "lutemaker", "mapmaker", "master builder",
             "miller", "miniaturist", "mint maker", "moneyer", "nailmaker", "netmaker", "oilmaker", "papermaker",
             "parchmenter", "perfumer", "pewterer", "pinmaker", "plasterer", "pot mender", "quarrier", "quilter",
-            "reedmaker", "sailmaker", "saltboiler", "sawyer", "shingler", "siever", "sin-eater", "silk-dyer", "stonecarver",
+            "reedmaker", "sailmaker", "saltboiler", "sawyer", "shingler", "siever", "sin-eater", "silk-dyer",
+            "stonecarver",
             "stonecutter", "tapestrymaker", "tenter", "threadmaker", "tile maker", "wheelwright", "typefounder",
             "haberdasher", "hay merchant", "ironmonger", "oil merchant", "spice merchant", "pie seller", "stationer",
             "taverner", "archer", "bowman", "captain", "crossbowman", "guardsman", "pikeman", "scout", "sergeant",
             "sergeant-at-arms", "spearman", "siege engineer", "camp cook", "hermit", "pardoner", "bargeman", "mariner",
-            "sea captain", "ship's captain", "navigator", "riverboat pilot", "courtier", "ship provisioner", "mathematician",
+            "sea captain", "ship's captain", "navigator", "riverboat pilot", "courtier", "ship provisioner",
+            "mathematician",
             "philosopher", "professor", "scribe", "tutor", "theologian", "restaurateur", "copyist", "bather", "porter",
             "attendant", "lawyer", "attorney", "dog trainer", "privy cleaner", "procurator", "quartermaster", "riveter",
             "royal food taster", "scullion", "stable hand", "valet", "wagoner", "water carrier", "weeper", "beggar",
@@ -299,7 +302,7 @@ prof_crime = ["arsonist", "assassin", "bandit", "blackmailer", "briber", "burgla
 prof_crime_m = ["warlock who curses people, places, or objects for money or worse compensation", "conman"]
 prof_crime_f = ["courtesan", "prostitute", "harlot",
                 "witch who curses people, places, or objects for money or worse compensation"]
-prof_med = ["alchemist", "apothecary", "healer", "physician", "surgeon", "doctor", "leech", "sawbones", "herbalist"]
+prof_med = ["alchemist", "apothecary", "healer", "physician", "surgeon", "doctor", "leech", "herbalist"]
 prof_med_f = ["midwife", "wise woman", "nurse"]
 prof_art = ["bard", "calligrapher", "dancer", "glasspainter", "manuscript illuminator", "painter", "playwright",
             "poet", "sculptor", "storyteller", "tumbler", "artist's model", "fresco painter", "composer", "fiddler",
@@ -309,46 +312,7 @@ prof_high = ["aristocrat", "general", "royal adviser", ]
 prof_high_m = ["baron", "bishop", "count", "duke", "king", "knight", "nobleman", "prince", "squire", "emperor",
                "archduke", "abbot", "cardinal"]
 prof_high_f = ["baroness", "countess", "duchess", "high priestess", "lady", "noblewoman", "princess", "queen", "abbess",
-               "empress", "archduchess", "dame",]
-
-# CONSTITUTION AND APPEARANCE #
-# -2 illnesses that do not disfigure #
-con_2_ill = ["ague (malaria)", "bad blood (syphilis)", "biliousness (jaundice from liver disease)", "black fever",
-             "blindness", "brain fever (meningitis)", "breakbone (dengue fever)", "canine madness (rabies)", "cholera",
-             "cold plague", "consumption (tuberculosis)", "deafness", "diphtheria",
-             "ecstasy (catalepsy marked by loss of reason)",
-             "grocer's itch (skin disease caused by mites in sugar or flour)", "horrors (delirium tremens)",
-             "jail fever (typhus)", "King's evil (tuberculosis of neck and lymph glands)", "lockjaw (tetanus)",
-             "mania (insanity)", "mortification or mormal (gangrene)", "palsy", "paroxysms (convulsions)", "plague",
-             "rickets", "scarlet fever", "severe dehydration", "St. Anthony's Fire (ergotism)",
-             "St. Vitus' Dance or Viper's Dance (chorea)", "the flux (dysentry)", "the red plague (smallpox)",
-             "the sacred disease or falling sickness (epilepsy)", "the shakes (Parkinson's)",
-             "the sweating sickness (influenza)", "typhoid fever", "whooping cough", "winter fever (pneumonia)"]
-con_2_ill_mag = ["curse", ]
-con_2_ill_poor = ["brink of starvation", ]
-con_2_ill_f = ["childbed fever (puerperal fever)"]
-# -2 injuries that do not disfigure #
-con_2_inj = ["fatal, non-magical wounds", "fatal, non-magical burns", ]
-con_2_inj_mag = ["fatal magical wounds", "fatal magical burns", ]
-# -2 illnesses that disfigure #
-con_2_ill_disfig = ["apoplexy (paralysis due to stroke)", "leprosy", ]
-# -2 injuries that disfigure #
-con_2_inj_disfig = ["loss of arm", "loss of foot", "loss of hand", "loss of leg", ]
-# -1 illnesses that do not disfigure #
-con_1_ill = ["fatigue", "muteness", "mild dehydration", "light-headedness", "food poisoning", "eye infection",
-             "joint aches", "chicken pox", "barrel fever (hangover)", "green fever (anemia)", "quincy (tonsillitis)",
-             "screws (arthritis)"]
-con_1_ill_poor = ["lice", "fleas", "bedbugs"]
-# -1 injuries that do not disfigure #
-con_1_inj = ["broken bone", "sprained ankle", "sprained wrist", "bruising", "lacerations", "loss of fingers",
-             "loss of toes", "loss of tongue", "scarring from wounds", "scarring from burns",
-             "scarring from skin infections", "minor, non-magical wounds", "minor, non-magical burns", "concussion",
-             "animal bite", "dislocated shoulder", "sterility or infertility"]
-con_1_inj_mag = ["minor magical wounds", "minor magical burns"]
-# -1 illnesses that disfigure #
-con_1_ill_disfig = ["skin infection", "scurvy"]
-# -1 injuries that disfigure #
-con_1_inj_disfig = ["loss of ear", "loss of an eye", "loss of teeth"]
+               "empress", "archduchess", "dame", ]
 
 
 # LISTS - QUIRKS
@@ -365,21 +329,20 @@ def q_obj():
                'pair of greaves', 'pair of gauntlets', 'pair of boots', 'helmet', 'breastplate', 'shield', 'sword',
                'dagger', 'knife',
                'cup', 'plate', 'spoon', 'needle', 'thread', 'thimble', 'spinning wheel', 'hatchet', 'staff',
-               'spell focus',
-               'vial', 'quiver', 'crystal', 'orb', 'rod', 'wand', 'blanket', 'cloak', 'bell', 'candle', 'book',
-               'bottle',
-               'map', 'scroll', 'chain', 'chalk', 'rope', 'shirt', 'pair of trousers', 'belt', 'button', 'hat',
-               'reliquary',
-               'emblem', 'hourglass', 'flask', 'hunting trap', 'leash', 'collar', 'ink well', 'quill', 'lamp', 'ladder',
+               'spell focus', 'vial', 'quiver', 'crystal', 'orb', 'rod', 'wand', 'blanket', 'cloak', 'bell', 'candle',
+               'book',
+               'bottle', 'map', 'scroll', 'chain', 'chalk', 'rope', 'shirt', 'pair of trousers', 'belt', 'button',
+               'hat',
+               'reliquary', 'emblem', 'hourglass', 'flask', 'hunting trap', 'leash', 'collar', 'ink well', 'quill',
+               'lamp', 'ladder',
                'magnifying glass', 'set of manacles', 'hand mirror', 'mirror', 'sheet of parchment',
-               'bottle of perfume',
-               'cooking pot', 'healing potion', 'robe', 'sack', 'whistle', 'pouch of powdered soap', 'spellbook',
-               'spyglass',
-               'tent', 'torch', 'tinderbox', 'mess kit', 'waterskin', 'whetstone', 'bow', 'rapier', 'abacus',
-               'deck of cards',
-               'set of dice', 'chess piece', 'letter', 'bone', 'tooth', 'tusk', 'antler', 'shard of glass',
-               'mirror shard',
-               'pebble', 'stone', 'nail', 'leaf', 'marble']
+               'bottle of perfume', 'cooking pot', 'healing potion', 'robe', 'sack', 'whistle',
+               'pouch of powdered soap', 'spellbook',
+               'spyglass', 'tent', 'torch', 'tinderbox', 'mess kit', 'waterskin', 'whetstone', 'bow', 'rapier',
+               'abacus',
+               'deck of cards', 'set of dice', 'chess piece', 'letter', 'bone', 'tooth', 'tusk', 'antler',
+               'shard of glass',
+               'mirror shard', 'pebble', 'stone', 'nail', 'leaf', 'marble']
     return random.choice(objects)
 
 
@@ -392,7 +355,7 @@ def quirks_people(n):
                          "step mother", "step brother", "step sister", "uncle", "aunt", "nephew", "niece", "nanny",
                          "ward",
                          "father-in-law", "mother-in-law", "brother-in-law", "sister-in-law"]
-    people_least_close = ["traveler", "creditor", "lender", "employer", "superior", "employee", "subordinate",
+    people_least_close = ["travelling companion", "creditor", "lender", "employer", "superior", "employee", "subordinate",
                           "correspondent", "liason", "peer", "teacher", "student", "flatterer", "lackey",
                           "acquaintance", "colleague"]
     # Sorting closest people by gender
@@ -447,12 +410,12 @@ def quirks_people(n):
 
 
 def q_circ():
-    circumstance_types = ["dead", "dying", "lost", "estranged", "much loved", "hated", "imprisoned", "falsely accused",
+    circumstance_types = ["dying", "lost", "estranged", "much loved", "hated", "imprisoned", "falsely accused",
                           "banished", "distant", "nearby", "close", "indebted", "dangerous",
                           "troubled", "misunderstood", "erring", "concerned", "distressed", "wounded", "enchanted",
                           "enthralled", "spellbound", "cursed", "metamorphosed", "avenged", "vindicated", "acquitted",
                           "deceived", "disregarded", "neglected", "famous", "believed-to-be-dead", "drunken",
-                          "believed-to-be-lost", "captured", "kidnapped", "insane", "mad", "homicidal", "murdered",
+                          "believed-to-be-lost", "captured", "kidnapped", "insane", "mad", "homicidal",
                           "self-destructive", "financially ruined", "returned", "found", "new", "undead", "cornered",
                           "desperate", "loving", "wonderful", "trustful", "loyal", "trusting", "gullible",
                           "happy", "newly resurrected", "recovering", "ailing", "convalescing", "penitent", "pious",
@@ -467,7 +430,7 @@ def q_circ():
 def q_orgs():
     organization_types = ["a guild of craftsmen", "a bard's college", "a college of magic", "a secret society",
                           "a school", "the royal guard", "the town's guard", "an army", "a team of legal experts",
-                          "a royal court", "an acting troupe", "a society of magicians or jesters", "a gang of bandits",
+                          "a royal court", "an acting troupe", "a society of magicians and jesters", "a gang of bandits",
                           "an enemy army", "a coven of witches", "a clan of vampires", "a cabal of usurpers",
                           "a group of conspirators", "a group of conspiracy theorists", "a group of assassins",
                           "a well-known spy network", "a rumored spy network", "a prostitution ring", "a church",
@@ -647,14 +610,14 @@ def quirk_gen(n):
                 f"{subj} always seems to be too cold",
                 f"{subj} is overly sensitive to offensive odors",
                 f"{subj} is sensitive to moonlight but not sunlight",
-                f"{subj} is always excusing {reflex} to go to the bathroom, perhaps suspiciously",
+                f"{subj} is always excusing {reflex} to go to the bathroom, more often than is needed",
                 f"{subj} always looks over {poss} shoulder while walking as if {subj_l} is afraid of being followed",
                 f"{subj} has a strong foreign accent",
                 f"{subj} is shedding a still-detectable accent",
                 f"{subj} does not understand the common language spoken in the region",
                 f"{subj} is mute, or wants others to believe {subj_l} is mute",
-                f"{subj} is {rc(['pretending to be', 'going', 'used to be'])} deaf",
-                f"{subj} is {rc(['pretending to be', 'going', 'used to be'])} blind",
+                f"{subj} {rc(['is pretending to be', 'is going', 'used to be'])} deaf",
+                f"{subj} {rc(['is pretending to be', 'is going', 'used to be'])} blind",
                 f"{subj} cannot experience pain and is prone to unnoticed cuts, bruises, and injuries",
                 f"{subj} acts as if no one ever believes {obj}",
                 f"{subj} always feels like {subj_l}'s being treated {rc(['fairly', 'unfairly', 'like a child', 'like royalty'])}",
@@ -804,7 +767,7 @@ def quirk_gen(n):
                 f"{subj} is always trying to take sips from a hidden flask without being noticed.  Someone who saw might assume it was alcohol, but it may be a magical potion or elixir",
                 f"{subj} only reads {rc(['new', 'old'])} books",
                 f"{subj} only reads books {rc(['by a certain author', 'in a particular language', ])}",
-                f"{subj} is adept at {rc(['mathematics', 'geography and navigation', 'mechanics and invention', 'finances and record-keeping', 'acting and improvisation', 'Abjuration', 'Conjuration', 'Divination', 'Enchantment', 'Evocation', 'Illusion', 'Necromancy', 'Transmutation', 'alchemy', 'astrology', 'astronomy'])}"
+                f"{subj} is adept at {rc(['mathematics', 'geography and navigation', 'mechanics and invention', 'finances and record-keeping', 'acting and improvisation', 'abjuration', 'conjuration', 'divination', 'enchantment', 'evocation', 'illusion', 'necromancy', 'transmutation', 'alchemy', 'astrology', 'astronomy'])}",
                 f"{subj} is vastly knowledgeable concerning the history of {rc(['magic', 'the world', 'religion', 'civilizations'])}",
                 f"{subj} is a vegetarian but hates beans so much that {subj_l} would rather die than run through a field of them (as did the ancient mathematician, Pythagoras, according to legend)",
                 f"{subj} dresses in surprisingly many layers, so that {subj_l} is actually much smaller than {subj_l} appears",
@@ -850,9 +813,9 @@ def quirk_gen(n):
                 f"{subj} advocates for the legalization of a certain religion and so is under suspicion of practicing it {reflex}",
                 f"{subj} advocates for the legalization of a certain spell or type of magic -- and so is suspected of knowing it",
                 f"{subj} accidentally killed someone with magic as a child and has neither studied nor practiced it since",
-                f"{subj} is thought by some to be the orchestrator of an elaborate and successful hoax that made {rc(['all magic', 'a certain type of magic', 'a certain religion'])} illegal in the region",
-                f"{subj} was the victim of an attack that caused {rc(['all magic', 'a certain type of magic', 'a certain religion'])} to be outlawed in the region, though {subj_l} certainly did not wish for that result",
-                f"{subj} was the victim of an attack that caused {rc(['all magic', 'a certain type of magic', 'a certain religion'])} to be outlawed in the region, which {subj_l} regards as an unlooked-for benefit",
+                f"{subj} is thought by some to be the orchestrator of an elaborate and successful hoax that made {rc(['magic', 'a certain type of magic', 'a certain religion'])} illegal in the region",
+                f"{subj} was the victim of an attack that caused {rc(['magic', 'a certain type of magic', 'a certain religion'])} to be outlawed in the region, though {subj_l} certainly did not wish for that result",
+                f"{subj} was the victim of an attack that caused {rc(['magic', 'a certain type of magic', 'a certain religion'])} to be outlawed in the region, which {subj_l} regards as an unlooked-for benefit",
                 f"{subj} was a victim of an attack that caused magic to be outlawed in the region; so now {subj_l} has to practice it in secret",
                 f"{subj} was the first of a number of people to suddenly and inexplicably gain the ability to use magic, and so {subj_l} is generally thought to be the catalyst or reason for it",
                 f"{subj} brought magic to the region from afar",
@@ -861,7 +824,7 @@ def quirk_gen(n):
                 f"{subj} always seems embarrassed and tries not to look directly at anyone, since {subj_l} can see through everyone's clothes but can't do anything about it",
                 f"{subj} has aims or ideals that are contrary to those of at least one member of the party but seems to be willing to work with the group in order to achieve a common goal",
                 f"{subj} is a refugee from a recently destroyed {q_places_lite()}",
-                f"{subj} is a spy sent ahead by an enemy.  Invasion is imminent",
+                f"{subj} is a spy sent ahead by an enemy.  {rc(['Invasion', 'Ambush'])} is imminent",
                 f"{subj} is presently in the form of a talking animal and cannot be convinced that {subj_l} wasn't always one",
                 f"{subj} is, unbeknownst to the players, the identical twin of an NPC they already know",
                 f"{subj} does not currently have the exercise of {poss} free will and is being controlled by {rc(['someone', 'something', 'a creature', 'a force', 'a group'])} hostile to the player characters",
@@ -883,7 +846,7 @@ def quirk_gen(n):
                 f"{subj} decides everything with a coin toss",
                 f"{subj} hides things in unconventional and unexpected places",
                 f"{subj} conceals {poss} money on {poss} person",
-                f"{subj} was disappointed long ago by someone {subj_l} looked up to, and now doesn't look up to anyone",
+                f"{subj} was disappointed long ago by someone {subj_l} looked up to, and now {subj_l} doesn't look up to anyone",
                 f"{subj} {rc(['receives', 'received', 'will receive'])} an unexpected gift: a cursed {q_obj()}",
                 f"{subj} offers the party a gift that magically causes tensions in the group",
                 f"{subj} offers the party a {q_obj()} that magically causes tensions in the group",
@@ -1089,7 +1052,7 @@ def quirk_gen(n):
                   f"{poss.capitalize()}{circ_spc90}{p1} is trying to {rc(['rescue', 'separate'])} {obj} from {org}",
                   f"{poss.capitalize()}{circ_spc90}{p1} is trying to stop {obj} from {rc(['joining', 'leaving', 'destroying', 'starting', 'supporting', 'establishing', 'founding', 'recruiting for'])} {org}",
                   f"{subj} is trying to stop {poss}{circ_spc90}{p1} from {rc(['joining', 'leaving', 'destroying', 'starting', 'supporting', 'establishing', 'founding', 'recruiting for'])} {org}",
-                  f"{subj} is trying to infiltrate {org} to find {poss}{circ_spc50}{p1}",
+                  f"{subj} is trying to infiltrate {org} to find {poss}{circ_spc90}{p1}",
                   f"{subj} is trying to keep a magic {q_obj()} out of the hands of {org}",
                   f"{subj} is trying to deliver a {rc(['magic', 'cursed'])} {q_obj()} to {org}",
                   f"{subj} has just received a {rc(['magic', 'cursed'])} {q_obj()} from {org}",
@@ -1139,6 +1102,141 @@ def quirk_gen(n):
     quirks.extend(quirks_2)
     quirks.extend(quirks_org)
     return random.choice(quirks)
+
+
+# ILLNESSES
+
+def con_gen():
+    # determines the constitution of the NPC #
+    # -2 = serious health concern, 0 = perfect health #
+    health_range = [-2, -1, 0]
+    return random.choices(health_range, weights=[2, 6, 92])[0]
+
+
+def ill_gen(n):
+    # VARIABLES
+    subj = n.subj.capitalize()
+    obj = n.obj
+    poss = n.poss
+    vitus = random.choice(["St. Vitus' Dance", "Viper's Dance"])
+    suffers_from = random.choice(['suffers from', 'is suffering from', 'is presently suffering from'])
+    if n.sex == "male":
+        childless = "sterile"
+        childlessness = "sterility"
+    else:
+        childless = "infertile"
+        childlessness = "infertility"
+    # END VARIABLES
+    sick_pool = []
+    serious = [f"{subj} {suffers_from} ague (i.e., malaria)",
+               f"{subj} {suffers_from} bad blood (i.e., syphilis)",
+               f"{subj} {suffers_from} biliousness (i.e., jaundice from liver disease)",
+               f"{subj} {suffers_from} black fever",
+               f"{subj} {rc(['is blind', 'has been struck blind by magic', 'has recently been struck blind by a tragic accident', 'is blind from birth', 'is going blind as a result of a curse'])}",
+               f"{subj} {rc(['is deaf', 'has been struck deaf by magic', 'has recently been struck deaf by a tragic accident', 'is deaf from birth', 'is going deaf as a result of a curse'])}",
+               f"{subj} {suffers_from} brain fever (i.e., meningitis)",
+               f"{subj} is suffering from breakbone (i.e., dengue fever)",
+               f"{subj} has the canine madness (i.e., rabies)",
+               f"{subj} {suffers_from} cholera",
+               f"{subj} {suffers_from} cold plague",
+               f"{subj} is dying of consumption (i.e., tuberculosis)",
+               f"{subj} {suffers_from} diphtheria",
+               f"{subj} {suffers_from} ecstasy, i.e., catalepsy marked by loss of reason",
+               f"{subj} {suffers_from} grocer's itch, a skin disease caused by mites in sugar or flour",
+               f"{subj} {suffers_from} horrors (i.e., delirium tremens)",
+               f"{subj} {suffers_from} jail fever (i.e., typhus)",
+               f"{subj} {suffers_from} King's evil, i.e., tuberculosis of the neck and lymph glands",
+               f"{subj} {suffers_from} lockjaw (i.e., tetanus)",
+               f"{subj} has lost {poss} sanity as a result of {rc(['recent tragedy', 'an injury sustained during an attack', 'a curse', 'a spell'])}",
+               f"{subj} {suffers_from} {rc(['mortification', 'mormal'])} (i.e., gangrene) and is in danger of losing a limb",
+               f"{subj} {suffers_from} palsy",
+               f"{subj} {suffers_from} {rc(['frequent', 'occasional'])} paroxysms (i.e., convulsions)",
+               f"{subj} has contracted the plague",
+               f"{subj} {suffers_from} rickets",
+               f"{subj} {suffers_from} scarlet fever",
+               f"{subj} is presently suffering from severe dehydration and is in serious danger",
+               f"{subj} {suffers_from} St. Anthony's Fire (i.e., ergotism)",
+               f"{subj} {suffers_from} {vitus} (i.e., chorea)",
+               f"{subj} {suffers_from} the flux (i.e., dysentery)",
+               f"{subj} {suffers_from} the red plague (i.e., smallpox)",
+               f"{subj} suffers from {rc(['the sacred disease', 'falling sickness'])} (i.e., epilepsy)",
+               f"{subj} suffers from the shakes (i.e., Parkinson's Disease), which gets progressively worse with age",
+               f"{subj} {suffers_from} the sweating sickness (i.e., influenza)",
+               f"{subj} {suffers_from} typhoid fever",
+               f"{subj} {suffers_from} whooping cough",
+               f"{subj} {suffers_from} winter fever (i.e., pneumonia)",
+               f"{subj} {suffers_from} fatal non-magical wounds",
+               f"{subj} {suffers_from} fatal non-magical burns",
+               f"{subj} {suffers_from} fatal magical wounds",
+               f"{subj} {suffers_from} fatal magical burns",
+               f"{subj} {suffers_from} apoplexy, i.e., paralysis due to stroke",
+               f"{subj} has contracted leprosy",
+               f"{subj} lost {rc(['an arm', 'a leg', 'a hand', 'a foot', 'an ear'])}",
+               f"{subj} is cursed with bad luck so persistent that sometimes it actually manifests itself as a black cloud that {rc(['follows', 'hovers over', 'surrounds'])} {obj}",
+               f"{subj} is cursed with {rc(['intolerable body odor', 'intolerably bad breath', 'compulsively bad language'])}",
+               f"{subj} is presently cursed with extreme ugliness and deformity",
+               f"{subj} has been transformed into a diminutive, harmless creature that can neither use magic nor be the target of it",
+               f"{subj} has a fatal {rc(['wound', 'injury'])} inflicted by magic that cannot be healed by non-magical means"]
+    serious_poor = [f"{subj} is on the brink of starvation"]
+    serious_f = [f"{subj} has childbed fever (i.e., puerperal fever)",
+                 f"{subj} has breast cancer"]
+
+    # MINOR ILLNESSES AND INJURIES
+    non_serious = [f"{subj} has a spell-wound that cannot be healed by non-magical means",
+                   f"{subj} {suffers_from} fatigue",
+                   f"{subj} {rc(['is mute', 'has been struck mute by magic', 'has recently been struck mute by an accidental throat injury', 'is mute from birth', 'is hoarse and will go completely mute if the curse is not lifted'])}",
+                   f"{subj} {suffers_from} mild dehydration",
+                   f"{subj} {suffers_from} {rc([f'light-headedness', 'faintness'])}",
+                   f"{subj} has a bad case food poisoning",
+                   f"{subj} has an eye infection",
+                   f"{subj} {suffers_from} joint aches",
+                   f"{subj} {suffers_from} chicken pox",
+                   f"{subj} {suffers_from} barrel fever (i.e., hangover)",
+                   f"{subj} {suffers_from} green fever (i.e., anemia)",
+                   f"{subj} {suffers_from} quincy (i.e., tonsillitis)",
+                   f"{subj} {suffers_from} screws (i.e., arthritis)",
+                   f"{subj} has a broken bone",
+                   f"{subj} has a sprained ankle",
+                   f"{subj} has a sprained wrist",
+                   f"{subj} has {rc(['facial', 'suspicious', 'concealed', 'conspicuous'])} bruises",
+                   f"{subj} has {rc(['facial', 'suspicious', 'concealed', 'conspicuous'])} lacerations",
+                   f"{subj} has lost {rc(['a finger', 'a couple of fingers'])}",
+                   f"{subj} has lost {rc(['a toe', 'a couple of toes'])}",
+                   f"{subj} has lost {poss} tongue",
+                   f"{subj} has {rc(['scarring', 'scars'])} from {rc(['magical', 'non-magical'])} wounds",
+                   f"{subj} has {rc(['scarring', 'scars'])} from {rc(['magical', 'non-magical'])} burns",
+                   f"{subj} has {rc(['scarring', 'scars'])} from a skin infection",
+                   f"{subj} {suffers_from} minor {rc(['magical', 'non-magical'])} wounds",
+                   f"{subj} {suffers_from} minor {rc(['magical', 'non-magical'])} burns",
+                   f"{subj} is suffering from a recently sustained concussion",
+                   f"{subj} {suffers_from} an animal bite",
+                   f"{subj} {suffers_from} a dislocated shoulder",
+                   f"{subj} {rc([f'is {childless}', f'has been stricken with {childlessness} by magic', f'has recently been stricken with {childlessness} by a tragic accident', f'has been {childless} since birth', f'is {childless} as a result of a curse'])}",
+                   f"{subj} {suffers_from} a fungal infection",
+                   f"{subj} {suffers_from} skin infection",
+                   f"{subj} {suffers_from} scurvy",
+                   f"{subj} has lost {rc(['an eye', 'a tooth'])}",
+                   f"{subj} {suffers_from} osteoporosis"]
+    non_serious_poor = [f"{subj} has {rc(['lice', 'fleas', 'bedbugs'])}"]
+    non_serious_f = [f"{subj} {suffers_from} postpartum depression",
+                     f"{subj} has a yeast infection"]
+    # CALCULATING
+    if n.con == 0:
+        return f"{subj} is in good health"
+    elif n.con == -1:
+        sick_pool.extend(non_serious)
+        if n.sex == "female":
+            sick_pool.extend(non_serious_f)
+        if n.prof_type == "common":
+            sick_pool.extend(non_serious_poor)
+        return random.choice(sick_pool)
+    else:  # n.con == -2:
+        sick_pool.extend(serious)
+        if n.sex == "female":
+            sick_pool.extend(serious_f)
+        if n.prof_type == "common":
+            sick_pool.extend(serious_poor)
+        return random.choice(sick_pool)
 
 
 # FUNCTIONS - GENDER
@@ -1342,7 +1440,7 @@ def prof_type_gen(char):
     elif char == "neutral":
         return random.choices(prof_types, weights=[50, 15, 5, 10, 10, 10])[0]
     else:
-        return random.choices(prof_types, weights=[15, 20, 45, 5, 5, 10])[0]
+        return random.choices(prof_types, weights=[20, 20, 40, 5, 5, 10])[0]
 
 
 def prof_gen(prof_type, sex):
@@ -1380,41 +1478,7 @@ def prof_gen(prof_type, sex):
     return random.choice(prof_pool)
 
 
-# FUNCTIONS - CONSTITUTION AND APPEARANCE
-
-
-def con_gen():
-    # determines the constitution of the NPC #
-    # -2 = serious health concern, 0 = perfect health #
-    health_range = [-2, -1, 0]
-    return random.choices(health_range, weights=[1, 5, 94])[0]
-
-
-def ill_gen(con, sex, prof_type):
-    # selects a condition for NPCs in poor health #
-    affliction_pool = []
-    if con == -2:
-        affliction_pool.extend(con_2_ill)
-        affliction_pool.extend(con_2_ill_mag)
-        affliction_pool.extend(con_2_ill_disfig)
-        affliction_pool.extend(con_2_inj)
-        affliction_pool.extend(con_2_inj_mag)
-        affliction_pool.extend(con_2_inj_disfig)
-        if sex == "female":
-            affliction_pool.extend(con_2_ill_f)
-        if prof_type == "common" or prof_type == "crime":
-            affliction_pool.extend(con_2_ill_poor)
-    elif con == -1:
-        affliction_pool.extend(con_1_ill)
-        affliction_pool.extend(con_1_ill_disfig)
-        affliction_pool.extend(con_1_inj)
-        affliction_pool.extend(con_1_inj_mag)
-        affliction_pool.extend(con_1_inj_disfig)
-        if prof_type == "common" or prof_type == "crime":
-            affliction_pool.extend(con_1_ill_poor)
-    else:
-        affliction_pool.append("no illnesses or injuries")
-    return random.choice(affliction_pool)
+# FUNCTIONS - APPEARANCE
 
 
 def looks_gen(sex):
@@ -1440,7 +1504,6 @@ class NPC:
         self.poss = gender_poss(self.sex)
         self.obj = gender_obj(self.sex)
         self.reflex = gender_reflex(self.sex)
-
         # CHARACTER AND PERSONALITY
         self.char = char_gen()
         self.principles = prin_gen(self.char)
@@ -1458,7 +1521,7 @@ class NPC:
         self.prof = prof_gen(self.prof_type, self.sex)
         # CONSTITUTION AND APPEARANCE
         self.con = con_gen()
-        self.ill = ill_gen(self.con, self.sex, self.prof_type)
+        self.ill = ill_gen(self)
         self.looks = looks_gen(self.sex)
 
         NPC.num_of_NPCs += 1
@@ -1510,7 +1573,7 @@ def narrative_view(NPC):
 
     # Statement of Morality
     if NPC.char == "neutral" and random.randint(1, 10) == 1:  # 10% chance for moral neutrality to be stated
-        print("neither a very good nor a very evil", end=" ")
+        print(f"neither a very good nor a very {rc(['evil', 'bad'])}", end=" ")
         morality_stated = True
     elif NPC.char != "neutral":  # if not neutral and morality still unstated, print morality
         print(f"{c_an} {NPC.char}", end=" ")
@@ -1569,7 +1632,7 @@ def narrative_view(NPC):
             print(f"{seemingly} {NPC.trait1} and {NPC.trait2}.", end=" ")
         # END STATEMENT
     if NPC.con != 0:
-        print(str(NPC.subj).capitalize() + " has a health condition: " + str(NPC.ill) + ".", end=" ")
+        print(str(NPC.ill) + ".", end=" ")
     # Quirk
     print(NPC.quirk + ".")
     print(" ")
