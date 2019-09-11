@@ -989,7 +989,7 @@ def quirk_gen(n):
                 f"{poss.capitalize()} {p1} left {obj} a {rc(['cursed', 'magic'])} {q_obj()} in {p1_poss} will, which {subj_l} has just received",
                 f"{subj} is trying to {rc(['get', 'persuade', 'make'])} {poss}{circ_spc75}{p1} to send a {rc(['cursed', 'magic'])} {q_obj()} to {poss} {p2}",
                 f"{subj} is trying to {rc(['stop', 'prevent', 'dissuade'])} {poss}{circ_spc75}{p1} from sending a {rc(['cursed', 'magic'])} {q_obj()} to {poss} {p2}",
-                f"{subj} is try to intercept a {rc(['cursed', 'magic'])} {q_obj()} {rc(['en route', f'sent from {poss} {p2}'])} to {poss} {p1}",
+                f"{subj} is trying to intercept a {rc(['cursed', 'magic'])} {q_obj()} {rc(['en route', f'sent from {poss} {p2}'])} to {poss} {p1}",
                 f"{subj} is trying to kill {poss}{circ_spc50}{p1} for reasons that {rc(['are', 'are not'])} obvious to those who know {rc([f'{obj}', f'{p1_obj}'])}",
                 f"{subj} is trying to kill {poss}{circ_spc50}{p1}",
                 f"{subj} is trying to prevent {poss}{circ_spc50}{p1} from {rc(['killing', 'destroying', 'ruining', 'meeting', 'ruining the reputation of', 'restoring the reputation of', 'improving the reputation of', 'lying to', 'liking', 'making amends with', 'running into'])} {poss} {p2}",
