@@ -65,9 +65,8 @@ traits10_char_not_charit = ["ungenerous", "unhelpful", "stingy", "miserly", "clo
                             "opportunistic", "self-indulgent", "selfish", "thievish", "uncharitable", ]
 
 # Brave
-traits11_char_is_brave = ["heroic", "brave", "courageous", "daring", "fearless", "gallant", "gutsy", "stout"]
-traits11_char_not_brave = ["cowardly", "dastardly", "anxious", "apprehensive", "base", "cowering", "caitiff",
-                           "gutless", "jittery", "craven", "pusillanimous", "fainthearted", "nervous", "panicky"]
+traits11_char_is_brave = []
+traits11_char_not_brave = []
 
 # Pious, Reverent
 traits12_char_is_pious = ["pious", "reverential", "religious", "devout", "godly", "reverent", "god-fearing",
@@ -89,7 +88,7 @@ traits14_char_not_flex = []
 # Self-Controlled
 traits15_char_is_contr = ["restrained", "frugal", "disciplined", "self-controlled", "composed", "controlled",
                           "deliberate", "ordered", "mature", "precise", ]
-traits15_char_not_contr = ["unrestrained", "uninhibited", "undisciplined", "compulsive", "indiscreet", "unruly", "impulsive", "rowdy", "reckless", ]
+traits15_char_not_contr = ["unrestrained", "uninhibited", "undisciplined", "compulsive", "indiscreet", "unruly", "impulsive", "rowdy", "reckless", "passionate"]
 
 char_traits_pos = []
 char_traits_pos.extend(traits1_char_is_good)
@@ -162,15 +161,16 @@ traits18_pers_is_forceful = ["strong-willed", "assertive", "forceful", "competit
                              "dynamic", "firm", "unflappable", "dauntless", "independent", "tough", "secure",
                              "confident", "outspoken", "physical", "masculine", "stubborn", "disobedient", "willful",
                              "unyielding", "uncooperative", "inflexible", "rigid", "dogmatic", "narrow-minded",
-                             "adamant", "pigheaded", "obstinate"]
+                             "adamant", "pigheaded", "obstinate", "heroic", "brave", "courageous", "daring", "fearless", "gallant", "gutsy", "stout"]
 traits18_pers_not_forceful = ["gentle", "peaceful", "weak-willed", "wormy", "noncompetitive", "soft", "submissive",
                               "unaggressive", "undemanding", "vulnerable", "weak", "insecure", "overly repentant",
                               "conformist", "conventional", "mellow", "ordinary", "placid", "fawning", "flattering",
                               "self-effacing", "self-conscious", "timid", "panicky", "delicate", "dependent",
                               "desperate", "fearful", "anxious", "hesitant", "indecisive", "inert", "passive",
-                              "inhibited", "neurotic", "effeminate", "twitchy", "casual", "subservient", "docile",
+                              "inhibited", "neurotic", "twitchy", "casual", "subservient", "docile",
                               "tractable", "obedient", "flexible", "undogmatic", "compliant", "deferential",
-                              "respectful", "amenable", "acquiescent", "governable", "obliging", "obeisant"]
+                              "respectful", "amenable", "acquiescent", "governable", "obliging", "obeisant", "cowardly", "dastardly", "anxious", "apprehensive", "base", "cowering", "caitiff",
+                           "gutless", "jittery", "craven", "pusillanimous", "fainthearted", "nervous", "panicky"]
 
 # Ambitious
 traits19_pers_is_ambit = ["self-improvement minded", "well-rounded", "ambitious", "purposeful", "hurried",
@@ -187,7 +187,7 @@ traits20_pers_not_trusting = ["cautious", "circumspect", "skeptical", "calculati
 traits21_pers_is_int = ["resourceful", "brilliant", "capable", "clever", "contemplative", "creative", "curious", "deep",
                         "educated", "efficient", "farsighted", "imaginative", "incisive", "innovative", "insightful",
                         "intuitive", "knowledgeable", "logical", "methodical", "objective", "perceptive",
-                        "profound", "rational", "realistic", "reflective", "sage", "sane", "scholarly", "shrewd",
+                        "profound", "rational", "realistic", "reflective", "sagacious", "sane", "scholarly", "shrewd",
                         "skillful", "sober", "sophisticated", "studious", "systematic", "thorough", "well-read", "wise",
                         "witty", "cerebral", "complex", "articulate", "intelligent", "many-sided", "unfathomable",
                         "unfoolable", "open-minded"]
@@ -198,7 +198,7 @@ traits21_pers_not_int = ["shallow", "uneducated", "shallow-minded", "obtuse", "d
 
 # Energetic, Lively, Carefree; Idealistic, Impractial, Unserious
 traits22_pers_is_liv = ["boisterous", "breezy", "adventurous", "venturesome", "very active", "careless", "energetic",
-                        "optimistic", "passionate", "playful", "relaxed", "romantic", "idealistic", "imprudent",
+                        "optimistic", "playful", "relaxed", "romantic", "idealistic", "imprudent",
                         "obsessive", "absentminded", "frivolous", "silly", "indulgent", "noncommittal",
                         "fanciful", "easily distracted", "impractical", "unrealistic", "sentimental", "spontaneous",
                         "sporting", "dreamy", "daydreaming", "fiery", "flamboyant", "high-spirited", "idiosyncratic",
@@ -992,7 +992,7 @@ def quirk_gen(n):
                 f"{subj} is try to intercept a {rc(['cursed', 'magic'])} {q_obj()} {rc(['en route', f'sent from {poss} {p2}'])} to {poss} {p1}",
                 f"{subj} is trying to kill {poss}{circ_spc50}{p1} for reasons that {rc(['are', 'are not'])} obvious to those who know {rc([f'{obj}', f'{p1_obj}'])}",
                 f"{subj} is trying to kill {poss}{circ_spc50}{p1}",
-                f"{subj} is trying to prevent {poss}{circ_spc50}{p1} from {rc(['killing', 'destroying', 'ruining', 'meeting', 'ruining the reputation of', 'restoring the reputation of', 'improving the reputation of', 'lying to', 'liking', 'making amends with', 'running into', 'forgetting', 'remembering'])} {poss} {p2}",
+                f"{subj} is trying to prevent {poss}{circ_spc50}{p1} from {rc(['killing', 'destroying', 'ruining', 'meeting', 'ruining the reputation of', 'restoring the reputation of', 'improving the reputation of', 'lying to', 'liking', 'making amends with', 'running into'])} {poss} {p2}",
                 f"{subj} is trying to get {poss}{circ_spc50}{p1} to {rc(['meet', 'forgive', 'make amends with', 'impersonate', 'slander', 'disown', 'destroy', 'be on good terms with', 'get in the good graces of', 'reconcile with', 'run into', 'restore the reputation of', 'ruin the reputation of', 'avoid', 'forget', 'remember'])} {poss} {p2}",
                 f"{subj} is trying to locate {poss}{circ_spc50}{p1}",
                 f"{subj} is trying to {rc(['restore', 'ruin', 'establish'])} the reputation of {poss}{circ_spc25}{p1}",
@@ -1116,6 +1116,7 @@ def con_gen():
 def ill_gen(n):
     # VARIABLES
     subj = n.subj.capitalize()
+    subj_l = n.subj
     obj = n.obj
     poss = n.poss
     vitus = random.choice(["St. Vitus' Dance", "Viper's Dance"])
@@ -1172,11 +1173,16 @@ def ill_gen(n):
                f"{subj} {suffers_from} apoplexy, i.e., paralysis due to stroke",
                f"{subj} has contracted leprosy",
                f"{subj} lost {rc(['an arm', 'a leg', 'a hand', 'a foot', 'an ear'])}",
-               f"{subj} is cursed with bad luck so persistent that sometimes it actually manifests itself as a black cloud that {rc(['follows', 'hovers over', 'surrounds'])} {obj}",
+               f"{subj} is cursed with bad luck so persistent that it sometimes manifests itself as a black cloud that {rc(['follows', 'hovers over', 'surrounds'])} {obj}",
                f"{subj} is cursed with {rc(['intolerable body odor', 'intolerably bad breath', 'compulsively bad language'])}",
                f"{subj} is presently cursed with extreme ugliness and deformity",
                f"{subj} has been transformed into a diminutive, harmless creature that can neither use magic nor be the target of it",
-               f"{subj} has a fatal {rc(['wound', 'injury'])} inflicted by magic that cannot be healed by non-magical means"]
+               f"{subj} has a fatal {rc(['wound', 'injury'])} inflicted by magic that cannot be healed by non-magical means",
+               f"{subj} has been cursed: {subj_l} will die by midnight of {poss} next birthday unless {subj_l} can find some way to lift the curse",
+               f"Due to a curse, anything that touches {poss} skin turns to {rc(['gold', 'stone', 'lead', 'dust', 'ash', 'cinders'])}.  As a result, {subj_l} is dying of dehydration and in a state of utter desperation",
+               f"{subj} is cursed with heavy and inexplicable sorrow.  Anyone who comes into contact with {obj} is afflicted with the same sorrow, which lingers for a time afterwards",
+               f"{subj} has been transformed into a member of the opposite sex and is looking for a way to reverse the spell",
+               f"{subj} has a terrible curse: {subj_l} is forced to {rc(['dance', 'work a loom', 'knit', 'roll a stone uphill', 'play a stringed instrument', 'run in one (compass) direction', 'scratch', 'drink', 'eat', 'laugh', f'wash {n.reflex}'])} until {subj_l} dies or the curse is {rc(['lifted', 'transferred to someone else'])}"]
     serious_poor = [f"{subj} is on the brink of starvation"]
     serious_f = [f"{subj} has childbed fever (i.e., puerperal fever)",
                  f"{subj} has breast cancer"]
@@ -1213,7 +1219,7 @@ def ill_gen(n):
                    f"{subj} {suffers_from} a dislocated shoulder",
                    f"{subj} {rc([f'is {childless}', f'has been stricken with {childlessness} by magic', f'has recently been stricken with {childlessness} by a tragic accident', f'has been {childless} since birth', f'is {childless} as a result of a curse'])}",
                    f"{subj} {suffers_from} a fungal infection",
-                   f"{subj} {suffers_from} skin infection",
+                   f"{subj} {suffers_from} a skin infection",
                    f"{subj} {suffers_from} scurvy",
                    f"{subj} has lost {rc(['an eye', 'a tooth'])}",
                    f"{subj} {suffers_from} osteoporosis"]
