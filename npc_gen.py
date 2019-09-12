@@ -783,7 +783,7 @@ def quirk_gen(n):
                 f"{subj} considers punching someone in the shoulder a sign of affection",
                 f"{subj} pretends to be fluent in a language {subj_l} only knows a few words or phrases in",
                 f"{subj} is fluent in many languages{rc(['', f'but does not know how {subj_l} learned them', f'but will not say where {subj_l} learned them'])}",
-                f"{poss.capitalize()} eyes that don't point in the same direction, and it is difficult to {rc(['tell', 'know'])} where {subj_l}'s looking",
+                f"{poss.capitalize()} eyes don't point in the same direction, so it is difficult to {rc(['tell', 'know'])} where {subj_l}'s looking",
                 f"{subj} has just been {rc(['poisoned', 'executed', 'put under a spell', 'married', 'imprisoned', 'killed', 'drowned', 'trampled to death', 'resurrected', 'healed'])}",
                 f"{subj} was {rc(['poisoned', 'cursed'])} {rc(['a few moments', 'an hour', 'a few hours', 'two days', 'a few days', 'a week', 'a few weeks'])} ago and is fighting for {poss} life",
                 f"{subj} was {rc(['poisoned', 'cursed'])} {rc(['a month', 'a few months', 'a year', 'a few years', 'ten years', 'nearly a lifetime'])} ago and is still fighting for {poss} life",
@@ -808,7 +808,7 @@ def quirk_gen(n):
                 f"{subj} collapses to the ground in pain, cupping {poss} ears with {poss} hands.  {subj} does not speak without shouting and appears to be suffering from some extremely loud, continuous noise that no one else can hear",
                 f"{subj} is standing nearby when {poss} exact duplicate shows up.  It is not obvious which one, if either, is real",
                 f"{subj} has neither slept nor rested for {rc(['two', 'three', 'four', 'seven', 'fourteen', 'thirty', 'sixty', 'ninety'])} days, yet seems wide awake",
-                f"believes in a {rc(['foreign', 'uncommon', 'little-known'])} deity",
+                f"{subj} believes in a {rc(['foreign', 'uncommon', 'little-known'])} deity",
                 f"{subj} practices {rc(['an illegal religion', 'illegal magic'])} in secret",
                 f"{subj} advocates for the legalization of a certain religion and so is under suspicion of practicing it {reflex}",
                 f"{subj} advocates for the legalization of a certain spell or type of magic -- and so is suspected of knowing it",
@@ -1570,7 +1570,7 @@ def narrative_view(NPC):
         l_an = "a"
 
     # PRINT NPC NUMBER
-    print(str(NPC.num_of_NPCs) + ".", end=" ")
+    # print(str(NPC.num_of_NPCs) + ".", end=" ")
 
     # PRINT INITIAL STATEMENT
 
