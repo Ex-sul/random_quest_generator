@@ -495,7 +495,7 @@ def quirk_gen(n):
     reflex = n.reflex
     gender = n.gender
     org = q_orgs()
-    isnt = "isn't"
+    doesnt = "doesn't"
     p1, p2, p1_subj, p1_poss, p1_obj, p1_reflex = quirks_people(n)
     circ = q_circ()
     circ_spc25 = random.choices([f" {circ} ", " "], weights=[75, 25])[0]
@@ -509,7 +509,7 @@ def quirk_gen(n):
     # VARIABLES CONT'D
     reaction_types = ["breaks out in hives", "has feelings of dread", "has feelings of unease", "experiences itching",
                       "experiences swelling of throat and difficulty breathing",
-                      "experiences lightheadedness or confusion", "is inexplicably giddy", "is oddly euphoric",
+                      "experiences lightheadedness or confusion", "gets inexplicably giddy", "gets oddly euphoric",
                       "experiences temporary amnesia", "experiences permanent amnesia", "experiences aches and pains",
                       "has a heightened sense of smell", "has a hypersensitive nose", "starts crying uncontrollably",
                       "starts laughing uncontrollably", "experiences blindsight",
@@ -966,7 +966,7 @@ def quirk_gen(n):
                 f"{subj} distrusts anyone who reminds {obj} of {poss}{circ_spc90}{p1}",
                 f"{subj} has a weak spot for anyone who reminds {obj} of {poss}{circ_spc90}{p1}",
                 f"{subj} often talks to {poss}{circ_spc90}{p1} as if {p1_subj} were present",
-                f"{subj} thinks that {poss} dead {p1} still talks to {obj} -- {p1_subj} {rc(['is', isnt])}",
+                f"{subj} thinks that {poss} dead {p1} still talks to {obj} -- {p1_subj} {rc(['does', doesnt])}",
                 f"{subj} {rc(['is', f'claims {subj_l} is', f'thinks {subj_l} is'])} being pursued by {rc(['an', f'{poss}'])} obsessed {p1}",
                 f"{subj} {rc(['is afraid', 'believes', 'is hopeful'])} that {poss}{circ_spc90}{p1} is searching for {obj}",
                 f"{subj} is trying to find {poss}{circ_spc50}{p1}",
@@ -1650,7 +1650,8 @@ current_NPCs = []
 # view_mode = input("View mode (1 for profile view, 2 for narrative view): ")
 view_mode = 2
 
-while input(" ").lower() != "stop":
+# while input(" ").lower() != "stop":
+for x in range(100):
     current_NPCs.append(NPC())
     if view_mode == "1":
         profile_view(current_NPCs[-1])
