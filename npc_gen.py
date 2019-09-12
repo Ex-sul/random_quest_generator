@@ -815,7 +815,7 @@ def quirk_gen(n):
                 f"{subj} accidentally killed someone with magic as a child and has neither studied nor practiced it since",
                 f"{subj} is thought by some to be the orchestrator of an elaborate and successful hoax that made {rc(['magic', 'a certain type of magic', 'a certain religion'])} illegal in the region",
                 f"{subj} was the victim of an attack that caused {rc(['magic', 'a certain type of magic', 'a certain religion'])} to be outlawed in the region, though {subj_l} certainly did not wish for that result",
-                f"{subj} was the victim of an attack that caused {rc(['magic', 'a certain type of magic', 'a certain religion'])} to be outlawed in the region, which {subj_l} regards as an unlooked-for benefit",
+                f"{subj} was the victim of an attack that caused {rc(['magic', 'a certain type of magic', 'a certain religion'])} to be outlawed in the region, which {subj_l} regards as an {rc(['unlooked-for', 'unexpected', 'unintended'])} benefit",
                 f"{subj} was a victim of an attack that caused magic to be outlawed in the region; so now {subj_l} has to practice it in secret",
                 f"{subj} was the first of a number of people to suddenly and inexplicably gain the ability to use magic, and so {subj_l} is generally thought to be the catalyst or reason for it",
                 f"{subj} brought magic to the region from afar",
@@ -1570,7 +1570,7 @@ def narrative_view(NPC):
         l_an = "a"
 
     # PRINT NPC NUMBER
-    # print(str(NPC.num_of_NPCs) + ".", end=" ")
+    print(str(NPC.num_of_NPCs) + ".", end=" ")
 
     # PRINT INITIAL STATEMENT
 
@@ -1651,11 +1651,11 @@ current_NPCs = []
 view_mode = 2
 
 # while input(" ").lower() != "stop":
-# for x in range(100):
-#     current_NPCs.append(NPC())
-#     if view_mode == "1":
-#         profile_view(current_NPCs[-1])
-#     else:
-#         narrative_view(current_NPCs[-1])
-#
-# print("Number of NPCs created: " + str(len(current_NPCs)))
+for x in range(100):
+    current_NPCs.append(NPC())
+    if view_mode == "1":
+        profile_view(current_NPCs[-1])
+    else:
+        narrative_view(current_NPCs[-1])
+
+print("Number of NPCs created: " + str(len(current_NPCs)))
