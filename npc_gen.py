@@ -718,7 +718,7 @@ def quirk_gen(n):
                 f"{subj} will not talk to or make eye contact with strangers until they are introduced",
                 f"{subj} insists on being introduced to people {subj_l} doesn't know",
                 f"{subj} breaks the ice with strangers by pretending to know them already or have seen them around",
-                f"{subj} gets distracted while drinking and forgets to swallow; will squirt the drink out of {poss} nose if startled",
+                f"{subj} gets distracted while drinking and forgets to swallow; {subj_l} will squirt the drink out of {poss} nose if startled",
                 f"{subj} sniffles a lot, even when healthy",
                 f"{subj} always has to have something in {poss} hand",
                 f"{subj} speaks in a monotone",
@@ -1651,11 +1651,11 @@ current_NPCs = []
 view_mode = 2
 
 # while input(" ").lower() != "stop":
-for x in range(100):
-    current_NPCs.append(NPC())
-    if view_mode == "1":
-        profile_view(current_NPCs[-1])
-    else:
-        narrative_view(current_NPCs[-1])
-
-print("Number of NPCs created: " + str(len(current_NPCs)))
+# for x in range(100):
+#     current_NPCs.append(NPC())
+#     if view_mode == "1":
+#         profile_view(current_NPCs[-1])
+#     else:
+#         narrative_view(current_NPCs[-1])
+#
+# print("Number of NPCs created: " + str(len(current_NPCs)))
