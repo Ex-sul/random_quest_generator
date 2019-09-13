@@ -283,7 +283,7 @@ prof_com = ["architect", "astrologer", "baker", "banker", "barber", "bee keeper"
             "ballast master", "blast furnace slagger", "boatswain", "bondman", "broker", "cane seller", "castrator"]
 prof_com_m = ["barman", "ferryman", "fisherman", "monk", "priest", "plowman", "shepherd", "tillerman", "huntsman",
               "foundryman", "silk-dresser", "friar", "boatman", "waterman", "manservant", "butler", "groom",
-              "groom of the stool", "potboy", "rag and bone man", "whipping boy"]
+              "groom of the stool", "potboy", "rag and bone man"]
 prof_com_f = ["bartender", "ferrywoman", "fisherwoman", "milkmaid", "nun", "priestess", "quilter", "seamstress",
               "wet-nurse", "dairymaid", "plowwoman", "shepherdess", "tillerwoman", "huntswoman", "foundrywoman",
               "silkmaid", "maid", "maidservant", "laundress", "scullery maid", "housewife", "alewife", "brewster"]
@@ -1646,16 +1646,16 @@ def narrative_view(NPC):
     # End
 
 
-current_NPCs = []
+# current_NPCs = []
 # view_mode = input("View mode (1 for profile view, 2 for narrative view): ")
-view_mode = 2
+# view_mode = 2
 
 # while input(" ").lower() != "stop":
-for x in range(100):
-    current_NPCs.append(NPC())
-    if view_mode == "1":
-        profile_view(current_NPCs[-1])
-    else:
-        narrative_view(current_NPCs[-1])
-
-print("Number of NPCs created: " + str(len(current_NPCs)))
+# for x in range(100):
+#     current_NPCs.append(NPC())
+#     if view_mode == "1":
+#         profile_view(current_NPCs[-1])
+#     else:
+#         narrative_view(current_NPCs[-1])
+#
+# print("Number of NPCs created: " + str(len(current_NPCs)))
