@@ -51,12 +51,10 @@ def extract_attribs_to_list(npc):
             npc.prof_type, npc.prof, npc.con, npc.ill, npc.looks]
 
 
-def appending_to_file(attrib_list):
+def append_to_file(attrib_list):
     """Append the attributes of a single NPC to save file as a list"""
     # Open (or create) the save file in append mode
     save_file = open("saved_npcs.txt", "a")
-    # Insert starting bracket
-    save_file.write("[")
     # Take the items of an attribute list (except the last item)
     # and write them to file as list items
     for attrib in attrib_list[:-1]:
@@ -70,21 +68,41 @@ def appending_to_file(attrib_list):
         save_file.write(f"{attrib_list[-1]}")
     else:
         save_file.write(f"\"{attrib_list[-1]}\"")
-    # Insert end bracket and a line break
-    save_file.write("]\n")
+    # Insert a line break
+    save_file.write("\n")
     # Close the file
     save_file.close()
 
 
-
+def delete_npc():
+    """Delete a single NPC from the save file and then update it"""
+    # Open the save file in read mode
+    save_file = open("saved_npcs.txt", "r")
+    # Save NPC attribute lists in save_file to a temporary list
+    saved_npcs_raw = []
+    for each_line in save_file:
+        saved_npcs_raw.append(each_line)
+    # Close the save file
+    save_file.close()
+    for x in saved_npcs_raw:
+        print(x)
+        print(isinstance(x, str))
+    # Reconstruct the NPCs from the temporary list
+    # saved_npcs_rebuilt = []
+    # for each_raw in saved_npcs_raw:
+    #     saved_npcs_rebuilt.append(NPCSaved(*each_raw))
+    # # Ask the user which NPC he wants to delete
+    # for num, each in enumerate(saved_npcs_rebuilt, start=1):
+    #     print(f"{num}. {npc_gen.narrative_view(each)}")
+    # ask = input("\nWhich NPC do you want to delete? ")
 
 
 #########  TESTING  #########
 
 n1 = npc_gen.NPC()
 n1_extract = extract_attribs_to_list(n1)
-appending_to_file(n1_extract)
-
+append_to_file(n1_extract)
+# delete_npc()
 
 #########  INTRO TEXT  #########
 
