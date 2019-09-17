@@ -1500,7 +1500,7 @@ def looks_gen(sex):
 # CLASSES
 
 class NPC:
-    num_of_NPCs = 0
+
 
     def __init__(self):
         # SEX AND GENDER
@@ -1530,8 +1530,6 @@ class NPC:
         self.ill = ill_gen(self)
         self.looks = looks_gen(self.sex)
 
-        NPC.num_of_NPCs += 1
-
 
 # PRINTING
 
@@ -1552,7 +1550,7 @@ def profile_view(NPC):
 
 def narrative_view(NPC):
     # VARIABLES
-
+    output_list = []
     # 'Seeming' word
     seeming_word_list = ["seemingly", "apparently", "ostensibly", "evidently"]
     seemingly = random.choices(seeming_word_list, weights=[80, 10, 5, 5])[0]
@@ -1569,20 +1567,17 @@ def narrative_view(NPC):
     else:
         l_an = "a"
 
-    # PRINT NPC NUMBER
-    print(str(NPC.num_of_NPCs) + ".", end=" ")
-
     # PRINT INITIAL STATEMENT
 
     # Statement of Profession
-    print(f"The {NPC.prof} is", end=" ")
+    output_list.append(f"The {NPC.prof} is")
 
     # Statement of Morality
     if NPC.char == "neutral" and random.randint(1, 10) == 1:  # 10% chance for moral neutrality to be stated
-        print(f"neither a very good nor a very {rc(['evil', 'bad'])}", end=" ")
+        output_list.append(f"neither a very good nor a very {rc(['evil', 'bad'])}")
         morality_stated = True
     elif NPC.char != "neutral":  # if not neutral and morality still unstated, print morality
-        print(f"{c_an} {NPC.char}", end=" ")
+        output_list.append(f"{c_an} {NPC.char}")
         morality_stated = True
     else:  # character is neutral and their morality has not been stated
         morality_stated = False
@@ -1591,10 +1586,10 @@ def narrative_view(NPC):
     if not morality_stated:  # morality has not been stated; try stating appearance
         if NPC.looks == "plain-looking" and random.randint(1,
                                                            10) == 1:  # 10% chance to state a plain-looking character's appearance
-            print(f"{l_an} {NPC.looks}", end=" ")
+            output_list.append(f"{l_an} {NPC.looks}")
             looks_stated = True
         elif NPC.looks != "plain-looking":  # if character is not plain-looking and their appearance has not been stated, state it
-            print(f"{l_an} {NPC.looks}", end=" ")
+            output_list.append(f"{l_an} {NPC.looks}")
             looks_stated = True
         else:  # character is plain-looking and their appearance has not been stated
             looks_stated = False
@@ -1603,16 +1598,16 @@ def narrative_view(NPC):
 
     # Statement of Gender if Preceded by a Modifier
     if morality_stated or looks_stated:
-        print(f"{NPC.gender},", end=" ")
+        output_list.append(f"{NPC.gender},")
 
     # PRINT SUBSEQUENT STATEMENT
 
     # Stating Traits in Initial Statement, Since No Modifier Has Been Given
     if not morality_stated and not looks_stated:  # not possible at this point for traits to conflict with character, since character is neutral
         if NPC.conf_tt:  # if the traits contradict each other, state them both
-            print(f"somehow both {NPC.trait1} and {NPC.trait2}.", end=" ")
+            output_list.append(f"somehow both {NPC.trait1} and {NPC.trait2}.")
         else:
-            print(f"{NPC.trait1} and {NPC.trait2}.", end=" ")
+            output_list.append(f"{NPC.trait1} and {NPC.trait2}.")
         # END STATEMENT
 
     # Stating Traits Subsequently, Since a Modifier Was Already Given
@@ -1620,29 +1615,28 @@ def narrative_view(NPC):
         if morality_stated:  # if morality has been stated, looks have not: chance to print them
             if NPC.looks == "plain-looking" and random.randint(1,
                                                                4) == 1:  # 25% chance to state a plain-looking character's appearance
-                print(f"{NPC.looks}", end=", ")
+                output_list.append(f"{NPC.looks},")
             elif NPC.looks != "plain-looking":  # if character is not plain-looking and their appearance has not been stated, state it
-                print(f"{NPC.looks}", end=", ")
+                output_list.append(f"{NPC.looks},")
             else:  # character is plain-looking and their appearance will not be stated at all
                 pass
         # Morality and Appearance Statements Resolved; Now Printing Traits
         if NPC.conf_tt:  # traits conflict; print them both
-            print(f"somehow both {NPC.trait1} and {NPC.trait2}.", end=" ")
+            output_list.append(f"somehow both {NPC.trait1} and {NPC.trait2}.")
         elif not NPC.conf_ct1 and not NPC.conf_ct2:  # if neither trait conflicts with character, print them both
-            print(f"{NPC.trait1} and {NPC.trait2}.", end=" ")
+            output_list.append(f"{NPC.trait1} and {NPC.trait2}.")
         elif not NPC.conf_ct1 and NPC.conf_ct2:  # trait2 conflicts with character, but trait1 does not
-            print(f"{NPC.trait1} and {seemingly} {NPC.trait2}.", end=" ")
+            output_list.append(f"{NPC.trait1} and {seemingly} {NPC.trait2}.")
         elif NPC.conf_ct1 and not NPC.conf_ct2:  # trait1 conflicts with character, but trait2 does not
-            print(f"{NPC.trait2} and {seemingly} {NPC.trait1}.", end=" ")
+            output_list.append(f"{NPC.trait2} and {seemingly} {NPC.trait1}.")
         else:  # both traits conflict with character; print them both
-            print(f"{seemingly} {NPC.trait1} and {NPC.trait2}.", end=" ")
+            output_list.append(f"{seemingly} {NPC.trait1} and {NPC.trait2}.")
         # END STATEMENT
     if NPC.con != 0:
-        print(str(NPC.ill) + ".", end=" ")
+        output_list.append(str(NPC.ill) + ".")
     # Quirk
-    print(NPC.quirk + ".")
-    print(" ")
-    print(" ")
+    output_list.append(NPC.quirk + ".")
+    return " ".join(output_list)
     # End
 
 
