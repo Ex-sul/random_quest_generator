@@ -74,6 +74,12 @@ def append_to_file(attrib_list):
     save_file.close()
 
 
+def reconstruct_list(str_list):
+    """Convert a list saved to file as a string back into a list"""
+    pass  # PROBLEM: The quirk will have commas in it
+
+
+
 def delete_npc():
     """Delete a single NPC from the save file and then update it"""
     # Open the save file in read mode
@@ -91,7 +97,7 @@ def delete_npc():
     # saved_npcs_rebuilt = []
     # for each_raw in saved_npcs_raw:
     #     saved_npcs_rebuilt.append(NPCSaved(*each_raw))
-    # # Ask the user which NPC he wants to delete
+    # Ask the user which NPC he wants to delete
     # for num, each in enumerate(saved_npcs_rebuilt, start=1):
     #     print(f"{num}. {npc_gen.narrative_view(each)}")
     # ask = input("\nWhich NPC do you want to delete? ")
