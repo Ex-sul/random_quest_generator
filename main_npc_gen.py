@@ -59,9 +59,9 @@ def append_to_file(attrib_list):
     # and write them to file as list items
     for attrib in attrib_list[:-1]:
         if not isinstance(attrib, str):
-            save_file.write(f"{attrib}, ")
+            save_file.write(f"{attrib}|<^>|")
         else:  # attrib is string
-            save_file.write(f"\"{attrib}\", ")
+            save_file.write(f"\"{attrib}\"|<^>|")
     # Now add the last item to the list,
     # following the same procedure
     if not isinstance(attrib_list[-1], str):
@@ -76,7 +76,16 @@ def append_to_file(attrib_list):
 
 def reconstruct_list(str_list):
     """Convert a list saved to file as a string back into a list"""
-    pass  # PROBLEM: The quirk will have commas in it
+    split_string = str_list.split("|<^>|")
+    new_list = []
+    for each_str in split_string:
+        try:
+            new_list.append(int(each_str))
+        except:
+            if each_str == "True":
+                new_list.append(True)
+            elif each_str == "False":
+                new_list.append(False)  # LEFT OFF HERE
 
 
 
