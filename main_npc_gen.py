@@ -58,66 +58,69 @@ def append_to_file(attrib_list):
     # Take the items of an attribute list (except the last item)
     # and write them to file as list items
     for attrib in attrib_list[:-1]:
-        if not isinstance(attrib, str):
-            save_file.write(f"{attrib}|<^>|")
-        else:  # attrib is string
-            save_file.write(f"\"{attrib}\"|<^>|")
-    # Now add the last item to the list,
-    # following the same procedure
-    if not isinstance(attrib_list[-1], str):
-        save_file.write(f"{attrib_list[-1]}")
-    else:
-        save_file.write(f"\"{attrib_list[-1]}\"")
+        save_file.write(f"{attrib}|<@>|")
+    # Now add the last item to the list
+    save_file.write(f"{attrib_list[-1]}")
     # Insert a line break
     save_file.write("\n")
     # Close the file
     save_file.close()
 
 
-def reconstruct_list(str_list):
-    """Convert a list saved to file as a string back into a list"""
-    split_string = str_list.split("|<^>|")
-    new_list = []
-    for each_str in split_string:
-        try:
-            new_list.append(int(each_str))
-        except:
-            if each_str == "True":
-                new_list.append(True)
-            elif each_str == "False":
-                new_list.append(False)  # LEFT OFF HERE
-
+def pull_from_file():
+    """Reconstruct all NPCs from the save file"""
+    # Open the save file in read mode
+    save_file = open("saved_npcs.txt", "r")
+    # Add each list that was lumped into a single string to a temporary list
+    lump_list = []
+    for each_lump in save_file:
+        lump_list.append(each_lump)
+    # Close the file
+    save_file.close()
+    # Reconvert strings into lists
+    master_split_list = []
+    for each_lump in lump_list:
+        split_lump = each_lump.split("|<@>|")
+        master_split_list.append(split_lump)
+        # Delete the line break following the last element
+        split_lump[-1] = split_lump[-1].strip()
+    # Reconvert the list items into their proper data types
+    all_rebuilt_lists = []
+    for each_list in master_split_list:
+        rebuilt_list = []
+        for each_item in each_list:
+            try:
+                rebuilt_list.append(int(each_item))
+            except:
+                if each_item == "True":
+                    rebuilt_list.append(True)
+                elif each_item == "False":
+                    rebuilt_list.append(False)
+                else:  # add string as string
+                    rebuilt_list.append(each_item)
+        all_rebuilt_lists.append(rebuilt_list)
+    # Reconvert all NPCs to class objects
+    master_list = []
+    for each_npc in all_rebuilt_lists:
+        master_list.append(NPCSaved(*each_npc))
+    return master_list
 
 
 def delete_npc():
     """Delete a single NPC from the save file and then update it"""
     # Open the save file in read mode
     save_file = open("saved_npcs.txt", "r")
-    # Save NPC attribute lists in save_file to a temporary list
-    saved_npcs_raw = []
-    for each_line in save_file:
-        saved_npcs_raw.append(each_line)
+    #
+
     # Close the save file
     save_file.close()
-    for x in saved_npcs_raw:
-        print(x)
-        print(isinstance(x, str))
-    # Reconstruct the NPCs from the temporary list
-    # saved_npcs_rebuilt = []
-    # for each_raw in saved_npcs_raw:
-    #     saved_npcs_rebuilt.append(NPCSaved(*each_raw))
-    # Ask the user which NPC he wants to delete
-    # for num, each in enumerate(saved_npcs_rebuilt, start=1):
-    #     print(f"{num}. {npc_gen.narrative_view(each)}")
-    # ask = input("\nWhich NPC do you want to delete? ")
 
 
 #########  TESTING  #########
 
-n1 = npc_gen.NPC()
-n1_extract = extract_attribs_to_list(n1)
-append_to_file(n1_extract)
-# delete_npc()
+p = pull_from_file()
+for x in p:
+    print("\n" * 3, npc_gen.narrative_view(x))
 
 #########  INTRO TEXT  #########
 

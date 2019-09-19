@@ -817,7 +817,7 @@ def quirk_gen(n):
                 f"{subj} was the victim of an attack that caused {rc(['magic', 'a certain type of magic', 'a certain religion'])} to be outlawed in the region, though {subj_l} certainly did not wish for that result",
                 f"{subj} was the victim of an attack that caused {rc(['magic', 'a certain type of magic', 'a certain religion'])} to be outlawed in the region, which {subj_l} regards as an {rc(['unlooked-for', 'unexpected', 'unintended'])} benefit",
                 f"{subj} was a victim of an attack that caused magic to be outlawed in the region; so now {subj_l} has to practice it in secret",
-                f"{subj} was the first of a number of people to suddenly and inexplicably gain the ability to use magic, and so {subj_l} is generally thought to be the catalyst or reason for it",
+                f"{subj} was the first of a number of people to suddenly and inexplicably gain the ability to use magic, and so {subj_l} is generally thought to be the {rc(['catalyst', 'reason', 'cause', 'origin'])}",
                 f"{subj} brought magic to the region from afar",
                 f"{subj} was granted a wish that {subj_l} would never again be able to experience physical pain--and is now prone to unnoticed scrapes, bruises, and injuries",
                 f"{subj} once wished that {subj_l} would never be able to experience heartache again and is now incapable of feeling love, empathy, or guilt for any of {poss} actions",
