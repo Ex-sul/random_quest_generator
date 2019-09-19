@@ -43,16 +43,12 @@ class NPCSaved:
 #########  FUNCTIONS  #########
 
 
-def extract_attribs_to_list(npc):
-    """Extract the attributes of a single NPC to prep for file saving"""
-    return [npc.sex, npc.char, npc.principles, npc.law_disposition,
+def append_to_file(npc):
+    """Append the attributes of an NPC to safe file as a string"""
+    attrib_list = [npc.sex, npc.char, npc.principles, npc.law_disposition,
             npc.trait1_type, npc.trait2_type, npc.trait1, npc.trait2,
             npc.conf_ct1, npc.conf_ct2, npc.conf_tt, npc.quirk,
             npc.prof_type, npc.prof, npc.con, npc.ill, npc.looks]
-
-
-def append_to_file(attrib_list):
-    """Append the attributes of a single NPC to save file as a list"""
     # Open (or create) the save file in append mode
     save_file = open("saved_npcs.txt", "a")
     # Take the items of an attribute list (except the last item)
@@ -111,7 +107,7 @@ def delete_npc():
     # Open the save file in read mode
     save_file = open("saved_npcs.txt", "r")
     #
-
+    # CODE HERE
     # Close the save file
     save_file.close()
 
