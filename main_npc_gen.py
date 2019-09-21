@@ -1,4 +1,5 @@
 import npc_gen
+import json
 
 
 # CLASS TO RECONSTRUCT NPCS FROM SAVE FILE
@@ -44,62 +45,25 @@ class NPCSaved:
 
 
 def append_to_file(npc):
-    """Append the attributes of an NPC to safe file as a string"""
+    """Append the attributes of an NPC to save file as a string"""
     attrib_list = [npc.sex, npc.char, npc.principles, npc.law_disposition,
             npc.trait1_type, npc.trait2_type, npc.trait1, npc.trait2,
             npc.conf_ct1, npc.conf_ct2, npc.conf_tt, npc.quirk,
             npc.prof_type, npc.prof, npc.con, npc.ill, npc.looks]
     # Open (or create) the save file in append mode
-    save_file = open("saved_npcs.txt", "a")
-    # Take the items of an attribute list (except the last item)
-    # and write them to file as list items
-    for attrib in attrib_list[:-1]:
-        save_file.write(f"{attrib}|<@>|")
-    # Now add the last item to the list
-    save_file.write(f"{attrib_list[-1]}")
-    # Insert a line break
-    save_file.write("\n")
-    # Close the file
-    save_file.close()
+    with open("saved_npcs.txt", "a") as save_file:
+        # Serializing attribute list to save file
+        # as a JSON-formatted string
+        save_file.write(json.dumps(attrib_list))
 
 
 def pull_from_file():
     """Reconstruct all NPCs from the save file"""
     # Open the save file in read mode
-    save_file = open("saved_npcs.txt", "r")
-    # Add each list that was lumped into a single string to a temporary list
-    lump_list = []
-    for each_lump in save_file:
-        lump_list.append(each_lump)
-    # Close the file
-    save_file.close()
-    # Reconvert strings into lists
-    master_split_list = []
-    for each_lump in lump_list:
-        split_lump = each_lump.split("|<@>|")
-        master_split_list.append(split_lump)
-        # Delete the line break following the last element
-        split_lump[-1] = split_lump[-1].strip()
-    # Reconvert the list items into their proper data types
-    all_rebuilt_lists = []
-    for each_list in master_split_list:
-        rebuilt_list = []
-        for each_item in each_list:
-            try:
-                rebuilt_list.append(int(each_item))
-            except:
-                if each_item == "True":
-                    rebuilt_list.append(True)
-                elif each_item == "False":
-                    rebuilt_list.append(False)
-                else:  # add string as string
-                    rebuilt_list.append(each_item)
-        all_rebuilt_lists.append(rebuilt_list)
-    # Reconvert all NPCs to class objects
-    master_list = []
-    for each_npc in all_rebuilt_lists:
-        master_list.append(NPCSaved(*each_npc))
-    return master_list
+    with open("saved_npcs.txt", "r") as save_file:
+        s = json.load(save_file)
+        for x in s:
+            print(x)
 
 
 def delete_npc():
@@ -114,9 +78,10 @@ def delete_npc():
 
 #########  TESTING  #########
 
-p = pull_from_file()
-for x in p:
-    print("\n" * 3, npc_gen.narrative_view(x))
+
+# n1 = npc_gen.NPC()
+# append_to_file(n1)
+pull_from_file()
 
 #########  INTRO TEXT  #########
 
