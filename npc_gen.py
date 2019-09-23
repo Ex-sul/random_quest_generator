@@ -1425,7 +1425,7 @@ def conf_traittrait(trait1, trait2):
 
 
 def conf_traitchar(char, trait):
-    # Determines the level of conflict between character and a character trait
+    # Determines whether there is conflict between character and a character trait
     # False = No conflict
     # True = Trait conflicts with character
     if char == "good" and trait in char_traits_neg:

@@ -43,45 +43,105 @@ class NPCSaved:
 
 #########  FUNCTIONS  #########
 
+def identify_type(x):
+    if isinstance(x, str):
+        return "string"
+    elif isinstance(x, bool):
+        return "bool"
+    elif isinstance(x, int):
+        return "int"
+    else:
+        return "something else"
+
 
 def append_to_file(npc):
-    """Append the attributes of an NPC to save file as a string"""
+    """Append the attributes of an NPC to save file as a JSON string"""
+    # Pull the attributes off an NPC class instance
     attrib_list = [npc.sex, npc.char, npc.principles, npc.law_disposition,
-            npc.trait1_type, npc.trait2_type, npc.trait1, npc.trait2,
-            npc.conf_ct1, npc.conf_ct2, npc.conf_tt, npc.quirk,
-            npc.prof_type, npc.prof, npc.con, npc.ill, npc.looks]
+                   npc.trait1_type, npc.trait2_type, npc.trait1, npc.trait2,
+                   npc.conf_ct1, npc.conf_ct2, npc.conf_tt, npc.quirk,
+                   npc.prof_type, npc.prof, npc.con, npc.ill, npc.looks]
     # Open (or create) the save file in append mode
     with open("saved_npcs.txt", "a") as save_file:
         # Serializing attribute list to save file
         # as a JSON-formatted string
         save_file.write(json.dumps(attrib_list))
+        save_file.write("\n")
 
 
 def pull_from_file():
     """Reconstruct all NPCs from the save file"""
-    # Open the save file in read mode
+    # Create list to store NPCs pulled from save file
+    pulled_npcs = []
+    # Load NPCs from save file
     with open("saved_npcs.txt", "r") as save_file:
-        s = json.load(save_file)
-        for x in s:
-            print(x)
+        for each_list in save_file:
+            pulled_npcs.append(json.loads(each_list))
+    # Reconvert each attribute list to NPC class instance
+    reconstructed_npcs = []
+    for each_npc in pulled_npcs:
+        reconstructed_npcs.append(NPCSaved(*each_npc))
+    return reconstructed_npcs
 
 
 def delete_npc():
     """Delete a single NPC from the save file and then update it"""
-    # Open the save file in read mode
-    save_file = open("saved_npcs.txt", "r")
-    #
-    # CODE HERE
-    # Close the save file
-    save_file.close()
+    # Pull NPCs from save file
+    pulled = pull_from_file()
+    # Display saved NPCs in a numbered list
+    print("\n" * 2)
+    for x, y in enumerate(pulled, start=1):
+        print(f"{x}. {npc_gen.narrative_view(y)}", "\n" * 2)
+    # Ask the user which saved NPC he wants to delete
+    while True:
+        # Check to see if user gives valid input (int)
+        try:
+            del_index = int(input("Which NPC do you want to delete? ")) - 1
+            # Check to see if input corresponds to an NPC index
+            if del_index in range(0, len(pulled)):
+                break
+            else:
+                print("Invalid input.  That number does not correspond to an NPC in the list.")
+        except ValueError:
+            print("Invalid input.  Please enter a number.")
+    # Ask for confirmation
+    print(f"\n\n{del_index + 1}. {npc_gen.narrative_view(pulled[del_index])}")
+    del_verify = input("\nAre you sure you want to delete this character? ")
+    # If confirmed, delete NPC
+    if "y" in del_verify.lower():
+        # Delete the NPC
+        del pulled[del_index]
+        # Clear the save file
+        with open("saved_npcs.txt", "w") as save_file:
+            pass
+        # Push updated list to save file
+        for each_npc in pulled:
+            append_to_file(each_npc)
+    else:
+        # Not deleting, return to main menu
+        pass
+
+
+def delete_all():
+    """Clear the save file"""
+    # Ask for confirmation
+    del_verify = input("\nAre you sure you want to delete all the NPCs you've saved? ")
+    if "y" in del_verify.lower():
+        # Clear the save file
+        with open("saved_npcs.txt", "w") as save_file:
+            pass
+
 
 
 #########  TESTING  #########
 
+delete_all()
 
 # n1 = npc_gen.NPC()
 # append_to_file(n1)
-pull_from_file()
+# p = pull_from_file()
+# for x in p:
+#     print("\n" * 3, npc_gen.narrative_view(x))
 
 #########  INTRO TEXT  #########
 
