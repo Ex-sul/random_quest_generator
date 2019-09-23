@@ -6,9 +6,10 @@ import json
 
 class NPCSaved:
 
-    def __init__(self, sex, char, principles, law_disposition, trait1_type,
+    def __init__(self, name, sex, char, principles, law_disposition, trait1_type,
                  trait2_type, trait1, trait2, conf_ct1, conf_ct2,
-                 conf_tt, quirk, prof_type, prof, con, ill, looks):  # 17
+                 conf_tt, quirk, prof_type, prof, con, ill, looks):  # 18
+        self.name = name
         # SEX AND GENDER
         self.sex = sex
         self.gender, self.subj, self.poss, self.obj, self.reflex = self.pronouns()
@@ -43,21 +44,10 @@ class NPCSaved:
 
 #########  FUNCTIONS  #########
 
-def identify_type(x):
-    if isinstance(x, str):
-        return "string"
-    elif isinstance(x, bool):
-        return "bool"
-    elif isinstance(x, int):
-        return "int"
-    else:
-        return "something else"
-
-
 def append_to_file(npc):
     """Append the attributes of an NPC to save file as a JSON string"""
     # Pull the attributes off an NPC class instance
-    attrib_list = [npc.sex, npc.char, npc.principles, npc.law_disposition,
+    attrib_list = [npc.name, npc.sex, npc.char, npc.principles, npc.law_disposition,
                    npc.trait1_type, npc.trait2_type, npc.trait1, npc.trait2,
                    npc.conf_ct1, npc.conf_ct2, npc.conf_tt, npc.quirk,
                    npc.prof_type, npc.prof, npc.con, npc.ill, npc.looks]
@@ -134,8 +124,6 @@ def delete_all():
 
 
 #########  TESTING  #########
-
-delete_all()
 
 # n1 = npc_gen.NPC()
 # append_to_file(n1)

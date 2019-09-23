@@ -1503,6 +1503,7 @@ class NPC:
 
 
     def __init__(self):
+        self.name = "unnamed"
         # SEX AND GENDER
         self.sex = sex_gen()
         self.gender = gender_noun(self.sex)
