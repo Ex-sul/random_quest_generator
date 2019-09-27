@@ -782,7 +782,7 @@ def quirk_gen(n):
                 f"{subj} has a lisp and tries to avoid words that have the letter \"s\" in them",
                 f"{subj} considers punching someone in the shoulder a sign of affection",
                 f"{subj} pretends to be fluent in a language {subj_l} only knows a few words or phrases in",
-                f"{subj} is fluent in many languages{rc(['', f'but does not know how {subj_l} learned them', f'but will not say where {subj_l} learned them'])}",
+                f"{subj} is fluent in many languages{rc(['', f' but does not know how {subj_l} learned them', f' but will not say where {subj_l} learned them'])}",
                 f"{poss.capitalize()} eyes don't point in the same direction, so it is difficult to {rc(['tell', 'know'])} where {subj_l}'s looking",
                 f"{subj} has just been {rc(['poisoned', 'executed', 'put under a spell', 'married', 'imprisoned', 'killed', 'drowned', 'trampled to death', 'resurrected', 'healed'])}",
                 f"{subj} was {rc(['poisoned', 'cursed'])} {rc(['a few moments', 'an hour', 'a few hours', 'two days', 'a few days', 'a week', 'a few weeks'])} ago and is fighting for {poss} life",
@@ -1642,15 +1642,15 @@ def narrative_view(NPC):
 
 
 # current_NPCs = []
-# view_mode = input("View mode (1 for profile view, 2 for narrative view): ")
+# # view_mode = input("View mode (1 for profile view, 2 for narrative view): ")
 # view_mode = 2
-
-# while input(" ").lower() != "stop":
+#
+# # while input(" ").lower() != "stop":
 # for x in range(100):
 #     current_NPCs.append(NPC())
-#     if view_mode == "1":
-#         profile_view(current_NPCs[-1])
-#     else:
-#         narrative_view(current_NPCs[-1])
+#
+# for num, npc in enumerate(current_NPCs, start=1):
+#     print("\n" * 2)
+#     print(f"{num}. {narrative_view(npc)}")
 #
 # print("Number of NPCs created: " + str(len(current_NPCs)))
