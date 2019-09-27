@@ -450,7 +450,7 @@ def q_orgs():
                           "an elitist group of educators who insist that everyone must learn magic",
                           "a traveling carnival", "a traveling circus", "a group of farmers",
                           "an association of horse-breeders",
-                          "a group dedicated to the conservation or recovery of magic"]
+                          f"a group dedicated to the {rc(['conservation', 'recovery', 'eradication', 'annihilation'])} of magic"]
     return random.choice(organization_types)
 
 
