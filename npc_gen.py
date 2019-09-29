@@ -254,23 +254,23 @@ prof_com = ["architect", "astrologer", "baker", "banker", "barber", "bee keeper"
             "ship builder", "shipwright", "shoemaker", "soldier", "spinner", "stonemason", "tailor", "tavern keeper",
             "town crier",
             "weaver", "wine merchant", "cowherd", "swineherd", "gardener", "goatherd", "hawker", "peasant", "reaper",
-            "serf", "hostler", "sheep-shearer", "thresher", "woodcutter", "lumberjack", "vintner", "woolcomber",
-            "yeoman", "forester", "fowler", "gamekeeper", "master of hounds", "molecatcher", "rat catcher", "trapper",
-            "leech-collector", "seaweed harvester", "oysterer", "pastrycook", "cooper", "scabbard maker", "hatter",
+            "serf", "hostler", "sheep-shearer", "thresher", "woodcutter", "lumberjack", "vintner", "wool comber",
+            "yeoman", "forester", "fowler", "gamekeeper", "master of hounds", "mole catcher", "rat catcher", "trapper",
+            "leech-collector", "seaweed harvester", "oysterer", "pastry cook", "cooper", "scabbard maker", "hatter",
             "saddler", "chicken butcher", "purse maker", "buckle maker", "roofer", "rope maker", "tanner", "rug maker",
             "town's guard", "bleacher", "cutler", "knife sharpener", "glover", "bottler", "cobbler", "girdler",
             "armorsmith", "arrowsmith", "bladesmith", "bowyer", "merchant tailor", "miner", "swordsmith", "smelter",
-            "blacksmith's striker", "arcane smith", "silversmith", "goldbeater", "spooner", "tinker", "alabasterer",
-            "stabler", "basketmaker", "bonecarver", "book printer", "bricklayer", "builder", "buttonmaker",
-            "cabinetmaker", "cartwright", "chainmaker", "charcoalburner", "cheesemaker", "clockmaker", "clothier",
-            "coiner", "combmaker", "compass-smith", "confectioner", "corsetier", "ditch digger", "dog catcher", "dyer",
-            "embroiderer", "engraver", "feltmaker", "furniture maker", "gemcutter", "gilder", "horner", "lacemaker",
-            "lampwright", "lanternmaker", "leadworker", "linenspinner", "lutemaker", "mapmaker", "master builder",
-            "miller", "miniaturist", "mint maker", "moneyer", "nailmaker", "netmaker", "oilmaker", "papermaker",
+            "blacksmith's striker", "arcane smith", "silversmith", "gold beater", "spooner", "tinker", "alabasterer",
+            "stabler", "basket maker", "bone carver", "book printer", "bricklayer", "builder", "button maker",
+            "cabinetmaker", "cartwright", "chain maker", "charcoal burner", "cheese maker", "clockmaker", "clothier",
+            "coiner", "comb maker", "compass-smith", "confectioner", "corsetier", "ditch digger", "dog catcher", "dyer",
+            "embroiderer", "engraver", "felt maker", "furniture maker", "gem cutter", "gilder", "horner", "lace maker",
+            "lampwright", "lantern maker", "lead worker", "linen spinner", "lute maker", "mapmaker", "master builder",
+            "miller", "miniaturist", "mint maker", "moneyer", "nail maker", "net maker", "oil maker", "paper maker",
             "parchmenter", "perfumer", "pewterer", "pinmaker", "plasterer", "pot mender", "quarrier", "quilter",
-            "reedmaker", "sailmaker", "saltboiler", "sawyer", "shingler", "siever", "sin-eater", "silk-dyer",
-            "stonecarver",
-            "stonecutter", "tapestrymaker", "tenter", "threadmaker", "tile maker", "wheelwright", "typefounder",
+            "reed maker", "sail maker", "salt boiler", "sawyer", "shingler", "siever", "sin-eater", "silk-dyer",
+            "stone carver", "surveyor"
+            "stone cutter", "tapestry maker", "tenter", "thread maker", "tile maker", "wheelwright", "type founder",
             "haberdasher", "hay merchant", "ironmonger", "oil merchant", "spice merchant", "pie seller", "stationer",
             "taverner", "archer", "bowman", "captain", "crossbowman", "guardsman", "pikeman", "scout", "sergeant",
             "sergeant-at-arms", "spearman", "siege engineer", "camp cook", "hermit", "pardoner", "bargeman", "mariner",
@@ -304,7 +304,7 @@ prof_crime_f = ["courtesan", "prostitute", "harlot",
                 "witch who curses people, places, or objects for money or worse compensation"]
 prof_med = ["alchemist", "apothecary", "healer", "physician", "surgeon", "doctor", "leech", "herbalist"]
 prof_med_f = ["midwife", "wise woman", "nurse"]
-prof_art = ["bard", "calligrapher", "dancer", "glasspainter", "manuscript illuminator", "painter", "playwright",
+prof_art = ["bard", "calligrapher", "dancer", "glass painter", "manuscript illuminator", "painter", "playwright",
             "poet", "sculptor", "storyteller", "tumbler", "artist's model", "fresco painter", "composer", "fiddler",
             "harper", "lutenist", "minstrel", "musician", "piper", "singer", "actor", "fool", "juggler", "jester",
             "troubadour"]
@@ -1645,16 +1645,16 @@ def narrative_view(NPC):
     # End
 
 
-# current_NPCs = []
+current_NPCs = []
 # # view_mode = input("View mode (1 for profile view, 2 for narrative view): ")
-# view_mode = 2
-#
-# # while input(" ").lower() != "stop":
-# for x in range(100):
-#     current_NPCs.append(NPC())
-#
-# for num, npc in enumerate(current_NPCs, start=1):
-#     print("\n" * 2)
-#     print(f"{num}. {narrative_view(npc)}")
-#
-# print("Number of NPCs created: " + str(len(current_NPCs)))
+view_mode = 2
+
+# while input(" ").lower() != "stop":
+for x in range(100):
+    current_NPCs.append(NPC())
+
+for num, npc in enumerate(current_NPCs, start=1):
+    print("\n" * 2)
+    print(f"{num}. {narrative_view(npc)}")
+
+print("Number of NPCs created: " + str(len(current_NPCs)))
