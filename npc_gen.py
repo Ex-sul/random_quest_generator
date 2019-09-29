@@ -1432,6 +1432,10 @@ def conf_traitchar(char, trait):
         return True
     elif char == "evil" and trait in char_traits_pos:
         return True
+    elif char == "neutral" and trait in traits1_char_is_good:
+        return True
+    elif char == "neutral" and trait in traits1_char_not_good:
+        return True
     else:
         return False
 
