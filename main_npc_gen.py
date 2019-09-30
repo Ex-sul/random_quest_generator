@@ -125,4 +125,13 @@ def delete_all():
 
 #########  TESTING  #########
 
+# current_npcs = []
+# for r in range(4):
+#     current_npcs.append(npc_gen.NPC())
+#
+# for cn in current_npcs:
+#     append_to_file(cn)
 
+rebuilt_npcs = pull_from_file()
+for num, npc in enumerate(rebuilt_npcs, start=1):
+    print(num, npc.__dict__, "\n")

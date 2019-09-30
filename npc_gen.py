@@ -1645,16 +1645,16 @@ def narrative_view(NPC):
     # End
 
 
-current_NPCs = []
-# # view_mode = input("View mode (1 for profile view, 2 for narrative view): ")
-view_mode = 2
-
-# while input(" ").lower() != "stop":
-for x in range(100):
-    current_NPCs.append(NPC())
-
-for num, npc in enumerate(current_NPCs, start=1):
-    print("\n" * 2)
-    print(f"{num}. {narrative_view(npc)}")
-
-print("Number of NPCs created: " + str(len(current_NPCs)))
+# current_NPCs = []
+# # # view_mode = input("View mode (1 for profile view, 2 for narrative view): ")
+# view_mode = 2
+#
+# # while input(" ").lower() != "stop":
+# for x in range(100):
+#     current_NPCs.append(NPC())
+#
+# for num, npc in enumerate(current_NPCs, start=1):
+#     print("\n" * 2)
+#     print(f"{num}. {narrative_view(npc)}")
+#
+# print("Number of NPCs created: " + str(len(current_NPCs)))
